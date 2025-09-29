@@ -10,6 +10,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Transpayra brand colors */
+  --color-brand-primary: #F0DFC8;
+  --color-brand-secondary: #795833;
+  --color-brand-accent: #795833;
 }
 
 @media (prefers-color-scheme: dark) {
