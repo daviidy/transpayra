@@ -15,6 +15,7 @@
   --color-brand-primary: #F0DFC8;
   --color-brand-secondary: #795833;
   --color-brand-accent: #795833;
+  --color-brand-hero-bg: #E9ECF0;
 }
 
 @media (prefers-color-scheme: dark) {

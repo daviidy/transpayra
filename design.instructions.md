@@ -122,6 +122,7 @@ Before designing any page, always ask me how I want that page to visually appear
   * `brand-primary`: #F0DFC8 (light cream/beige)
   * `brand-secondary`: #795833 (brown)
   * `brand-accent`: #795833 (same as secondary)
+  * `brand-hero-bg`: #E9ECF0 (light gray for hero section background)
 * **Normalization:** After using any template, apply brand colors, standard radii/shadows/spacing, and ensure a11y and responsiveness.
 
 ---
