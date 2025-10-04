@@ -1,18 +1,35 @@
 import { pgTable, bigserial, text, bigint, numeric, integer, timestamp, uuid, unique, index } from 'drizzle-orm/pg-core'
 import { relations } from 'drizzle-orm'
 
+// Industry table
+export const industry = pgTable('industry', {
+  industryId: bigserial('industry_id', { mode: 'number' }).primaryKey(),
+  name: text('name').unique().notNull(),
+  slug: text('slug').unique().notNull(),
+  icon: text('icon'),
+})
+
 // Job Title table
 export const jobTitle = pgTable('job_title', {
   jobTitleId: bigserial('job_title_id', { mode: 'number' }).primaryKey(),
   title: text('title').unique().notNull(),
+  industryId: bigint('industry_id', { mode: 'number' }).references(() => industry.industryId),
+  category: text('category'),
+  slug: text('slug').unique().notNull(),
 })
 
 // Company table
 export const company = pgTable('company', {
   companyId: bigserial('company_id', { mode: 'number' }).primaryKey(),
   name: text('name').unique().notNull(),
+  slug: text('slug').unique().notNull(),
   website: text('website'),
   logoUrl: text('logo_url'),
+  industry: text('industry'),
+  headquarters: text('headquarters'),
+  founded: integer('founded'),
+  companyType: text('company_type'),
+  description: text('description'),
 })
 
 // Location table
@@ -21,6 +38,8 @@ export const location = pgTable('location', {
   city: text('city').notNull(),
   state: text('state'),
   country: text('country').notNull(),
+  slug: text('slug').unique().notNull(),
+  region: text('region'),
 }, (table) => ({
   uniqueLocation: unique().on(table.city, table.state, table.country),
 }))
@@ -56,12 +75,20 @@ export const salarySubmission = pgTable('salary_submission', {
 }))
 
 // Relations
+export const industryRelations = relations(industry, ({ many }) => ({
+  jobTitles: many(jobTitle),
+}))
+
 export const companyRelations = relations(company, ({ many }) => ({
   levels: many(level),
   salarySubmissions: many(salarySubmission),
 }))
 
-export const jobTitleRelations = relations(jobTitle, ({ many }) => ({
+export const jobTitleRelations = relations(jobTitle, ({ one, many }) => ({
+  industry: one(industry, {
+    fields: [jobTitle.industryId],
+    references: [industry.industryId],
+  }),
   levels: many(level),
   salarySubmissions: many(salarySubmission),
 }))
@@ -88,6 +115,7 @@ export const salarySubmissionRelations = relations(salarySubmission, ({ one }) =
     references: [company.companyId],
   }),
   jobTitle: one(jobTitle, {
+
     fields: [salarySubmission.jobTitleId],
     references: [jobTitle.jobTitleId],
   }),

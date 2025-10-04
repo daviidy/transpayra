@@ -13,6 +13,7 @@ Before designing any page, always ask me how I want that page to visually appear
 * **Consistency.** One theme across the product; never mix competing primitives on the same screen.
 * **Accessibility (WCAG AA).** Always maintain contrast, visible focus, and keyboard operability.
 * **Performance-aware.** Prefer lightweight visuals and motion; avoid heavy effects.
+* **CTA Placement.** Every page must include the ContributeCTA component before the Footer component. This ensures consistent conversion opportunities across all pages.
 
 ---
 

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Breakdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<div class="max-w-6xl mx-auto px-6 py-12">
+    <!-- Page Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900">Software Engineer Salary in San Francisco Bay Area, US</h1>
+    </div>
+
+    <!-- Hero Stats Card -->
+    <div class="bg-white rounded-2xl shadow-lg mb-12 overflow-hidden">
+        <!-- Top Section -->
+        <div class="p-8">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8">
+                <!-- Left: Main Salary -->
+                <div class="mb-6 lg:mb-0">
+                    <div class="text-5xl font-bold text-green-600 mb-2">$268,200</div>
+                    <div class="text-gray-600 text-lg">Median Total Comp</div>
+                </div>
+
+                <!-- Center: Percentile Stats -->
+                <div class="flex flex-wrap gap-6 mb-6 lg:mb-0">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-400">$200K</div>
+                        <div class="text-gray-500 text-sm">25th percentile</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-600">$370K</div>
+                        <div class="text-gray-500 text-sm">75th percentile</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-800">$492K</div>
+                        <div class="text-gray-500 text-sm">90th percentile</div>
+                    </div>
+                </div>
+
+                <!-- Right: Level Dropdown -->
+                <div>
+                    <select class="px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm">
+                        <option>All Levels</option>
+                        <option>Entry Level</option>
+                        <option>Mid Level</option>
+                        <option>Senior Level</option>
+                        <option>Staff Level</option>
+                        <option>Principal Level</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Middle Row: CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    <span>Contribute Your Salary</span>
+                </button>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200">
+                    View Jobs
+                </button>
+            </div>
+
+            <!-- Bottom Row: Fine Print -->
+            <div class="text-center text-gray-500 text-sm mb-6">
+                <p>Salary ranges are based on anonymous submissions from verified employees. Last updated: December 2024</p>
+            </div>
+        </div>
+
+        <!-- Ad/Promotion Banner -->
+        <div class="bg-purple-900 text-white p-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                        <span class="text-purple-900 font-bold text-lg">T</span>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Senior Software Engineer - TechCorp</div>
+                        <div class="text-purple-200 text-sm">$300K - $450K • Remote</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="bg-purple-700 text-purple-200 px-2 py-1 rounded text-xs">Promoted</span>
+                    <button class="bg-white text-purple-900 font-bold py-2 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compensation Distribution Chart -->
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Compensation Distribution</h2>
+
+        <!-- Chart Container -->
+        <div class="relative">
+            <!-- Percentile Markers -->
+            <div class="flex justify-between mb-4 text-sm">
+                <div class="text-center">
+                    <div class="text-green-600 font-semibold">Median</div>
+                    <div class="w-px h-4 bg-green-600 mx-auto"></div>
+                </div>
+                <div class="text-center">
+                    <div class="text-green-600 font-semibold">75th</div>
+                    <div class="w-px h-4 bg-green-600 mx-auto"></div>
+                </div>
+                <div class="text-center">
+                    <div class="text-green-800 font-semibold">90th</div>
+                    <div class="w-px h-4 bg-green-800 mx-auto"></div>
+                </div>
+            </div>
+
+            <!-- Bar Chart -->
+            <div class="flex items-end justify-between h-64 bg-gray-50 rounded-lg p-4">
+                <!-- Bars representing distribution -->
+                <div class="bg-green-500 w-8 rounded-t" style="height: 20%"></div>
+                <div class="bg-green-500 w-8 rounded-t" style="height: 35%"></div>
+                <div class="bg-green-500 w-8 rounded-t" style="height: 50%"></div>
+                <div class="bg-green-500 w-8 rounded-t" style="height: 70%"></div>
+                <div class="bg-green-500 w-8 rounded-t" style="height: 85%"></div>
+                <div class="bg-green-600 w-8 rounded-t" style="height: 100%"></div>
+                <div class="bg-green-600 w-8 rounded-t" style="height: 95%"></div>
+                <div class="bg-green-600 w-8 rounded-t" style="height: 80%"></div>
+                <div class="bg-green-700 w-8 rounded-t" style="height: 65%"></div>
+                <div class="bg-green-700 w-8 rounded-t" style="height: 50%"></div>
+                <div class="bg-green-700 w-8 rounded-t" style="height: 35%"></div>
+                <div class="bg-green-800 w-8 rounded-t" style="height: 25%"></div>
+                <div class="bg-green-800 w-8 rounded-t" style="height: 15%"></div>
+                <div class="bg-green-800 w-8 rounded-t" style="height: 10%"></div>
+            </div>
+
+            <!-- X-Axis Labels -->
+            <div class="flex justify-between mt-4 text-sm text-gray-600">
+                <span>$90K</span>
+                <span>$150K</span>
+                <span>$200K</span>
+                <span>$268K</span>
+                <span>$350K</span>
+                <span>$450K</span>
+                <span>$550K</span>
+                <span>$639K</span>
+            </div>
+
+            <!-- Y-Axis Label -->
+            <div class="absolute left-0 top-1/2 transform -rotate-90 -translate-y-1/2 -translate-x-8 text-sm text-gray-600 font-medium">
+                Number of Reports
+            </div>
+        </div>
+
+        <!-- Chart Footer -->
+        <div class="mt-6 text-center text-gray-500 text-sm">
+            <p>Total Annual Compensation includes base salary, bonuses, and equity</p>
+        </div>
+    </div>
+</div>
+
+</html>

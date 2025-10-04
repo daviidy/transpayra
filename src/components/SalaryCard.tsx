@@ -1,7 +1,11 @@
 import { Building2, MapPin, TrendingUp } from "lucide-react"
+import Link from "next/link"
+import { CompanyLogo } from "./CompanyLogo"
 
 interface SalaryCardProps {
+  id: number
   company: string
+  companyLogoUrl?: string | null
   jobTitle: string
   location: string
   baseSalary: string
@@ -12,7 +16,9 @@ interface SalaryCardProps {
 }
 
 export function SalaryCard({
+  id,
   company,
+  companyLogoUrl,
   jobTitle,
   location,
   baseSalary,
@@ -28,10 +34,13 @@ export function SalaryCard({
   ).toLocaleString('en-US', { maximumFractionDigits: 0 })
 
   return (
-    <div className="w-full px-4 py-3 bg-white rounded-md shadow-md border border-gray-200">
+    <Link
+      href={`/submission/${id}`}
+      className="block w-full px-4 py-3 bg-white rounded-md shadow-md border border-gray-200 hover:shadow-lg transition-shadow cursor-pointer"
+    >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-sm font-light text-black">
-          <Building2 className="w-4 h-4" />
+          <CompanyLogo companyName={company} logoUrl={companyLogoUrl} size="sm" />
           <span>{company}</span>
         </div>
         {level && (
@@ -72,6 +81,6 @@ export function SalaryCard({
         <TrendingUp className="w-3 h-3" />
         <span>{yearsOfExperience} years of experience</span>
       </div>
-    </div>
+    </Link>
   )
 }

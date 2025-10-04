@@ -4,11 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eddd899d-9956-4e2f-84f6-1be912d6cd14" name="Changes" comment="" />
+    <list default="true" id="eddd899d-9956-4e2f-84f6-1be912d6cd14" name="Changes" comment="Add card, hero section, and grid layout; update design instructions and package.json">
+      <change afterPath="$PROJECT_DIR$/design_samples/add-salary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/company-directory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/company-overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/hyperui/cta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/hyperui/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/industry-overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/location-directory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/salary-breakdown.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/salary-table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/submission-overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_samples/title-directory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/industries-job.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design.instructions.md" beforeDir="false" afterPath="$PROJECT_DIR$/design.instructions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/transpayra_main.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/transpayra_main.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/actions/salaries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/salaries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/JobTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/JobTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalaryCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SalaryCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/db/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/db/migrations/meta/_journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/db/migrations/meta/_journal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/db/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/db/schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/db/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/db/seed.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -21,6 +48,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/davidyao/Documents/transpayra",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -28,9 +57,15 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/Users/davidyao/Documents/transpayra/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/design_samples/merakiui" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -48,10 +83,34 @@
       <updated>1759024584860</updated>
       <workItem from="1759024586258" duration="98000" />
       <workItem from="1759024689159" duration="5739000" />
+      <workItem from="1759039151390" duration="98918000" />
+      <workItem from="1759599177656" duration="11044000" />
     </task>
+    <task id="LOCAL-00001" summary="Add primary button, dropdown component, and navbar with brand colors">
+      <option name="closed" value="true" />
+      <created>1759117375386</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759117375386</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add card, hero section, and grid layout; update design instructions and package.json">
+      <option name="closed" value="true" />
+      <created>1759187581461</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759187581461</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add primary button, dropdown component, and navbar with brand colors" />
+    <MESSAGE value="Add card, hero section, and grid layout; update design instructions and package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add card, hero section, and grid layout; update design instructions and package.json" />
   </component>
 </project>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Directory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<div class="max-w-6xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-3">Location Directory</h1>
+        <p class="text-gray-600 text-lg">Popular locations are listed below. Use the Search bar to search all locations.</p>
+    </div>
+
+    <!-- Search & Filters Row -->
+    <div class="flex flex-col md:flex-row gap-4 mb-12 items-center">
+        <!-- Search Bar -->
+        <div class="relative flex-1 max-w-2xl">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+            <input
+                    type="text"
+                    placeholder="Search over 1,000 locations across metros, countries, and more"
+                    class="w-full pl-12 pr-4 py-4 bg-white border border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm"
+                    id="searchInput"
+            >
+        </div>
+
+        <!-- Role Dropdown -->
+        <div class="w-full md:w-auto">
+            <select class="px-6 py-4 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm min-w-48">
+                <option>Software Engineer</option>
+                <option>Product Manager</option>
+                <option>Data Scientist</option>
+                <option>Designer</option>
+                <option>Marketing Manager</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Location Sections -->
+    <div class="space-y-12">
+        <!-- North America Section -->
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">North America</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇺🇸</span>
+                    <span class="text-blue-600 hover:underline font-medium">New York, NY</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇺🇸</span>
+                    <span class="text-blue-600 hover:underline font-medium">San Francisco, CA</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇺🇸</span>
+                    <span class="text-blue-600 hover:underline font-medium">Austin, TX</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇺🇸</span>
+                    <span class="text-blue-600 hover:underline font-medium">Seattle, WA</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇨🇦</span>
+                    <span class="text-blue-600 hover:underline font-medium">Toronto, ON</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇨🇦</span>
+                    <span class="text-blue-600 hover:underline font-medium">Vancouver, BC</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Europe Section -->
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Europe</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇬🇧</span>
+                    <span class="text-blue-600 hover:underline font-medium">London, UK</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇩🇪</span>
+                    <span class="text-blue-600 hover:underline font-medium">Berlin, Germany</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇫🇷</span>
+                    <span class="text-blue-600 hover:underline font-medium">Paris, France</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇳🇱</span>
+                    <span class="text-blue-600 hover:underline font-medium">Amsterdam, Netherlands</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇪🇸</span>
+                    <span class="text-blue-600 hover:underline font-medium">Barcelona, Spain</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇮🇹</span>
+                    <span class="text-blue-600 hover:underline font-medium">Milan, Italy</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Asia Pacific Section -->
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Asia Pacific</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇯🇵</span>
+                    <span class="text-blue-600 hover:underline font-medium">Tokyo, Japan</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇸🇬</span>
+                    <span class="text-blue-600 hover:underline font-medium">Singapore</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇦🇺</span>
+                    <span class="text-blue-600 hover:underline font-medium">Sydney, Australia</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇰🇷</span>
+                    <span class="text-blue-600 hover:underline font-medium">Seoul, South Korea</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇮🇳</span>
+                    <span class="text-blue-600 hover:underline font-medium">Bangalore, India</span>
+                </a>
+                <a href="#" class="location-card bg-gray-100 hover:bg-gray-200 rounded-xl p-4 flex items-center space-x-3 transition-colors duration-200 hover:shadow-md">
+                    <span class="text-2xl">🇭🇰</span>
+                    <span class="text-blue-600 hover:underline font-medium">Hong Kong</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

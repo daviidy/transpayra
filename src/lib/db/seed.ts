@@ -364,6 +364,7 @@ async function seed() {
   console.log('Salary submissions seeded:', submissions.length)
 
   console.log('Seed completed successfully!')
+  await client.end()
 }
 
 seed().catch((error) => {

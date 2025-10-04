@@ -1,0 +1,2473 @@
+[
+  {
+    "job_title_id": null,
+    "title": "SERVICES OPÉRATEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "OPÉRATEUR SAISIE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ACHETEUR GRANDE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ACHETEUR GRANDE DISTRIBUTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ACHETEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ACHETEUR MATIÈRES PREMIÈRES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ACHETEUR SERVICES/FM",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "PROCUREMENT ACHETEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE MOYENS GÉNÉRAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR D'AGENCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DES OPÉRATIONS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR MOYENS GÉNÉRAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTION DIRECTEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR TRANSPORTS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "AGENT PLANIFICATION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE PROJET",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE PROJET INGÉNIERIE & IMPLÉMENTATION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE APPROVISIONNE- MENTS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE FLUX & STOCKS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "FLUX & STOCKS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MAGASINIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MAGASINIER/ MANUTENTION- NAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE APPROVISIONNE- MENTS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE D'ENTREPÔT/ 'ENTREPOSAGE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE OPÉRATIONS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE FLUX & STOCKS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE PRÉVISION VENTES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE S&OP",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "AGENT DE DOUANE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "AGENT TRACKING",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHAUFFEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHAUFFEUR CHALLENGER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHAUFFEUR ENGIN",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHAUFFEUR ENGIN DE MANUTENTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHAUFFEUR TRACTEUR ROUTIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DÉCLARANT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DÉCLARANT DOUANES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE PARC AUTOMOBILE ENGINS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE TRANSPORTS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DÉPARTEMENT/ ÉQUIPE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT DIRECTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT DE DIRECTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT POLYVALENT PME",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT DE PRÉSIDENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT PRÉSIDENT/ DIRECTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "BILINGUE OFFICE MANAGER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "OFFICE MANAGER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "OFFICE MANAGER ANGLAIS COURANT/ BILINGUE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SPÉCIALISÉ ASSISTANT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT/ SECRÉTAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT/ SECRÉTAIRE MÉDICALE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE EXPORT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE IMPORT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE IMPORT & EXPORT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE EXPORT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE IMPORT & EXPORT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "AGENT CALL CENTER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF D'ÉQUIPE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF D'ÉQUIPE /SUPERVISEUR CALL CENTER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SUPERVISEUR CALL CENTER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE SERVICE CLIENTS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ADMINISTRATION RESPONSABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE SERVICE CLIENTS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT COMMERCIAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "BIENS GESTIONNAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE DE SINISTRES IARD/DAB",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE SINISTRES IARD/DAB",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "PERSONNES GESTIONNAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE DE SINISTRES CORPORELS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE SANTÉ/ PRÉVOYANCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR FINANCIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONTRÔLEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONTRÔLEUR GESTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONTRÔLEUR INTERNE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRANSVERSES ACTUAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ACTUAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT SOUSCRIPTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE ACTUARIAT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SOUSCRIPTEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE MISSION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE MISSION SENIOR - ANS D'EXPÉRIENCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DE MISSION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DE MISSION D'EXPÉRIENCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE ASSISTANT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COLLABORATEUR COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "EXPERT COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSET MANAGEMENT ANALYSTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ANALYSTE FINANCIER JUNIOR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE SERVICE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DE L'ORGANISATION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE BACK-OFFICE MARCHÉS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE PORTEFEUILLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "PORTEFEUILLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR FINANCIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRADER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "D'AFFAIRES ANALYSTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ANALYSTE FINANCIER SENIOR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR CORPORATE BANKING",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE PROJET MONÉTIQUE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DÉTAIL/EN LIGNE CHEF/DIRECTEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF/DIRECTEUR 'AGENCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR D'INVESTISSE - MENT/FONDS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DE LA TRÉSORERIE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DES RISQUES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RISQUES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DU CONTRÔLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SUPPORTS ANALYSTE RISQUES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ANALYSTE RISQUES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONTRÔLEUR INTERNE/ PERMANENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SUPPORTS RESPONSABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE CONTRÔLE DE GESTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE CONTRÔLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE RISQUES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE TRÉSORERIE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRÉSORIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT COMMERCIAL/ 'AGENCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR COMMERCIAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE COMMERCIAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE COURTAGE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE COMMERCIAL COURTAGE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE 'ÉQUIPE/PLATEAU",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "'ÉQUIPE/PLATEAU",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE GRANDS COMPTES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT SALES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE SERVICE CLIENTÈLES /PMI",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GMS/CHR/RHF/GDS CHEF DE SECTEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE SECTEUR GMS/CHR/GSB/ /GSS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DES VENTES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DES VENTES RÉGIONAL /CHD",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR NATIONAL DES VENTES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE VENTES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR COMMERCIAL B-TO-B",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DES VENTES/ SALES MANAGER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR COMMERCIAL -TO-B",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR 'AFFAIRES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "HARDWARE/WEB RESPONSABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE ZONE DE VENTES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE ZONE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE ZONE EXPORT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR NATIONAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR RÉGIONAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE NATIONAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE RÉGIONAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MÉDIAS CHEF DES VENTES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DE CLIENTÈLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR COMMERCIAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE CLIENTÈLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MÉDIAS SUPERVISEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SUPERVISEUR/ RESPONSABLE TÉLÉVENTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE TÉLÉVENTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DESSINATEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DESSINATEUR PROJETEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE BUREAU D'ÉTUDES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE CHANTIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE CHANTIER BÂTIMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE PROJETS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE PROJETS BÂTIMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONDUCTEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONDUCTEUR DE TRAVAUX BÂTIMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRAVAUX BÂTIMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DE PROJETS BÂTIMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DE TRAVAUX BÂTIMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR PRINCIPAL GRANDS PROJETS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE TRAVAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRAVAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE CHANTIER TRAVAUX PUBLICS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRAVAUX PUBLICS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE PROJETS TRAVAUX PUBLICS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONDUCTEUR TRAVAUX TP",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DE PROJETS TRAVAUX PUBLICS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "PROJETS TRAVAUX PUBLICS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR TRAVAUX TP",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRAVAUX TP",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR TRAVAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TOPOGRAPHE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE IMMOBILIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE LOCATIF",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE IMMOBILIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR ARTISTIQUE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GRAPHISTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INFOGRAPHISTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MOTION DESIGNER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "UX DESIGNER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DATA ANALYST",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SOCIAL MEDIA MANAGER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "WEBMASTER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ANALYSTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT CHEF",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "BRAND MANAGER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CATEGORY MANAGER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DISTRIBUTION DIRECTEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR MAGASIN HYPERMARCHÉ",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR MAGASIN SUPERMARCHÉ",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE DÉPARTEMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE SECTEUR HYPERMARCHÉ",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE SECTEUR SUPERMARCHÉ",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SUPERVISEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SUPERVISEUR CHEF D'ÉQUIPE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "BOUCHER, BOULANGER, CAISSIER…",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "VENDEUR & ÉQUIPIER POLYVALENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "& ÉQUIPIER POLYVALENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR D'EXPANSION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE D'EXPANSION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE ENSEIGNE DE MARQUES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE ADJOINT ENSEIGNE MARQUES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GÉNÉRAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GÉNÉRAUX ASSISTANT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT SERVICES GÉNÉRAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SERVICES GÉNÉRAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE CONTRATS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE SERVICES GÉNÉRAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRANSVERSES RESPONSABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE 'ÉTUDES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "& ENTRETIEN INGÉNIEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR MAINTENANCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE DE MAINTENANCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLES AIDE-COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "AIDE-COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF/ RESPONSABLE COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF/ RESPONSABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE ADJOINT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE ANALYTIQUE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE CLIENTS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE FOURNISSEURS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLES COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE GÉNÉRAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE IMMOBILISATIONS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE PAIE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE SUPERVISEUR/ SENIOR/CONFIRMÉ",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SUPERVISEUR/ SENIOR/CONFIRMÉ",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMPTABLE TRÉSORERIE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE DE PÔLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT CONTRÔLEUR DE GESTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONTRÔLEUR DE GESTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT GESTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT FINANCIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONTRÔLEUR DE GESTION CORPORATE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONTRÔLEUR DE GESTION GROUPE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONTRÔLEUR FINANCIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE CONTRÔLE GESTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE CONTRÔLE FINANCIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE FINANCIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "AGENT FACTURATION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE SERVICE FACTURATION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE RECOUVREMENT CONTENTIEUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR COMPTABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DU CONTRÔLE DE GESTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR FINANCIER GROUPE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF RÉCEPTION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR D'HÔTEL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GÉRANT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GOUVERNANT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RÉCEPTIONNISTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RÉCEPTIONNISTE BILINGUE ANGLAIS- FRANÇAIS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT MANAGER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "BARMAN",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF BARMAN",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE CUISINE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE SALLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMMISSIONING DIRECTEUR SAV",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE PIÈCES DÉTACHÉES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE SAV",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COMMISSIONING RESPONSABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE PIÈCES DÉTACHÉES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR MÉTHODES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE GMAO",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE MÉTHODES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE TRAVAUX NEUFS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "TRAVAUX NEUFS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF D'ATELIER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF D'ATELIER MAINTENANCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF D'ÉQUIPE MAINTENANCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR AUTOMATISME",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE DE MAINTENANCE ADJOINT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MAINTENANCE/ ÉLECTRICIEN",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MAINTENANCE/ MÉCANICIEN",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE CENTRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE CENTRE EMPLISSEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE QUART",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CONDUCTEUR LIGNE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR D'USINE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR OPÉRATIONS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ESSAIS INGÉNIEUR BUREAU",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR BUREAU 'ÉTUDES/R&D",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ESSAIS INGÉNIEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR LABORATOIRE/ ESSAIS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE LABORATOIRE/ ESSAIS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "FISCALISTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "FISCALISTE 'ENTREPRISE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "JURISTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "JURISTE BANCAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "JURISTE FISCALISTE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "JUSTICE RESPONSABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE FISCAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR COMPLIANCE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF D'ATELIER MÉCANIQUE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ÉLECTRICIEN",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ÉLECTRICIEN AUTOMOBILE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MÉCANICIEN",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MÉCANICIEN AUTOMOBILE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "AUTOMOBILES DIRECTEUR SAV",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR SAV",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MÉCANICIEN POIDS LOURDS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHARGÉ/ GESTIONNAIRE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ADMINISTRATION ET PAIE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE ADMINISTRATION PAIE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHARGÉ DE RECRUTEMENT/ RECRUTEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RECRUTEMENT/ RECRUTEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE DE FORMATION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE RECRUTEMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE DÉVELOPPEMENT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RH ASSISTANT RH",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ASSISTANT RH",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COORDINATEUR RH",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR RH",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR RH ADJOINT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR RH GROUPE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "GESTIONNAIRE RH",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE RH",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE RSE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ADMINISTRATEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DÉVELOPPEMENT CHEF DE PROJET",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE PROJET FONCTIONNEL , CRM, BI…",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CHEF DE PROJET INFRASTRUCTURES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR D'ÉTUDES ET",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR TESTS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR TESTS/ RECETTES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "PRODUCT OWNER",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DES INFRASTRUCTURES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR DES SYSTÈMES D'INFORMATION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE DES INFRASTRUCTURES",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE DES SYSTÈMES 'INFORMATION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTION RESPONSABLE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ADMINISTRATEUR SYSTÈMES/ RÉSEAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SYSTÈMES/ RÉSEAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DÉVELOPPEUR",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DÉVELOPPEUR MOBILE",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DÉVELOPPEUR WEB",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR DEVOPS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "INGÉNIEUR SYSTÈMES/ RÉSEAUX",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "RESPONSABLE SUPPORT/ HELPDESK",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "COUNTRY MANAGER/ DIRECTEUR PAYS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MANAGER/ DIRECTEUR PAYS",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR GÉNÉRAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR RÉGIONAL/ SOUS-RÉGIONAL",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "DIRECTEUR GÉNÉRAL ADJOINT",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ANS D'EXPÉRIENCE DIRECTEUR DE MISSION",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  }
+]

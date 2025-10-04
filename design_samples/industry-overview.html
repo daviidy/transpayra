@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biotechnology Industry Salary Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<!-- Header -->
+<div class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center">
+            <!-- DNA Helix Icon -->
+            <div class="mb-4">
+                <svg class="w-12 h-12 mx-auto text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-900 mb-8">Biotechnology Industry</h1>
+        </div>
+    </div>
+</div>
+
+<!-- Top Salary Cards -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <div class="flex flex-wrap gap-6 items-center justify-between">
+        <!-- Salary Cards -->
+        <div class="flex flex-wrap gap-4 flex-1">
+            <div class="bg-white rounded-lg shadow-md p-6 min-w-48">
+                <h3 class="text-gray-700 font-medium mb-2">Hardware Engineer</h3>
+                <p class="text-2xl font-bold text-green-600">$232,000</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 min-w-48">
+                <h3 class="text-gray-700 font-medium mb-2">Product Manager</h3>
+                <p class="text-2xl font-bold text-green-600">$198,000</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 min-w-48">
+                <h3 class="text-gray-700 font-medium mb-2">Data Scientist</h3>
+                <p class="text-2xl font-bold text-green-600">$185,000</p>
+            </div>
+        </div>
+
+        <!-- Location Dropdown -->
+        <div class="flex-shrink-0">
+            <select class="bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option>Choose Location</option>
+                <option>San Francisco, CA</option>
+                <option>New York, NY</option>
+                <option>Boston, MA</option>
+                <option>Seattle, WA</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- Contribution CTA -->
+<div class="max-w-7xl mx-auto px-4 py-6">
+    <div class="text-center">
+        <button class="bg-white border-2 border-blue-500 text-blue-500 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            💪 Contribute Your Salary
+        </button>
+    </div>
+</div>
+
+<!-- Explore Salaries Section -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Explore Salaries</h2>
+
+        <!-- Search and Controls -->
+        <div class="flex flex-wrap gap-4 items-center justify-between mb-6">
+            <div class="flex gap-4 flex-1">
+                <input type="text" placeholder="Search City, Tag, Etc" class="flex-1 max-w-md bg-white border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select class="bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>All Filters</option>
+                    <option>Experience Level</option>
+                    <option>Company Size</option>
+                    <option>Job Family</option>
+                </select>
+            </div>
+
+            <div class="flex gap-3">
+                <button class="bg-gray-100 text-gray-700 px-4 py-3 rounded-lg hover:bg-gray-200 transition-colors">
+                    🔔 Subscribe
+                </button>
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Add Compensation
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Salary Table -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <table class="w-full">
+            <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="text-left py-4 px-6 font-semibold">Company</th>
+                <th class="text-left py-4 px-6 font-semibold">Job Family</th>
+                <th class="text-left py-4 px-6 font-semibold">Years of Experience</th>
+                <th class="text-left py-4 px-6 font-semibold">Total Compensation (USD)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="border-b border-gray-200">
+                <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm">G</div>
+                        <div>
+                            <a href="#" class="text-blue-600 font-medium hover:underline">Google</a>
+                            <p class="text-sm text-gray-500">Mountain View, CA • 2 days ago</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div>
+                        <p class="font-medium">Software Engineer</p>
+                        <p class="text-sm text-gray-500">L5</p>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <p>8 / 3</p>
+                </td>
+                <td class="py-4 px-6">
+                    <div>
+                        <p class="font-bold text-lg">$285,000</p>
+                        <p class="text-sm text-gray-500">$180K | $80K | $25K</p>
+                    </div>
+                </td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+                <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-green-600 rounded flex items-center justify-center text-white font-bold text-sm">M</div>
+                        <div>
+                            <a href="#" class="text-blue-600 font-medium hover:underline">Meta</a>
+                            <p class="text-sm text-gray-500">Menlo Park, CA • 1 week ago</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div>
+                        <p class="font-medium">Data Scientist</p>
+                        <p class="text-sm text-gray-500">E6</p>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <p>6 / 2</p>
+                </td>
+                <td class="py-4 px-6">
+                    <div>
+                        <p class="font-bold text-lg">$265,000</p>
+                        <p class="text-sm text-gray-500">$165K | $75K | $25K</p>
+                    </div>
+                </td>
+            </tr>
+            <!-- Blurred rows with overlay -->
+            <tr class="border-b border-gray-200 relative">
+                <td class="py-4 px-6 blur-sm">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-red-600 rounded flex items-center justify-center text-white font-bold text-sm">N</div>
+                        <div>
+                            <a href="#" class="text-blue-600 font-medium">Netflix</a>
+                            <p class="text-sm text-gray-500">Los Gatos, CA • 3 days ago</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="py-4 px-6 blur-sm">
+                    <div>
+                        <p class="font-medium">Product Manager</p>
+                        <p class="text-sm text-gray-500">Senior</p>
+                    </div>
+                </td>
+                <td class="py-4 px-6 blur-sm">
+                    <p>7 / 1</p>
+                </td>
+                <td class="py-4 px-6 blur-sm">
+                    <div>
+                        <p class="font-bold text-lg">$245,000</p>
+                        <p class="text-sm text-gray-500">$155K | $65K | $25K</p>
+                    </div>
+                </td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200 blur-sm">
+                <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center text-white font-bold text-sm">A</div>
+                        <div>
+                            <a href="#" class="text-blue-600 font-medium">Apple</a>
+                            <p class="text-sm text-gray-500">Cupertino, CA • 5 days ago</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div>
+                        <p class="font-medium">Hardware Engineer</p>
+                        <p class="text-sm text-gray-500">ICT5</p>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <p>9 / 4</p>
+                </td>
+                <td class="py-4 px-6">
+                    <div>
+                        <p class="font-bold text-lg">$235,000</p>
+                        <p class="text-sm text-gray-500">$145K | $70K | $20K</p>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- Unlock Gate Overlay -->
+        <div class="relative bg-white border-t border-gray-200 p-8 text-center">
+            <div class="mb-4">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl">💰</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Unlock by Adding Your Salary!</h3>
+                <p class="text-gray-600 mb-6">Help the community by anonymously sharing your compensation. Takes under 60 seconds.</p>
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4">
+                    + Add Salary
+                </button>
+                <div class="flex items-center justify-center gap-2">
+                    <input type="checkbox" id="already-added" class="rounded">
+                    <label for="already-added" class="text-sm text-gray-600">Added mine already within last 1 year</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Two Column Layout -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Top Paying Companies -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold text-gray-900">Top Paying Companies</h3>
+                <button class="bg-white border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors">
+                    🏆 See our Leaderboard
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-600 rounded flex items-center justify-center text-white font-bold">G</div>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Google</a>
+                    </div>
+                    <span class="font-bold text-gray-900">$285,000</span>
+                </div>
+
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-600 rounded flex items-center justify-center text-white font-bold">M</div>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Meta</a>
+                    </div>
+                    <span class="font-bold text-gray-900">$265,000</span>
+                </div>
+
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-600 rounded flex items-center justify-center text-white font-bold">N</div>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Netflix</a>
+                    </div>
+                    <span class="font-bold text-gray-900">$245,000</span>
+                </div>
+
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-purple-600 rounded flex items-center justify-center text-white font-bold">A</div>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Apple</a>
+                    </div>
+                    <span class="font-bold text-gray-900">$235,000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Paying Locations -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold text-gray-900">Top Paying Locations US</h3>
+                <button class="bg-white border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors">
+                    🌐 See all locations
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="text-red-500">📍</span>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">San Francisco, CA</a>
+                    </div>
+                    <span class="font-bold text-gray-900">$275,000</span>
+                </div>
+
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="text-red-500">📍</span>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">New York, NY</a>
+                    </div>
+                    <span class="font-bold text-gray-900">$255,000</span>
+                </div>
+
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="text-red-500">📍</span>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Seattle, WA</a>
+                    </div>
+                    <span class="font-bold text-gray-900">$245,000</span>
+                </div>
+
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="text-red-500">📍</span>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Boston, MA</a>
+                    </div>
+                    <span class="font-bold text-gray-900">$235,000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

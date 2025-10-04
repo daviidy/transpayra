@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Comparison Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .blur-content {
+            filter: blur(3px);
+            pointer-events: none;
+        }
+        .paywall-overlay {
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,1) 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+<div class="max-w-7xl mx-auto p-6">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <!-- Table Header -->
+        <div class="bg-gray-50 border-b border-gray-200">
+            <div class="grid grid-cols-4 gap-4 px-6 py-4 text-sm font-semibold text-gray-700">
+                <div>Company</div>
+                <div>Level Name</div>
+                <div>Years of Experience</div>
+                <div>Total Compensation (USD)</div>
+            </div>
+        </div>
+
+        <!-- Table Body -->
+        <div class="divide-y divide-gray-200">
+            <!-- Row 1: Bio-Techne -->
+            <div class="grid grid-cols-4 gap-4 px-6 py-5 hover:bg-gray-50 transition-colors">
+                <div>
+                    <a href="#" class="text-blue-600 font-bold hover:text-blue-800 transition-colors">Bio-Techne</a>
+                    <div class="text-sm text-gray-600 mt-1">
+                        <div>San Francisco, CA</div>
+                        <div>5 minutes ago</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-gray-500">–</div>
+                    <div class="text-sm text-gray-600 mt-1">API Development (Back-End)</div>
+                </div>
+                <div>
+                    <div class="font-medium">11 yrs</div>
+                    <div class="text-sm text-gray-600 mt-1">5 yrs</div>
+                </div>
+                <div>
+                    <div class="font-bold text-lg">$195,000</div>
+                    <div class="text-sm text-gray-600 mt-1">180K | N/A | 15K</div>
+                </div>
+            </div>
+
+            <!-- Row 2: Lyft -->
+            <div class="grid grid-cols-4 gap-4 px-6 py-5 hover:bg-gray-50 transition-colors">
+                <div>
+                    <a href="#" class="text-blue-600 font-bold hover:text-blue-800 transition-colors">Lyft</a>
+                    <div class="text-sm text-gray-600 mt-1">
+                        <div>San Francisco, CA</div>
+                        <div>1 hour ago</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-medium">T4</div>
+                    <div class="text-sm text-gray-600 mt-1">Networking</div>
+                </div>
+                <div>
+                    <div class="font-medium">7 yrs</div>
+                    <div class="text-sm text-gray-600 mt-1">3 yrs</div>
+                </div>
+                <div>
+                    <div class="font-bold text-lg">$200,000</div>
+                    <div class="text-sm text-gray-600 mt-1">190K | 10K | N/A</div>
+                </div>
+            </div>
+
+            <!-- Row 3: Oracle -->
+            <div class="grid grid-cols-4 gap-4 px-6 py-5 hover:bg-gray-50 transition-colors">
+                <div>
+                    <a href="#" class="text-blue-600 font-bold hover:text-blue-800 transition-colors">Oracle</a>
+                    <div class="text-sm text-gray-600 mt-1">
+                        <div>Redwood City, CA</div>
+                        <div>3 hours ago</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-medium">L4</div>
+                    <div class="text-sm text-gray-600 mt-1">API Development (Back-End)</div>
+                </div>
+                <div>
+                    <div class="font-medium">2 yrs</div>
+                    <div class="text-sm text-gray-600 mt-1">2 yrs</div>
+                </div>
+                <div>
+                    <div class="font-bold text-lg">$178,500</div>
+                    <div class="text-sm text-gray-600 mt-1">170K | N/A | 8.5K</div>
+                </div>
+            </div>
+
+            <!-- Locked Content Section -->
+            <div class="relative">
+                <!-- Blurred rows -->
+                <div class="blur-content">
+                    <div class="grid grid-cols-4 gap-4 px-6 py-5 hover:bg-gray-50 transition-colors">
+                        <div>
+                            <a href="#" class="text-blue-600 font-bold hover:text-blue-800 transition-colors">Google</a>
+                            <div class="text-sm text-gray-600 mt-1">
+                                <div>Mountain View, CA</div>
+                                <div>6 hours ago</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-medium">L5</div>
+                            <div class="text-sm text-gray-600 mt-1">Full Stack Development</div>
+                        </div>
+                        <div>
+                            <div class="font-medium">8 yrs</div>
+                            <div class="text-sm text-gray-600 mt-1">4 yrs</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg">$285,000</div>
+                            <div class="text-sm text-gray-600 mt-1">200K | 65K | 20K</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4 px-6 py-5 hover:bg-gray-50 transition-colors">
+                        <div>
+                            <a href="#" class="text-blue-600 font-bold hover:text-blue-800 transition-colors">Meta</a>
+                            <div class="text-sm text-gray-600 mt-1">
+                                <div>Menlo Park, CA</div>
+                                <div>8 hours ago</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-medium">E5</div>
+                            <div class="text-sm text-gray-600 mt-1">Machine Learning</div>
+                        </div>
+                        <div>
+                            <div class="font-medium">6 yrs</div>
+                            <div class="text-sm text-gray-600 mt-1">2 yrs</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg">$320,000</div>
+                            <div class="text-sm text-gray-600 mt-1">220K | 80K | 20K</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4 px-6 py-5 hover:bg-gray-50 transition-colors">
+                        <div>
+                            <a href="#" class="text-blue-600 font-bold hover:text-blue-800 transition-colors">Apple</a>
+                            <div class="text-sm text-gray-600 mt-1">
+                                <div>Cupertino, CA</div>
+                                <div>12 hours ago</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-medium">ICT4</div>
+                            <div class="text-sm text-gray-600 mt-1">iOS Development</div>
+                        </div>
+                        <div>
+                            <div class="font-medium">5 yrs</div>
+                            <div class="text-sm text-gray-600 mt-1">3 yrs</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg">$245,000</div>
+                            <div class="text-sm text-gray-600 mt-1">185K | 45K | 15K</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paywall Overlay -->
+                <div class="absolute inset-0 paywall-overlay flex items-center justify-center">
+                    <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8 max-w-md mx-4 text-center">
+                        <div class="mb-4">
+                            <svg class="w-12 h-12 text-blue-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Unlock by Adding Your Salary!</h3>
+                        <p class="text-gray-600 mb-6">Add your salary anonymously in less than 60 seconds and continue exploring all the data.</p>
+
+                        <button onclick="handleAddSalary()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors mb-4">
+                            + Add Salary
+                        </button>
+
+                        <div class="flex items-center justify-center text-sm text-gray-600">
+                            <input type="checkbox" id="already-added" class="mr-2 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                            <label for="already-added" class="cursor-pointer">Added mine already within last 1 year</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function handleAddSalary() {
+        alert('Redirecting to salary submission form...');
+        // In a real application, this would navigate to the salary submission form
+    }
+
+    // Handle the checkbox for users who already added their salary
+    document.getElementById('already-added').addEventListener('change', function() {
+        if (this.checked) {
+            // In a real application, this would verify the user's previous submission
+            // and unlock the content if valid
+            const blurredContent = document.querySelector('.blur-content');
+            const paywallOverlay = document.querySelector('.paywall-overlay');
+
+            setTimeout(() => {
+                blurredContent.classList.remove('blur-content');
+                paywallOverlay.style.display = 'none';
+            }, 500);
+        }
+    });
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98776520c09e0f5f',t:'MTc1OTI3Mzg0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
