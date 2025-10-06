@@ -1,2471 +1,3941 @@
 [
   {
     "job_title_id": null,
-    "title": "SERVICES OPÉRATEUR",
+    "title": "Services Operator",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "OPÉRATEUR SAISIE",
+    "title": "Data Entry Operator",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ACHETEUR GRANDE",
+    "title": "Buyer (Large-Scale)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ACHETEUR GRANDE DISTRIBUTION",
+    "title": "Mass Retail Buyer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ACHETEUR",
+    "title": "Buyer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ACHETEUR MATIÈRES PREMIÈRES",
+    "title": "Raw Materials Buyer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ACHETEUR SERVICES/FM",
+    "title": "Services/Facilities Buyer (FM)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "PROCUREMENT ACHETEUR",
+    "title": "Procurement Buyer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE",
+    "title": "Administrator",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE MOYENS GÉNÉRAUX",
+    "title": "General Services Manager (Facilities)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR D'AGENCE",
+    "title": "Branch Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DES OPÉRATIONS",
+    "title": "Director of Operations",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR MOYENS GÉNÉRAUX",
+    "title": "Director of General Services (Facilities Director)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTION DIRECTEUR",
+    "title": "Managing Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR TRANSPORTS",
+    "title": "Transport Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "AGENT PLANIFICATION",
+    "title": "Planning Agent",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE PROJET",
+    "title": "Project Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE PROJET INGÉNIERIE & IMPLÉMENTATION",
+    "title": "Engineering & Implementation Project Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE APPROVISIONNE- MENTS",
+    "title": "Supply Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE FLUX & STOCKS",
+    "title": "Flow & Inventory Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "FLUX & STOCKS",
+    "title": "Flows & Inventory",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MAGASINIER",
+    "title": "Storekeeper / Warehouse Clerk",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MAGASINIER/ MANUTENTION- NAIRE",
+    "title": "Storekeeper / Handler",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE APPROVISIONNE- MENTS",
+    "title": "Head of Supplies (Supply Manager)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE D'ENTREPÔT/ 'ENTREPOSAGE",
+    "title": "Warehouse / Storage Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE OPÉRATIONS",
+    "title": "Operations Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE FLUX & STOCKS",
+    "title": "Sales Forecasting Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE PRÉVISION VENTES",
+    "title": "S&OP Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE S&OP",
+    "title": "Customs Agent",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "AGENT DE DOUANE",
+    "title": "Tracking Agent",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "AGENT TRACKING",
+    "title": "Driver",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHAUFFEUR",
+    "title": "Challenger Driver",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHAUFFEUR CHALLENGER",
+    "title": "Equipment Driver",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHAUFFEUR ENGIN",
+    "title": "Material-Handling Equipment Driver (Forklift Operator)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHAUFFEUR ENGIN DE MANUTENTION",
+    "title": "Truck Tractor Driver (Truck Driver)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHAUFFEUR TRACTEUR ROUTIER",
+    "title": "Declarant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DÉCLARANT",
+    "title": "Customs Declarant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DÉCLARANT DOUANES",
+    "title": "Fleet & Equipment Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE PARC AUTOMOBILE ENGINS",
+    "title": "Transport Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE TRANSPORTS",
+    "title": "Department / Team",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DÉPARTEMENT/ ÉQUIPE",
+    "title": "Management Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT DIRECTION",
+    "title": "Executive Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT DE DIRECTION",
+    "title": "Generalist Assistant (SME)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT POLYVALENT PME",
+    "title": "President’s Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT DE PRÉSIDENT",
+    "title": "President / Executive Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT PRÉSIDENT/ DIRECTION",
+    "title": "Bilingual Office Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "BILINGUE OFFICE MANAGER",
+    "title": "Office Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "OFFICE MANAGER",
+    "title": "Office Manager (Fluent English / Bilingual)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "OFFICE MANAGER ANGLAIS COURANT/ BILINGUE",
+    "title": "Specialized Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SPÉCIALISÉ ASSISTANT",
+    "title": "Assistant / Secretary",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT/ SECRÉTAIRE",
+    "title": "Medical Assistant / Secretary",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT/ SECRÉTAIRE MÉDICALE",
+    "title": "Export Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE EXPORT",
+    "title": "Import Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE IMPORT",
+    "title": "Import & Export Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE IMPORT & EXPORT",
+    "title": "Head of Export (Export Manager)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE EXPORT",
+    "title": "Head of Import & Export",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE IMPORT & EXPORT",
+    "title": "Call Center Agent",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "AGENT CALL CENTER",
+    "title": "Team Leader",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF D'ÉQUIPE",
+    "title": "Team Lead / Call Center Supervisor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF D'ÉQUIPE /SUPERVISEUR CALL CENTER",
+    "title": "Call Center Supervisor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SUPERVISEUR CALL CENTER",
+    "title": "Customer Service Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE SERVICE CLIENTS",
+    "title": "Administration Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ADMINISTRATION RESPONSABLE",
+    "title": "Sales Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE SERVICE CLIENTS",
+    "title": "Property Manager (Assets)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT COMMERCIAL",
+    "title": "P&C Claims Handler (IARD/DAB)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "BIENS GESTIONNAIRE",
+    "title": "Head of P&C Claims (IARD/DAB)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE DE SINISTRES IARD/DAB",
+    "title": "Personal Lines Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE SINISTRES IARD/DAB",
+    "title": "Bodily Injury Claims Handler",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "PERSONNES GESTIONNAIRE",
+    "title": "Health / Provident Scheme Administrator",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE DE SINISTRES CORPORELS",
+    "title": "Chief Financial Officer (CFO)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE SANTÉ/ PRÉVOYANCE",
+    "title": "Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR FINANCIER",
+    "title": "Controller",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE",
+    "title": "Management Controller (FP&A)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONTRÔLEUR",
+    "title": "Internal Controller (Internal Auditor)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONTRÔLEUR GESTION",
+    "title": "Chief Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONTRÔLEUR INTERNE",
+    "title": "Cross-Functional Actuary",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE COMPTABLE",
+    "title": "Actuary",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRANSVERSES ACTUAIRE",
+    "title": "Underwriting Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ACTUAIRE",
+    "title": "Head of Actuarial",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT SOUSCRIPTION",
+    "title": "Underwriter",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE ACTUARIAT",
+    "title": "Engagement Manager (Audit)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SOUSCRIPTEUR",
+    "title": "Senior Engagement Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE MISSION",
+    "title": "Engagement Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE MISSION SENIOR - ANS D'EXPÉRIENCE",
+    "title": "Experienced Engagement Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DE MISSION",
+    "title": "Accounting Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DE MISSION D'EXPÉRIENCE",
+    "title": "Assistant Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE ASSISTANT",
+    "title": "Staff Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT COMPTABLE",
+    "title": "Chartered Accountant (CPA)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COLLABORATEUR COMPTABLE",
+    "title": "Asset Management Analyst",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "EXPERT COMPTABLE",
+    "title": "Junior Financial Analyst",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSET MANAGEMENT ANALYSTE",
+    "title": "Head of Department",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ANALYSTE FINANCIER JUNIOR",
+    "title": "Organization Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE SERVICE",
+    "title": "Markets Back-Office Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DE L'ORGANISATION",
+    "title": "Portfolio Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE BACK-OFFICE MARCHÉS",
+    "title": "Portfolio",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE PORTEFEUILLE",
+    "title": "Financial Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "PORTEFEUILLE",
+    "title": "Trader",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR FINANCIER",
+    "title": "Business Analyst",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRADER",
+    "title": "Senior Financial Analyst",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "D'AFFAIRES ANALYSTE",
+    "title": "Corporate Banking Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ANALYSTE FINANCIER SENIOR",
+    "title": "Payments / Card Project Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR CORPORATE BANKING",
+    "title": "Retail / Online Head / Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE PROJET MONÉTIQUE",
+    "title": "Branch Manager / Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DÉTAIL/EN LIGNE CHEF/DIRECTEUR",
+    "title": "Director of Investment / Funds",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF/DIRECTEUR 'AGENCE",
+    "title": "Treasury Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR D'INVESTISSE - MENT/FONDS",
+    "title": "Risk Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DE LA TRÉSORERIE",
+    "title": "Risks",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DES RISQUES",
+    "title": "Control Director (Head of Controls)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RISQUES",
+    "title": "Risk Analyst (Support Functions)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DU CONTRÔLE",
+    "title": "Risk Analyst",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SUPPORTS ANALYSTE RISQUES",
+    "title": "Internal / Permanent Controller",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ANALYSTE RISQUES",
+    "title": "Head of Support Functions",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONTRÔLEUR INTERNE/ PERMANENT",
+    "title": "Head of Management Control",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SUPPORTS RESPONSABLE",
+    "title": "Head of Control",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE CONTRÔLE DE GESTION",
+    "title": "Head of Risk",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE CONTRÔLE",
+    "title": "Head of Treasury",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE RISQUES",
+    "title": "Treasurer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE TRÉSORERIE",
+    "title": "Sales / Branch Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRÉSORIER",
+    "title": "Sales Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT COMMERCIAL/ 'AGENCE",
+    "title": "Sales Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR COMMERCIAL",
+    "title": "Brokerage Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE COMMERCIAL",
+    "title": "Commercial Brokerage Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE COURTAGE",
+    "title": "Team / Floor Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE COMMERCIAL COURTAGE",
+    "title": "Team / Floor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE 'ÉQUIPE/PLATEAU",
+    "title": "Key Account Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "'ÉQUIPE/PLATEAU",
+    "title": "Head of SME Client Services",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE GRANDS COMPTES",
+    "title": "Area Sales Manager (GMS/CHR/RHF/GDS)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT SALES",
+    "title": "Area Sales Manager (GMS/CHR/GSB/GSS)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE SERVICE CLIENTÈLES /PMI",
+    "title": "Head of Sales",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GMS/CHR/RHF/GDS CHEF DE SECTEUR",
+    "title": "Regional Head of Sales / CHD",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE SECTEUR GMS/CHR/GSB/ /GSS",
+    "title": "National Sales Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DES VENTES",
+    "title": "B2B Sales Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DES VENTES RÉGIONAL /CHD",
+    "title": "Head of Sales / Sales Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR NATIONAL DES VENTES",
+    "title": "Business Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE VENTES",
+    "title": "Hardware / Web Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR COMMERCIAL B-TO-B",
+    "title": "Sales Area Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DES VENTES/ SALES MANAGER",
+    "title": "Area Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR COMMERCIAL -TO-B",
+    "title": "Export Area Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR 'AFFAIRES",
+    "title": "National Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "HARDWARE/WEB RESPONSABLE",
+    "title": "Regional Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE ZONE DE VENTES",
+    "title": "National Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE ZONE",
+    "title": "Regional Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE ZONE EXPORT",
+    "title": "Media Head of Sales",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR NATIONAL",
+    "title": "Account Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR RÉGIONAL",
+    "title": "Sales Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE NATIONAL",
+    "title": "Account Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE RÉGIONAL",
+    "title": "Media Supervisor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MÉDIAS CHEF DES VENTES",
+    "title": "Telesales Supervisor / Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DE CLIENTÈLE",
+    "title": "Telesales Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR COMMERCIAL",
+    "title": "Drafter",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE CLIENTÈLE",
+    "title": "Design Drafter",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MÉDIAS SUPERVISEUR",
+    "title": "Head of Design Office",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SUPERVISEUR/ RESPONSABLE TÉLÉVENTE",
+    "title": "Site Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE TÉLÉVENTE",
+    "title": "Building Site Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DESSINATEUR",
+    "title": "Building Project Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DESSINATEUR PROJETEUR",
+    "title": "Works Supervisor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE BUREAU D'ÉTUDES",
+    "title": "Construction Site Manager (Building Works)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE CHANTIER",
+    "title": "Building Works",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE CHANTIER BÂTIMENT",
+    "title": "Building Projects Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE PROJETS",
+    "title": "Director of Building Works",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE PROJETS BÂTIMENT",
+    "title": "Principal Engineer, Major Projects",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONDUCTEUR",
+    "title": "Works Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONDUCTEUR DE TRAVAUX BÂTIMENT",
+    "title": "Works",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRAVAUX BÂTIMENT",
+    "title": "Public Works Site Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DE PROJETS BÂTIMENT",
+    "title": "Public Works",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DE TRAVAUX BÂTIMENT",
+    "title": "Public Works Project Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR PRINCIPAL GRANDS PROJETS",
+    "title": "Public Works Site/Works Supervisor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE TRAVAUX",
+    "title": "Public Works Projects Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRAVAUX",
+    "title": "Public Works Projects",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE CHANTIER TRAVAUX PUBLICS",
+    "title": "Director of Public Works",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRAVAUX PUBLICS",
+    "title": "Works Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE PROJETS TRAVAUX PUBLICS",
+    "title": "Surveyor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONDUCTEUR TRAVAUX TP",
+    "title": "Real Estate Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DE PROJETS TRAVAUX PUBLICS",
+    "title": "Property Rental Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "PROJETS TRAVAUX PUBLICS",
+    "title": "Real Estate Manager (Head)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR TRAVAUX TP",
+    "title": "Art Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRAVAUX TP",
+    "title": "Graphic Designer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR TRAVAUX",
+    "title": "Graphic Artist",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TOPOGRAPHE",
+    "title": "Motion Designer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE IMMOBILIER",
+    "title": "UX Designer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE LOCATIF",
+    "title": "Data Analyst",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE IMMOBILIER",
+    "title": "Social Media Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR ARTISTIQUE",
+    "title": "Webmaster",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GRAPHISTE",
+    "title": "Analyst",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INFOGRAPHISTE",
+    "title": "Assistant Manager (Chef Assistant)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MOTION DESIGNER",
+    "title": "Brand Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "UX DESIGNER",
+    "title": "Category Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DATA ANALYST",
+    "title": "Retail Director (Distribution)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SOCIAL MEDIA MANAGER",
+    "title": "Hypermarket Store Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "WEBMASTER",
+    "title": "Supermarket Store Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ANALYSTE",
+    "title": "Department Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT CHEF",
+    "title": "Hypermarket Area Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "BRAND MANAGER",
+    "title": "Supermarket Area Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CATEGORY MANAGER",
+    "title": "Supervisor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DISTRIBUTION DIRECTEUR",
+    "title": "Supervisor / Team Leader",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR MAGASIN HYPERMARCHÉ",
+    "title": "Butcher, Baker, Cashier…",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR MAGASIN SUPERMARCHÉ",
+    "title": "Salesperson & Multi-skilled Crew Member",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE DÉPARTEMENT",
+    "title": "& Multi-skilled Crew Member",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE SECTEUR HYPERMARCHÉ",
+    "title": "Expansion Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE SECTEUR SUPERMARCHÉ",
+    "title": "Expansion Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SUPERVISEUR",
+    "title": "Brand Retail Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SUPERVISEUR CHEF D'ÉQUIPE",
+    "title": "Assistant Brand Retail Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "BOUCHER, BOULANGER, CAISSIER…",
+    "title": "General Services",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "VENDEUR & ÉQUIPIER POLYVALENT",
+    "title": "General Services Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "& ÉQUIPIER POLYVALENT",
+    "title": "Contracts Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR D'EXPANSION",
+    "title": "General Services Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE D'EXPANSION",
+    "title": "Cross-Functional Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE ENSEIGNE DE MARQUES",
+    "title": "Head of Studies",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE ADJOINT ENSEIGNE MARQUES",
+    "title": "Maintenance & Upkeep Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GÉNÉRAUX",
+    "title": "Maintenance Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GÉNÉRAUX ASSISTANT",
+    "title": "Maintenance Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT SERVICES GÉNÉRAUX",
+    "title": "Accountants",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SERVICES GÉNÉRAUX",
+    "title": "Accounts / Assistant Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE CONTRATS",
+    "title": "Head",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE SERVICES GÉNÉRAUX",
+    "title": "Chief / Head Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRANSVERSES RESPONSABLE",
+    "title": "Head / Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE 'ÉTUDES",
+    "title": "Deputy Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "& ENTRETIEN INGÉNIEUR",
+    "title": "Cost Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR MAINTENANCE",
+    "title": "Accounts Receivable Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE DE MAINTENANCE",
+    "title": "Accounts Payable Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLES",
+    "title": "General Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLES AIDE-COMPTABLE",
+    "title": "Fixed Assets Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "AIDE-COMPTABLE",
+    "title": "Payroll Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF",
+    "title": "Senior / Supervising Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF/ RESPONSABLE COMPTABLE",
+    "title": "Supervisor / Senior / Confirmed",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF/ RESPONSABLE",
+    "title": "Treasury Accountant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE ADJOINT",
+    "title": "Division Manager (Head of Pole)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE ANALYTIQUE",
+    "title": "Assistant Management Controller",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE CLIENTS",
+    "title": "Management Controller",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE FOURNISSEURS",
+    "title": "Financial Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLES COMPTABLE",
+    "title": "Corporate Management Controller",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE GÉNÉRAL",
+    "title": "Group Management Controller",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE IMMOBILISATIONS",
+    "title": "Financial Controller",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE PAIE",
+    "title": "Head of Financial Control",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE SUPERVISEUR/ SENIOR/CONFIRMÉ",
+    "title": "Finance Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SUPERVISEUR/ SENIOR/CONFIRMÉ",
+    "title": "Billing Agent",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMPTABLE TRÉSORERIE",
+    "title": "Head of Billing",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE DE PÔLE",
+    "title": "Collections & Litigation Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT CONTRÔLEUR DE GESTION",
+    "title": "Accounting Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONTRÔLEUR DE GESTION",
+    "title": "Director of Management Control",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT GESTION",
+    "title": "Group Chief Financial Officer (Group CFO)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT FINANCIER",
+    "title": "Front Desk Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONTRÔLEUR DE GESTION CORPORATE",
+    "title": "Hotel Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONTRÔLEUR DE GESTION GROUPE",
+    "title": "Manager (General Manager/Proprietor)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONTRÔLEUR FINANCIER",
+    "title": "Housekeeping Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE CONTRÔLE GESTION",
+    "title": "Receptionist",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE CONTRÔLE FINANCIER",
+    "title": "Bilingual Receptionist (English–French)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE FINANCIER",
+    "title": "Assistant Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "AGENT FACTURATION",
+    "title": "Bartender",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE SERVICE FACTURATION",
+    "title": "Head Bartender",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE RECOUVREMENT CONTENTIEUX",
+    "title": "Head Chef",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR COMPTABLE",
+    "title": "Restaurant Floor Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DU CONTRÔLE DE GESTION",
+    "title": "Commissioning / After-Sales Director (SAV)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR FINANCIER GROUPE",
+    "title": "Spare Parts Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF RÉCEPTION",
+    "title": "After-Sales Manager (SAV)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR D'HÔTEL",
+    "title": "Commissioning Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GÉRANT",
+    "title": "Methods Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GOUVERNANT",
+    "title": "CMMS Manager (GMAO Manager)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RÉCEPTIONNISTE",
+    "title": "Methods Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RÉCEPTIONNISTE BILINGUE ANGLAIS- FRANÇAIS",
+    "title": "New Works Manager (Capital Projects)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT MANAGER",
+    "title": "New Works",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "BARMAN",
+    "title": "Workshop Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF BARMAN",
+    "title": "Maintenance Workshop Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE CUISINE",
+    "title": "Maintenance Team Leader",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE SALLE",
+    "title": "Automation Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMMISSIONING DIRECTEUR SAV",
+    "title": "Deputy Maintenance Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE PIÈCES DÉTACHÉES",
+    "title": "Maintenance / Electrician",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE SAV",
+    "title": "Maintenance / Mechanic",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COMMISSIONING RESPONSABLE",
+    "title": "Center Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE PIÈCES DÉTACHÉES",
+    "title": "Filling Center Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR MÉTHODES",
+    "title": "Shift Supervisor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE GMAO",
+    "title": "Production Line Operator",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE MÉTHODES",
+    "title": "Plant Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE TRAVAUX NEUFS",
+    "title": "Operations Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "TRAVAUX NEUFS",
+    "title": "Test Engineer (Design Office)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF D'ATELIER",
+    "title": "Design Office / R&D Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF D'ATELIER MAINTENANCE",
+    "title": "Test Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF D'ÉQUIPE MAINTENANCE",
+    "title": "Laboratory / Test Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR AUTOMATISME",
+    "title": "Laboratory / Test Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE DE MAINTENANCE ADJOINT",
+    "title": "Tax Specialist",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MAINTENANCE/ ÉLECTRICIEN",
+    "title": "Corporate Tax Specialist",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MAINTENANCE/ MÉCANICIEN",
+    "title": "Legal Counsel",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE CENTRE",
+    "title": "Banking Lawyer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE CENTRE EMPLISSEUR",
+    "title": "Tax Lawyer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE QUART",
+    "title": "Head of Legal Affairs",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CONDUCTEUR LIGNE",
+    "title": "Tax Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR D'USINE",
+    "title": "Compliance Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR OPÉRATIONS",
+    "title": "Mechanical Workshop Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ESSAIS INGÉNIEUR BUREAU",
+    "title": "Electrician",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR BUREAU 'ÉTUDES/R&D",
+    "title": "Auto Electrician",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ESSAIS INGÉNIEUR",
+    "title": "Mechanic",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR LABORATOIRE/ ESSAIS",
+    "title": "Auto Mechanic",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE LABORATOIRE/ ESSAIS",
+    "title": "Automotive After-Sales Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "FISCALISTE",
+    "title": "After-Sales Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "FISCALISTE 'ENTREPRISE",
+    "title": "Heavy Vehicle Mechanic",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "JURISTE",
+    "title": "Officer / Manager (HR/General)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "JURISTE BANCAIRE",
+    "title": "HR Administration and Payroll",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "JURISTE FISCALISTE",
+    "title": "Payroll & HR Administration Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "JUSTICE RESPONSABLE",
+    "title": "Recruitment Officer / Recruiter",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE FISCAL",
+    "title": "Recruitment / Recruiter",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR COMPLIANCE",
+    "title": "Training Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF D'ATELIER MÉCANIQUE",
+    "title": "Recruitment Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ÉLECTRICIEN",
+    "title": "Development Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ÉLECTRICIEN AUTOMOBILE",
+    "title": "HR – HR Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MÉCANICIEN",
+    "title": "HR Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MÉCANICIEN AUTOMOBILE",
+    "title": "HR Coordinator",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "AUTOMOBILES DIRECTEUR SAV",
+    "title": "HR Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR SAV",
+    "title": "Deputy HR Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MÉCANICIEN POIDS LOURDS",
+    "title": "Group HR Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHARGÉ/ GESTIONNAIRE",
+    "title": "HR Officer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ADMINISTRATION ET PAIE",
+    "title": "HR Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE ADMINISTRATION PAIE",
+    "title": "CSR Manager (Sustainability)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHARGÉ DE RECRUTEMENT/ RECRUTEUR",
+    "title": "Development Project Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RECRUTEMENT/ RECRUTEUR",
+    "title": "Functional Project Manager (CRM, BI…)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE DE FORMATION",
+    "title": "Infrastructure Project Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE RECRUTEMENT",
+    "title": "Design/Studies Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE DÉVELOPPEMENT",
+    "title": "Test / Acceptance Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RH ASSISTANT RH",
+    "title": "Product Owner",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ASSISTANT RH",
+    "title": "Infrastructure Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COORDINATEUR RH",
+    "title": "Chief Information Officer (CIO)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR RH",
+    "title": "Head of Infrastructure",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR RH ADJOINT",
+    "title": "Head of Information Systems (IS Manager)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR RH GROUPE",
+    "title": "Head of Department (Management)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "GESTIONNAIRE RH",
+    "title": "Systems / Network Administrator",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE RH",
+    "title": "Systems / Networks",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE RSE",
+    "title": "Developer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ADMINISTRATEUR",
+    "title": "Mobile Developer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DÉVELOPPEMENT CHEF DE PROJET",
+    "title": "Web Developer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE PROJET FONCTIONNEL , CRM, BI…",
+    "title": "DevOps Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "CHEF DE PROJET INFRASTRUCTURES",
+    "title": "Systems / Network Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR D'ÉTUDES ET",
+    "title": "Support / Helpdesk Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR TESTS",
+    "title": "Country Manager / Country Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR TESTS/ RECETTES",
+    "title": "Country Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "PRODUCT OWNER",
+    "title": "General Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DES INFRASTRUCTURES",
+    "title": "Regional / Sub-Regional Director",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR DES SYSTÈMES D'INFORMATION",
+    "title": "Deputy General Manager",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE DES INFRASTRUCTURES",
+    "title": "Engagement Director (Years of Experience)",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE DES SYSTÈMES 'INFORMATION",
+    "title": "AI Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTION RESPONSABLE",
+    "title": "AI Researcher",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ADMINISTRATEUR SYSTÈMES/ RÉSEAUX",
+    "title": "ASIC Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "SYSTÈMES/ RÉSEAUX",
+    "title": "Account Executive",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DÉVELOPPEUR",
+    "title": "Administrative Assistant",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DÉVELOPPEUR MOBILE",
+    "title": "Aerospace Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DÉVELOPPEUR WEB",
+    "title": "Analog Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR DEVOPS",
+    "title": "Analytics Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "INGÉNIEUR SYSTÈMES/ RÉSEAUX",
+    "title": "Android Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "RESPONSABLE SUPPORT/ HELPDESK",
+    "title": "Anesthesiologist",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "COUNTRY MANAGER/ DIRECTEUR PAYS",
+    "title": "Application Security Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "MANAGER/ DIRECTEUR PAYS",
+    "title": "Associate",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR GÉNÉRAL",
+    "title": "Attorney",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR RÉGIONAL/ SOUS-RÉGIONAL",
+    "title": "Auditor",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "DIRECTEUR GÉNÉRAL ADJOINT",
+    "title": "Backend Software Engineer",
     "industry_id": null,
     "category": null,
     "slug": null
   },
   {
     "job_title_id": null,
-    "title": "ANS D'EXPÉRIENCE DIRECTEUR DE MISSION",
+    "title": "Benefits Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Biocompatibility Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Bioinformatics Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Biomedical Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Biostatistician",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Business Development",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Business Development Representative",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Business Intelligence Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Business Intelligence Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Business Operations",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Business Operations Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "CAE Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Cardiothoracic Surgeon",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Chemical Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Chief of Staff",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Civil Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Claims Adjuster",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Clinical Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Clinical Specialist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Cloud Architect",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Cloud Security Architect",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Cloud Security Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Compensation Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Compliance Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Computational Biologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Construction Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Content Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Content Moderator",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Controls Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Copywriter",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Corporate Development",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Crypto Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Customer Service",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Customer Service Operations",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Customer Success",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Customer Success Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Cybersecurity Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Data Architect",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Data Center Design Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Data Center Technician",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Data Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Data Science Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Data Scientist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Data Visualization Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Dermatologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Design Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Developer Advocate",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Diagnostic Radiologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ENT (Ear, Nose, and Throat) Specialist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "ER Doctor",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Electrical Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Embedded Hardware Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Embedded Systems Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Endocrinologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Energy Services Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Environmental Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Executive Compensation Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "FPGA Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Facilities Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Facilities Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Fashion Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Field Sales Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Field Sales Representative",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Financial Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Financial Planning & Analysis Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Fire Protection Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Forensic Accountant",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Forward Deployed Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Founder",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Fraud Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Frontend Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Full-Stack Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Gastroenterologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "General Internal Medicine Physician",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "General Surgeon",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Geological Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Go-To-Market Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "HVAC Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Hardware Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Hematologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "IT Support",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Immunologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Industrial Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Infectious Disease Physician",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Information Technologist (IT)",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Inside Sales Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Inside Sales Representative",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Intensivist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Interaction Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Interventional Cardiologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Investment Banker",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Investor",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Leadership Recruiter",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Linguistic Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "MEP Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Machine Learning Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Machine Learning Ops Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Management Consultant",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Manufacturing Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Marketing",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Marketing Operations",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Materials Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Mechanical Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Mechatronics Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Meteorologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Mining Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Mixed Signal Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Mobile Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Mobile Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Nephrologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Network Administrator",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Networking Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Neurologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Neurosurgeon",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "New Product Introduction (NPI) Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Non-Invasive Cardiologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Obstetrician-Gynecologist (OB-GYN)",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Onboarding Specialist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Operations Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Ophthalmologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Optical Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Orthopedic Surgeon",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Packaging Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Partner",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Partner Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Pathologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Payroll Administrator",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Pediatric Intensivist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Pediatrician",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "People Operations",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Physiatrist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Physician",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Plastic Surgeon",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Plumbing Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Policy Enforcement Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Policy Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Primary Care Physician (PCP)",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Principal",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Process Controls Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Process Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Product Design Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Product Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Product Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Product Marketing Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Production Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Program Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Prompt Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Property Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Psychiatrist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Pulmonologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Quality Assurance (QA) Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Quality Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Quantitative Developer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Quantitative Researcher",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "R&D Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Radiation Oncologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Radio Frequency Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Real Estate Agent",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Recruiter",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Recruiting Coordinator",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Regulatory Affairs",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Research Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Research Scientist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Revenue Operations",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Rheumatologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Sales Development Representative",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Sales Development Representative Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Sales Enablement",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Salesforce Administrator",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Salesforce Developer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Security Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Site Reliability Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "SoC Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Software Engineering Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Solution Architect",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Sourcer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Sterilization Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Structural Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "System Administrator",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Systems Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Tax Accountant",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Technical Account Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Technical Accountant",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Technical Program Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Technical Project Manager",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Technical Recruiter",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Technical Writer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Technology Risk Analyst",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Thermal Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Total Rewards",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Toxicologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Transportation Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Trust and Safety",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "UI Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "UX Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "UX Researcher",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "UX Writer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "University Recruiter",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Urologist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Usability Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "VLSI CAD Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Vascular Surgeon",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Venture Capitalist",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Video Game Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Video Game Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Virtual Reality Software Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Water Resources Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Web Designer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "Workday Engineer",
+    "industry_id": null,
+    "category": null,
+    "slug": null
+  },
+  {
+    "job_title_id": null,
+    "title": "iOS Engineer",
     "industry_id": null,
     "category": null,
     "slug": null

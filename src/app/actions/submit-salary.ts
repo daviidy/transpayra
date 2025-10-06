@@ -22,6 +22,14 @@ export async function submitSalary(formData: FormData): Promise<{ success: boole
       ? (formData.baseSalary * formData.targetBonusPercent) / 100
       : 0
 
+    console.log('Salary Submission Debug:', {
+      actualBonusAmount: formData.actualBonusAmount,
+      targetBonusPercent: formData.targetBonusPercent,
+      calculatedBonus: bonus,
+      baseSalary,
+      stockComp
+    })
+
     // Insert salary submission
     const [result] = await db
       .insert(salarySubmission)

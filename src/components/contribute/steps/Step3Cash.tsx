@@ -12,6 +12,7 @@ const CURRENCIES = [
   { code: 'USD', symbol: '$', name: 'US Dollar' },
   { code: 'EUR', symbol: '€', name: 'Euro' },
   { code: 'GBP', symbol: '£', name: 'British Pound' },
+  { code: 'XOF', symbol: 'CFA', name: 'West African CFA Franc' },
   { code: 'NGN', symbol: '₦', name: 'Nigerian Naira' },
   { code: 'ZAR', symbol: 'R', name: 'South African Rand' },
   { code: 'KES', symbol: 'KSh', name: 'Kenyan Shilling' },

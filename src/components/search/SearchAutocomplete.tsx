@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 import { Search, Loader2 } from 'lucide-react'
 import { getSearchSuggestions, GroupedSuggestions, SearchSuggestion } from '@/app/actions/search'
 
@@ -17,6 +18,7 @@ export function SearchAutocomplete({
   onSelect,
   className = '',
 }: SearchAutocompleteProps) {
+  const router = useRouter()
   const [query, setQuery] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [suggestions, setSuggestions] = useState<GroupedSuggestions>({
@@ -132,8 +134,12 @@ export function SearchAutocomplete({
   const handleSelect = (suggestion: SearchSuggestion) => {
     setQuery(suggestion.name)
     setIsOpen(false)
+
     if (onSelect) {
       onSelect(suggestion)
+    } else {
+      // Default behavior: navigate to search results page
+      router.push(`/salaries/search?type=${suggestion.type}&id=${suggestion.id}`)
     }
   }
 
