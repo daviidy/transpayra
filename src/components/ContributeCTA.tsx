@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function ContributeCTA() {
   return (
     <section className="overflow-hidden bg-brand-primary sm:grid sm:grid-cols-2 sm:items-center">
@@ -14,12 +16,12 @@ export function ContributeCTA() {
           </p>
 
           <div className="mt-4 md:mt-8">
-            <a
-              href="#"
+            <Link
+              href="/contribute"
               className="inline-block rounded-lg bg-brand-secondary px-12 py-3 text-sm font-medium text-white transition hover:bg-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:ring-offset-2"
             >
               Share Your Salary
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -24,6 +24,7 @@ export interface SearchFilters {
   jobTitleId?: number
   companyId?: number
   locationId?: number
+  industryId?: number
   levelId?: number
 }
 
@@ -39,6 +40,9 @@ export async function searchSalaries(filters: SearchFilters): Promise<SalaryResu
     }
     if (filters.locationId) {
       conditions.push(eq(salarySubmission.locationId, filters.locationId))
+    }
+    if (filters.industryId) {
+      conditions.push(eq(jobTitle.industryId, filters.industryId))
     }
     if (filters.levelId) {
       conditions.push(eq(salarySubmission.levelId, filters.levelId))

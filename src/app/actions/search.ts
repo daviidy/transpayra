@@ -1,13 +1,13 @@
 'use server'
 
 import { db } from '@/lib/db'
-import { company, jobTitle, location, level, salarySubmission } from '@/lib/db/schema'
+import { company, jobTitle, location, level, industry, salarySubmission } from '@/lib/db/schema'
 import { ilike, or, sql, count, desc, eq } from 'drizzle-orm'
 
 export interface SearchSuggestion {
   id: number
   name: string
-  type: 'job' | 'company' | 'location' | 'level'
+  type: 'job' | 'company' | 'location' | 'level' | 'industry'
   submissionCount?: number
 }
 
@@ -15,6 +15,7 @@ export interface GroupedSuggestions {
   jobTitles: SearchSuggestion[]
   companies: SearchSuggestion[]
   locations: SearchSuggestion[]
+  industries: SearchSuggestion[]
   levels: SearchSuggestion[]
 }
 
@@ -23,7 +24,7 @@ export async function getSearchSuggestions(
   contextJobTitle?: string
 ): Promise<GroupedSuggestions> {
   if (!query || query.length < 2) {
-    return { jobTitles: [], companies: [], locations: [], levels: [] }
+    return { jobTitles: [], companies: [], locations: [], industries: [], levels: [] }
   }
 
   const searchPattern = `%${query}%`
@@ -79,6 +80,21 @@ export async function getSearchSuggestions(
     .orderBy(desc(count(salarySubmission.submissionId)))
     .limit(3)
 
+  // Search industries
+  const industriesPromise = db
+    .select({
+      id: industry.industryId,
+      name: industry.name,
+      submissionCount: count(salarySubmission.submissionId),
+    })
+    .from(industry)
+    .leftJoin(jobTitle, eq(industry.industryId, jobTitle.industryId))
+    .leftJoin(salarySubmission, eq(jobTitle.jobTitleId, salarySubmission.jobTitleId))
+    .where(ilike(industry.name, searchPattern))
+    .groupBy(industry.industryId, industry.name)
+    .orderBy(desc(count(salarySubmission.submissionId)))
+    .limit(3)
+
   // Search levels (contextual if job title provided)
   let levelsPromise = Promise.resolve([])
   if (contextJobTitle) {
@@ -100,10 +116,11 @@ export async function getSearchSuggestions(
       .limit(3)
   }
 
-  const [jobTitlesData, companiesData, locationsData, levelsData] = await Promise.all([
+  const [jobTitlesData, companiesData, locationsData, industriesData, levelsData] = await Promise.all([
     jobTitlesPromise,
     companiesPromise,
     locationsPromise,
+    industriesPromise,
     levelsPromise,
   ])
 
@@ -125,6 +142,12 @@ export async function getSearchSuggestions(
       name: `${l.city}${l.state ? `, ${l.state}` : ''}, ${l.country}`,
       type: 'location' as const,
       submissionCount: Number(l.submissionCount),
+    })),
+    industries: industriesData.map((i) => ({
+      id: i.id,
+      name: i.name,
+      type: 'industry' as const,
+      submissionCount: Number(i.submissionCount),
     })),
     levels: levelsData.map((lv: any) => ({
       id: lv.id,

@@ -25,6 +25,7 @@ export function SearchAutocomplete({
     jobTitles: [],
     companies: [],
     locations: [],
+    industries: [],
     levels: [],
   })
   const [loading, setLoading] = useState(false)
@@ -42,13 +43,14 @@ export function SearchAutocomplete({
     ...suggestions.jobTitles,
     ...suggestions.companies,
     ...suggestions.locations,
+    ...suggestions.industries,
     ...suggestions.levels,
   ]
 
   const fetchSuggestions = useCallback(
     async (searchQuery: string) => {
       if (searchQuery.length < 2) {
-        setSuggestions({ jobTitles: [], companies: [], locations: [], levels: [] })
+        setSuggestions({ jobTitles: [], companies: [], locations: [], industries: [], levels: [] })
         setIsOpen(false)
         return
       }
@@ -104,7 +106,7 @@ export function SearchAutocomplete({
       }, 300)
     } else {
       setIsOpen(false)
-      setSuggestions({ jobTitles: [], companies: [], locations: [], levels: [] })
+      setSuggestions({ jobTitles: [], companies: [], locations: [], industries: [], levels: [] })
     }
 
     return () => {
@@ -230,6 +232,7 @@ export function SearchAutocomplete({
     suggestions.jobTitles.length +
     suggestions.companies.length +
     suggestions.locations.length +
+    suggestions.industries.length +
     suggestions.levels.length
 
   return (
@@ -292,12 +295,21 @@ export function SearchAutocomplete({
                 suggestions.jobTitles.length + suggestions.companies.length
               )}
               {renderGroup(
+                'Industries',
+                suggestions.industries,
+                'Industry',
+                suggestions.jobTitles.length +
+                  suggestions.companies.length +
+                  suggestions.locations.length
+              )}
+              {renderGroup(
                 'Levels',
                 suggestions.levels,
                 'Level',
                 suggestions.jobTitles.length +
                   suggestions.companies.length +
-                  suggestions.locations.length
+                  suggestions.locations.length +
+                  suggestions.industries.length
               )}
             </>
           )}
