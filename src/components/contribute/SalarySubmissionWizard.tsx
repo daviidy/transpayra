@@ -13,6 +13,7 @@ import {
 import { Step1Combined } from './steps/Step1Combined'
 import { Step2Compensation } from './steps/Step2Compensation'
 import { Step6Review } from './steps/Step6Review'
+import { useAnonymousToken } from '@/lib/hooks/useAnonymousToken'
 
 const STEPS = [
   { number: 1, name: 'Role & Experience' },
@@ -22,9 +23,11 @@ const STEPS = [
 
 export function SalarySubmissionWizard() {
   const router = useRouter()
+  const { token, isLoading: tokenLoading } = useAnonymousToken()
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   // Load draft from localStorage on mount
   useEffect(() => {
@@ -94,9 +97,12 @@ export function SalarySubmissionWizard() {
   }
 
   const handleSubmit = async () => {
+    if (isSubmitting || !token) return
+
+    setIsSubmitting(true)
     try {
       const { submitSalary } = await import('@/app/actions/submit-salary')
-      const result = await submitSalary(formData)
+      const result = await submitSalary(formData, token)
 
       if (result.success) {
         // Clear draft
@@ -106,10 +112,12 @@ export function SalarySubmissionWizard() {
         router.push('/contribute/success')
       } else {
         alert(result.error || 'Failed to submit salary. Please try again.')
+        setIsSubmitting(false)
       }
     } catch (error) {
       console.error('Submission error:', error)
       alert('An error occurred while submitting. Please try again.')
+      setIsSubmitting(false)
     }
   }
 
@@ -213,9 +221,10 @@ export function SalarySubmissionWizard() {
 
         <button
           onClick={handleNext}
-          className="px-8 py-3 bg-brand-secondary text-white rounded-lg font-semibold hover:bg-brand-accent transition-colors"
+          disabled={isSubmitting || (currentStep === 3 && !token)}
+          className="px-8 py-3 bg-brand-secondary text-white rounded-lg font-semibold hover:bg-brand-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {currentStep === 3 ? 'Submit' : 'Next →'}
+          {isSubmitting ? 'Submitting...' : currentStep === 3 ? 'Submit' : 'Next →'}
         </button>
       </div>
     </div>

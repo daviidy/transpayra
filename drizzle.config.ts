@@ -1,8 +1,9 @@
 import { defineConfig } from 'drizzle-kit'
 import { config } from 'dotenv'
 
-// Load environment variables from .env.local
-config({ path: '.env.local' })
+// Load environment variables based on NODE_ENV
+const envFile = process.env.NODE_ENV === 'test' ? '.env.test' : '.env.local'
+config({ path: envFile })
 
 export default defineConfig({
   schema: './src/lib/db/schema.ts',

@@ -60,6 +60,7 @@ export const level = pgTable('level', {
 export const salarySubmission = pgTable('salary_submission', {
   submissionId: bigserial('submission_id', { mode: 'number' }).primaryKey(),
   userId: uuid('user_id'), // nullable for anonymous submissions
+  userTokenHash: text('user_token_hash'), // hashed anonymous token for tracking
   companyId: bigint('company_id', { mode: 'number' }).notNull().references(() => company.companyId),
   jobTitleId: bigint('job_title_id', { mode: 'number' }).notNull().references(() => jobTitle.jobTitleId),
   locationId: bigint('location_id', { mode: 'number' }).notNull().references(() => location.locationId),
@@ -72,6 +73,7 @@ export const salarySubmission = pgTable('salary_submission', {
   submissionDate: timestamp('submission_date', { withTimezone: true }).notNull().defaultNow(),
 }, (table) => ({
   queryIdx: index().on(table.jobTitleId, table.companyId, table.locationId, table.levelId),
+  tokenHashIdx: index().on(table.userTokenHash),
 }))
 
 // Relations

@@ -29,6 +29,13 @@
       "when": 1759696467742,
       "tag": "0003_goofy_johnny_storm",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1759896413768,
+      "tag": "0004_jazzy_scourge",
+      "breakpoints": true
     }
   ]
 }
