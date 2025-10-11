@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { SalaryResult } from '@/app/actions/search-salaries'
 import { checkUserHasAccess } from '@/app/actions/check-access'
 import { useAnonymousToken } from '@/lib/hooks/useAnonymousToken'
+import { useAuth } from '@/contexts/AuthContext'
 
 interface SalaryResultsListProps {
   results: SalaryResult[]
@@ -16,19 +17,18 @@ export function SalaryResultsList({ results }: SalaryResultsListProps) {
   const [checkingAccess, setCheckingAccess] = useState(true)
   const router = useRouter()
   const { token } = useAnonymousToken()
+  const { user } = useAuth()
 
   // Check if user has access on mount
   useEffect(() => {
     async function verifyAccess() {
-      if (token) {
-        const hasAccess = await checkUserHasAccess(token)
-        setUnlocked(hasAccess)
-      }
+      const hasAccess = await checkUserHasAccess(token, user?.id)
+      setUnlocked(hasAccess)
       setCheckingAccess(false)
     }
 
     verifyAccess()
-  }, [token])
+  }, [token, user])
 
   const formatCurrency = (amount: string | number | undefined) => {
     if (!amount) return 'N/A'

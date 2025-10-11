@@ -1,6 +1,7 @@
 import { createRouteHandlerClient } from '@/lib/supabase-server'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
+import { migrateAnonymousSubmissions } from '@/app/actions/migrate-anonymous-submissions'
 
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url)
@@ -11,9 +12,26 @@ export async function GET(request: NextRequest) {
     const cookieStore = await cookies()
     const supabase = createRouteHandlerClient(cookieStore)
 
-    await supabase.auth.exchangeCodeForSession(code)
+    const { data } = await supabase.auth.exchangeCodeForSession(code)
+
+    // Migrate anonymous submissions to authenticated user
+    if (data.user) {
+      // Check if user has anonymous token in cookies
+      const anonymousTokenCookie = cookieStore.get('anonymous_user_token')
+
+      if (anonymousTokenCookie?.value) {
+        const result = await migrateAnonymousSubmissions(
+          data.user.id,
+          anonymousTokenCookie.value
+        )
+
+        if (result.success && result.migratedCount > 0) {
+          console.log(`✅ Migrated ${result.migratedCount} anonymous submissions for user ${data.user.email}`)
+        }
+      }
+    }
   }
 
-  // URL to redirect to after sign up process completes
-  return NextResponse.redirect(`${origin}`)
+  // Redirect to dashboard after successful sign-in
+  return NextResponse.redirect(`${origin}/dashboard`)
 }

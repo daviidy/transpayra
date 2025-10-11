@@ -114,7 +114,7 @@ export function Navbar() {
               ) : (
                 <button
                   onClick={handleAuthClick}
-                  className="px-5 py-2 text-sm font-medium text-white bg-brand-secondary rounded-lg hover:bg-brand-accent transition-colors"
+                  className="px-5 py-2 text-sm font-medium text-white bg-brand-secondary rounded-lg hover:bg-brand-accent transition-colors cursor-pointer"
                 >
                   Register / Sign in
                 </button>

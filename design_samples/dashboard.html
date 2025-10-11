@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Account - Sign-In and Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        .apple-font {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+        }
+
+        .sidebar-link {
+            transition: color 0.2s ease;
+        }
+
+        .sidebar-link:hover {
+            color: #0071e3;
+        }
+
+        .sidebar-link.active {
+            color: #0071e3;
+            font-weight: 500;
+        }
+
+        .security-card {
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .security-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-1px);
+        }
+
+        .sign-out-btn {
+            transition: all 0.2s ease;
+        }
+
+        .sign-out-btn:hover {
+            background-color: #f0f8ff;
+        }
+
+        .apple-icon {
+            background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
+        }
+    </style>
+</head>
+<body class="h-full bg-white apple-font">
+<!-- Top Bar -->
+<header class="border-b border-gray-200 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <h1 class="text-base font-bold text-gray-900">Apple Account</h1>
+            <button class="sign-out-btn px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-gray-300 rounded-lg hover:bg-blue-50">
+                Sign Out
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="flex h-full">
+    <!-- Left Sidebar -->
+    <aside class="w-1/4 bg-white border-r border-gray-200 min-h-screen">
+        <div class="p-8">
+            <!-- Profile Section -->
+            <div class="mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                        DY
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900">David Yao</h2>
+                        <p class="text-sm text-gray-500">yaodavidarmel@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="space-y-1">
+                <a href="#" class="sidebar-link block py-3 text-sm text-gray-800 hover:text-blue-600">
+                    Personal Information
+                </a>
+                <a href="#" class="sidebar-link active block py-3 text-sm">
+                    Sign-In and Security
+                </a>
+                <a href="#" class="sidebar-link block py-3 text-sm text-gray-800 hover:text-blue-600">
+                    Payment & Shipping
+                </a>
+                <a href="#" class="sidebar-link block py-3 text-sm text-gray-800 hover:text-blue-600">
+                    Subscriptions
+                </a>
+                <a href="#" class="sidebar-link block py-3 text-sm text-gray-800 hover:text-blue-600">
+                    Family Sharing
+                </a>
+                <a href="#" class="sidebar-link block py-3 text-sm text-gray-800 hover:text-blue-600">
+                    Devices
+                </a>
+                <a href="#" class="sidebar-link block py-3 text-sm text-gray-800 hover:text-blue-600">
+                    Privacy
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 bg-white">
+        <div class="p-16">
+            <!-- Section Header -->
+            <div class="mb-12">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Sign-In and Security</h1>
+                <p class="text-base text-gray-500">Manage your account security settings and authentication methods.</p>
+            </div>
+
+            <!-- Grid of Cards -->
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <!-- Email & Phone Numbers Card -->
+                <div class="security-card bg-white rounded-xl p-6 border border-gray-100 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-gray-900 mb-2">Email & Phone Numbers</h3>
+                            <p class="text-sm text-gray-500">yaodavidarmel@gmail.com and +1 (641) 451-4016</p>
+                        </div>
+                        <div class="apple-icon w-8 h-8 rounded-lg flex items-center justify-center ml-4">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password Card -->
+                <div class="security-card bg-white rounded-xl p-6 border border-gray-100 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-gray-900 mb-2">Password</h3>
+                            <p class="text-sm text-gray-500">Change your Apple Account password</p>
+                        </div>
+                        <div class="apple-icon w-8 h-8 rounded-lg flex items-center justify-center ml-4">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Security Card -->
+                <div class="security-card bg-white rounded-xl p-6 border border-gray-100 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-gray-900 mb-2">Account Security</h3>
+                            <p class="text-sm text-gray-500">Two-factor authentication and security settings</p>
+                        </div>
+                        <div class="apple-icon w-8 h-8 rounded-lg flex items-center justify-center ml-4">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Recovery Card -->
+                <div class="security-card bg-white rounded-xl p-6 border border-gray-100 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-gray-900 mb-2">Account Recovery</h3>
+                            <p class="text-sm text-gray-500">Set up recovery contacts and methods</p>
+                        </div>
+                        <div class="apple-icon w-8 h-8 rounded-lg flex items-center justify-center ml-4">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legacy Contact Card -->
+                <div class="security-card bg-white rounded-xl p-6 border border-gray-100 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-gray-900 mb-2">Legacy Contact</h3>
+                            <p class="text-sm text-gray-500">Choose someone to access your account if needed</p>
+                        </div>
+                        <div class="apple-icon w-8 h-8 rounded-lg flex items-center justify-center ml-4">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign in with Apple Card -->
+                <div class="security-card bg-white rounded-xl p-6 border border-gray-100 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-gray-900 mb-2">Sign in with Apple</h3>
+                            <p class="text-sm text-gray-500">Manage apps using Sign in with Apple</p>
+                        </div>
+                        <div class="apple-icon w-8 h-8 rounded-lg flex items-center justify-center ml-4">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App-Specific Passwords Card (Full Width) -->
+            <div class="security-card bg-white rounded-xl p-6 border border-gray-100 cursor-pointer">
+                <div class="flex justify-between items-start">
+                    <div class="flex-1">
+                        <h3 class="text-base font-bold text-gray-900 mb-2">App-Specific Passwords</h3>
+                        <p class="text-sm text-gray-500">Generate passwords for apps that don't support two-factor authentication</p>
+                    </div>
+                    <div class="apple-icon w-8 h-8 rounded-lg flex items-center justify-center ml-4">
+                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</html>
