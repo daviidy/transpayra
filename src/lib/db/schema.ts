@@ -25,7 +25,7 @@ export const company = pgTable('company', {
   slug: text('slug').unique().notNull(),
   website: text('website'),
   logoUrl: text('logo_url'),
-  industry: text('industry'),
+  industryId: bigint('industry_id', { mode: 'number' }).references(() => industry.industryId),
   headquarters: text('headquarters'),
   founded: integer('founded'),
   companyType: text('company_type'),
@@ -68,6 +68,7 @@ export const salarySubmission = pgTable('salary_submission', {
   baseSalary: numeric('base_salary').notNull(),
   bonus: numeric('bonus').default('0'),
   stockCompensation: numeric('stock_compensation').default('0'),
+  currency: text('currency').notNull().default('XOF'), // Currency code: XOF, EUR, USD
   yearsOfExperience: integer('years_of_experience').notNull(),
   yearsAtCompany: integer('years_at_company').default(0),
   submissionDate: timestamp('submission_date', { withTimezone: true }).notNull().defaultNow(),
@@ -79,9 +80,14 @@ export const salarySubmission = pgTable('salary_submission', {
 // Relations
 export const industryRelations = relations(industry, ({ many }) => ({
   jobTitles: many(jobTitle),
+  companies: many(company),
 }))
 
-export const companyRelations = relations(company, ({ many }) => ({
+export const companyRelations = relations(company, ({ one, many }) => ({
+  industry: one(industry, {
+    fields: [company.industryId],
+    references: [industry.industryId],
+  }),
   levels: many(level),
   salarySubmissions: many(salarySubmission),
 }))

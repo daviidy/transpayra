@@ -157,31 +157,52 @@ export function SalarySubmissionWizard() {
       </div>
 
       {/* Progress Indicator */}
-      <div className="mb-12">
-        <div className="flex items-center justify-between">
-          {STEPS.map((step, index) => (
-            <div key={step.number} className="flex items-center flex-1">
-              <div className="flex flex-col items-center flex-1">
+      <div className="mb-8">
+        {/* Step Indicators with Lines */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-4 w-full">
+            {STEPS.map((step, index) => (
+              <div key={step.number} className={`relative ${index < STEPS.length - 1 ? 'flex-1' : ''} flex items-center`}>
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
-                    currentStep === step.number
+                  className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors duration-300 font-semibold relative z-10 ${
+                    currentStep >= step.number
                       ? 'bg-brand-secondary text-white'
-                      : currentStep > step.number
-                      ? 'bg-green-500 text-white'
                       : 'bg-gray-300 text-gray-600'
                   }`}
                 >
                   {currentStep > step.number ? '✓' : step.number}
                 </div>
-                <span className="text-xs mt-2 text-gray-600 text-center">{step.name}</span>
+                {index < STEPS.length - 1 && (
+                  <div
+                    className={`absolute w-full h-1 left-0 top-1/2 -translate-y-1/2 -z-0 transition-colors duration-300 ${
+                      currentStep > step.number ? 'bg-brand-secondary' : 'bg-gray-300'
+                    }`}
+                  />
+                )}
               </div>
-              {index < STEPS.length - 1 && (
-                <div
-                  className={`h-1 flex-1 mx-2 ${
-                    currentStep > step.number ? 'bg-green-500' : 'bg-gray-300'
-                  }`}
-                />
-              )}
+            ))}
+          </div>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="w-full bg-gray-200 rounded-full h-2">
+          <div
+            className="bg-brand-secondary h-2 rounded-full transition-all duration-300"
+            style={{ width: `${(currentStep / STEPS.length) * 100}%` }}
+          />
+        </div>
+
+        {/* Step Labels */}
+        <div className="flex items-center justify-between mt-4">
+          {STEPS.map((step) => (
+            <div
+              key={step.number}
+              className={`text-xs text-center font-medium ${
+                currentStep >= step.number ? 'text-brand-secondary' : 'text-gray-500'
+              }`}
+              style={{ width: '33.33%' }}
+            >
+              {step.name}
             </div>
           ))}
         </div>

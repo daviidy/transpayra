@@ -53,7 +53,7 @@ export const initialFormData: FormData = {
   workModel: '',
   employmentType: '',
   asOfDate: { month: '', year: '' },
-  currency: 'USD',
+  currency: 'XOF', // Default to West African CFA
   equityType: '',
   equityGrantToggle: 'value',
   vestingFrontLoaded: false,

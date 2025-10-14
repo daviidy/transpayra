@@ -1,0 +1,2 @@
+ALTER TABLE "company" ADD COLUMN "industry_id" bigint;--> statement-breakpoint
+ALTER TABLE "company" ADD CONSTRAINT "company_industry_id_industry_industry_id_fk" FOREIGN KEY ("industry_id") REFERENCES "public"."industry"("industry_id") ON DELETE no action ON UPDATE no action;

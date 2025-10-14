@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Responsive Multi-Step Form</title>
+</head>
+<body class="bg-gray-50 font-sans">
+<div class="min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-8">
+        <!-- Step Indicator with Progress Bar -->
+        <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-4 w-full">
+                <!-- Step 1 -->
+                <div class="relative flex-1 flex items-center">
+                    <div id="indicator-1" class="w-10 h-10 flex items-center justify-center bg-purple-600 text-white rounded-full transition-colors duration-300">1</div>
+                    <div id="line-1" class="absolute w-full h-1 bg-gray-300 left-0 top-1/2 transform translate-y-[-50%] z-[-1] transition-colors duration-300"></div>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative flex-1 flex items-center">
+                    <div id="indicator-2" class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-600 rounded-full transition-colors duration-300">2</div>
+                    <div id="line-2" class="absolute w-full h-1 bg-gray-300 left-0 top-1/2 transform translate-y-[-50%] z-[-1] transition-colors duration-300"></div>
+                </div>
+                <!-- Step 3 -->
+                <div>
+                    <div id="indicator-3" class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-600 rounded-full transition-colors duration-300">3</div>
+                </div>.
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-gray-200 rounded-full h-2 mb-8">
+            <div id="progress-bar" class="bg-purple-600 h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
+        </div>
+
+        <!-- Form Content -->
+        <form id="multi-step-form">
+            <!-- Step 1 -->
+            <div id="step-1" class="step">
+                <h2 class="text-xl font-semibold mb-4">Step 1: Personal Info</h2>
+                <div class="space-y-4">
+                    <input type="text" placeholder="Name" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-purple-500">
+                    <input type="email" placeholder="Email" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-purple-500">
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="step-2" class="step hidden">
+                <h2 class="text-xl font-semibold mb-4">Step 2: Address</h2>
+                <div class="space-y-4">
+                    <input type="text" placeholder="Street Address" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-purple-500">
+                    <input type="text" placeholder="City" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-purple-500">
+                    <input type="text" placeholder="Postal Code" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-purple-500">
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step-3" class="step hidden">
+                <h2 class="text-xl font-semibold mb-4">Step 3: Review & Submit</h2>
+                <p class="mb-4">Please review your information before submitting.</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Name:</strong> <span id="review-name">John Doe</span></li>
+                    <li><strong>Email:</strong> <span id="review-email">john.doe@example.com</span></li>
+                    <li><strong>Address:</strong> <span id="review-address">123 Main St, City, 12345</span></li>
+                </ul>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between mt-8">
+                <button id="prev-btn" type="button" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hidden">Previous</button>
+                <button id="next-btn" type="button" class="bg-purple-600 text-white px-6 py-2 rounded-lg">Next</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const steps = document.querySelectorAll(".step");
+    const nextBtn = document.getElementById("next-btn");
+    const prevBtn = document.getElementById("prev-btn");
+    const indicators = [
+        document.getElementById("indicator-1"),
+        document.getElementById("indicator-2"),
+        document.getElementById("indicator-3")
+    ];
+    const lines = [
+        document.getElementById("line-1"),
+        document.getElementById("line-2")
+    ];
+    const progressBar = document.getElementById("progress-bar");
+    let currentStep = 0;
+
+    function updateIndicators(stepIndex) {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle("bg-purple-600", index <= stepIndex);
+            indicator.classList.toggle("text-white", index <= stepIndex);
+            indicator.classList.toggle("bg-gray-300", index > stepIndex);
+            indicator.classList.toggle("text-gray-600", index > stepIndex);
+        });
+
+        lines.forEach((line, index) => {
+            line.classList.toggle("bg-purple-600", index < stepIndex);
+            line.classList.toggle("bg-gray-300", index >= stepIndex);
+        });
+    }
+
+    function updateProgressBar(stepIndex) {
+        const progressPercentage = ((stepIndex + 1) / steps.length) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+    }
+
+    function showStep(index) {
+        steps.forEach((step, i) => {
+            step.classList.toggle("hidden", i !== index);
+        });
+        prevBtn.classList.toggle("hidden", index === 0);
+        nextBtn.textContent = index === steps.length - 1 ? "Submit" : "Next";
+        updateIndicators(index);
+        updateProgressBar(index);
+    }
+
+    nextBtn.addEventListener("click", () => {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        } else {
+            alert("Form Submitted!");
+        }
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+
+    showStep(currentStep);
+</script>
+</body>
+</html>

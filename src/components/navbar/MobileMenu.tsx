@@ -3,6 +3,8 @@
 import { X, ChevronDown } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useCurrency } from '@/contexts/CurrencyContext'
+import { CURRENCIES, Currency } from '@/lib/currency'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -13,6 +15,8 @@ interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose, isLoggedIn, onAuthClick }: MobileMenuProps) {
   const [isSalariesOpen, setIsSalariesOpen] = useState(false)
+  const [isCurrencyOpen, setIsCurrencyOpen] = useState(false)
+  const { selectedCurrency, setSelectedCurrency } = useCurrency()
   useEffect(() => {
     if (!isOpen) return
 
@@ -114,6 +118,45 @@ export function MobileMenu({ isOpen, onClose, isLoggedIn, onAuthClick }: MobileM
                       By Industry
                     </Link>
                   </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              {/* Currency selector with dropdown */}
+              <button
+                onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
+                className="w-full flex items-center justify-between text-2xl font-medium text-brand-secondary hover:text-brand-accent py-3 transition-colors"
+              >
+                <span className="flex items-center gap-2">
+                  Currency {CURRENCIES[selectedCurrency].flag} {CURRENCIES[selectedCurrency].symbol}
+                </span>
+                <ChevronDown
+                  className={`w-6 h-6 transition-transform ${
+                    isCurrencyOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              {isCurrencyOpen && (
+                <ul className="mt-2 ml-4 space-y-2">
+                  {(Object.keys(CURRENCIES) as Currency[]).map((currency) => (
+                    <li key={currency}>
+                      <button
+                        onClick={() => {
+                          setSelectedCurrency(currency)
+                          setIsCurrencyOpen(false)
+                        }}
+                        className={`w-full text-left block text-lg font-medium py-2 transition-colors flex items-center gap-2 ${
+                          selectedCurrency === currency
+                            ? 'text-brand-accent font-bold'
+                            : 'text-brand-secondary hover:text-brand-accent'
+                        }`}
+                      >
+                        <span>{CURRENCIES[currency].flag}</span>
+                        <span>{CURRENCIES[currency].symbol}</span>
+                        <span className="text-sm">({CURRENCIES[currency].code})</span>
+                      </button>
+                    </li>
+                  ))}
                 </ul>
               )}
             </li>

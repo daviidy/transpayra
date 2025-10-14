@@ -9,13 +9,9 @@ interface Step2Props {
 }
 
 const CURRENCIES = [
-  { code: 'USD', symbol: '$', name: 'US Dollar' },
+  { code: 'XOF', symbol: 'F CFA', name: 'West African CFA Franc' },
   { code: 'EUR', symbol: '€', name: 'Euro' },
-  { code: 'GBP', symbol: '£', name: 'British Pound' },
-  { code: 'XOF', symbol: 'CFA', name: 'West African CFA Franc' },
-  { code: 'NGN', symbol: '₦', name: 'Nigerian Naira' },
-  { code: 'ZAR', symbol: 'R', name: 'South African Rand' },
-  { code: 'KES', symbol: 'KSh', name: 'Kenyan Shilling' },
+  { code: 'USD', symbol: '$', name: 'US Dollar' },
 ]
 
 export function Step2Compensation({ formData, updateFormData, errors }: Step2Props) {

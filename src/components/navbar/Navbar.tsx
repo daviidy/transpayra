@@ -8,12 +8,16 @@ import { AuthModal } from './AuthModal'
 import { MobileMenu } from './MobileMenu'
 import { SearchAutocomplete } from '@/components/search/SearchAutocomplete'
 import { useAuth } from '@/contexts/AuthContext'
+import { useCurrency } from '@/contexts/CurrencyContext'
+import { CURRENCIES, Currency } from '@/lib/currency'
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const [isSalariesDropdownOpen, setIsSalariesDropdownOpen] = useState(false)
+  const [isCurrencyDropdownOpen, setIsCurrencyDropdownOpen] = useState(false)
   const { user } = useAuth()
+  const { selectedCurrency, setSelectedCurrency } = useCurrency()
 
   const handleAuthClick = () => {
     setIsAuthModalOpen(true)
@@ -92,6 +96,57 @@ export function Navbar() {
                     >
                       By Industry
                     </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Currency Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsCurrencyDropdownOpen(!isCurrencyDropdownOpen)}
+                  onBlur={() => setTimeout(() => setIsCurrencyDropdownOpen(false), 200)}
+                  className="text-sm font-medium text-brand-secondary hover:text-brand-accent transition-colors px-3 py-2 flex items-center gap-1"
+                >
+                  {CURRENCIES[selectedCurrency].flag} {CURRENCIES[selectedCurrency].symbol}
+                  <svg
+                    className={`w-4 h-4 transition-transform ${
+                      isCurrencyDropdownOpen ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                {isCurrencyDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+                    {(Object.keys(CURRENCIES) as Currency[]).map((currency) => (
+                      <button
+                        key={currency}
+                        onClick={() => {
+                          setSelectedCurrency(currency)
+                          setIsCurrencyDropdownOpen(false)
+                        }}
+                        className={`w-full text-left px-4 py-2 text-sm hover:bg-brand-primary transition-colors first:rounded-t-lg last:rounded-b-lg flex items-center gap-2 ${
+                          selectedCurrency === currency
+                            ? 'bg-brand-primary text-brand-accent font-semibold'
+                            : 'text-brand-secondary'
+                        }`}
+                      >
+                        <span>{CURRENCIES[currency].flag}</span>
+                        <span>{CURRENCIES[currency].symbol}</span>
+                        <span className="text-xs text-gray-600">
+                          {CURRENCIES[currency].code}
+                        </span>
+                      </button>
+                    ))}
                   </div>
                 )}
               </div>

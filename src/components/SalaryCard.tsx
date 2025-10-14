@@ -1,6 +1,10 @@
+'use client'
+
 import { Building2, MapPin, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import { CompanyLogo } from "./CompanyLogo"
+import { useCurrency } from "@/contexts/CurrencyContext"
+import { Currency } from "@/lib/currency"
 
 interface SalaryCardProps {
   id: number
@@ -11,6 +15,7 @@ interface SalaryCardProps {
   baseSalary: string
   bonus: string
   stockCompensation: string
+  currency: string
   yearsOfExperience: number
   level?: string
 }
@@ -24,14 +29,17 @@ export function SalaryCard({
   baseSalary,
   bonus,
   stockCompensation,
+  currency,
   yearsOfExperience,
   level,
 }: SalaryCardProps) {
-  const totalComp = (
-    parseFloat(baseSalary) +
-    parseFloat(bonus) +
-    parseFloat(stockCompensation)
-  ).toLocaleString('en-US', { maximumFractionDigits: 0 })
+  const { formatAmount } = useCurrency()
+
+  const totalComp = parseFloat(baseSalary) + parseFloat(bonus) + parseFloat(stockCompensation)
+  const formattedTotal = formatAmount(totalComp, currency as Currency)
+  const formattedBase = formatAmount(parseFloat(baseSalary), currency as Currency)
+  const formattedBonus = formatAmount(parseFloat(bonus), currency as Currency)
+  const formattedStock = formatAmount(parseFloat(stockCompensation), currency as Currency)
 
   return (
     <Link
@@ -61,19 +69,19 @@ export function SalaryCard({
       <div className="mt-3 space-y-1">
         <div className="flex items-center justify-between text-sm">
           <span className="text-black font-medium">Total Compensation:</span>
-          <span className="text-brand-secondary font-bold text-lg">${totalComp}</span>
+          <span className="text-brand-secondary font-bold text-lg">{formattedTotal}</span>
         </div>
         <div className="flex items-center justify-between text-xs text-gray-600">
           <span>Base Salary:</span>
-          <span className="font-medium">${parseFloat(baseSalary).toLocaleString('en-US', { maximumFractionDigits: 0 })}</span>
+          <span className="font-medium">{formattedBase}</span>
         </div>
         <div className="flex items-center justify-between text-xs text-gray-600">
           <span>Bonus:</span>
-          <span className="font-medium">${parseFloat(bonus).toLocaleString('en-US', { maximumFractionDigits: 0 })}</span>
+          <span className="font-medium">{formattedBonus}</span>
         </div>
         <div className="flex items-center justify-between text-xs text-gray-600">
           <span>Stock:</span>
-          <span className="font-medium">${parseFloat(stockCompensation).toLocaleString('en-US', { maximumFractionDigits: 0 })}</span>
+          <span className="font-medium">{formattedStock}</span>
         </div>
       </div>
 

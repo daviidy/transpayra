@@ -17,6 +17,7 @@ export async function getSalariesByJobTitle(jobTitleName: string, limit: number 
       baseSalary: salarySubmission.baseSalary,
       bonus: salarySubmission.bonus,
       stockCompensation: salarySubmission.stockCompensation,
+      currency: salarySubmission.currency,
       yearsOfExperience: salarySubmission.yearsOfExperience,
     })
     .from(salarySubmission)
@@ -37,6 +38,7 @@ export async function getSalariesByJobTitle(jobTitleName: string, limit: number 
     baseSalary: sub.baseSalary,
     bonus: sub.bonus || '0',
     stockCompensation: sub.stockCompensation || '0',
+    currency: sub.currency || 'XOF',
     yearsOfExperience: sub.yearsOfExperience,
     level: sub.levelName || undefined,
   }))

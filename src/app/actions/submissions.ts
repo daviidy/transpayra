@@ -18,6 +18,7 @@ export interface SubmissionDetails {
   baseSalary: string
   bonus: string
   stockCompensation: string
+  currency: string
   yearsOfExperience: number
   yearsAtCompany: number
   submissionDate: Date
@@ -39,6 +40,7 @@ export async function getSubmissionDetails(submissionId: number): Promise<Submis
       baseSalary: salarySubmission.baseSalary,
       bonus: salarySubmission.bonus,
       stockCompensation: salarySubmission.stockCompensation,
+      currency: salarySubmission.currency,
       yearsOfExperience: salarySubmission.yearsOfExperience,
       yearsAtCompany: salarySubmission.yearsAtCompany,
       submissionDate: salarySubmission.submissionDate,

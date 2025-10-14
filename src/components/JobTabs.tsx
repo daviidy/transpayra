@@ -15,6 +15,7 @@ interface Submission {
   baseSalary: string
   bonus: string
   stockCompensation: string
+  currency: string
   yearsOfExperience: number
   level?: string
 }
@@ -123,6 +124,7 @@ export function JobTabs() {
                     baseSalary={submission.baseSalary}
                     bonus={submission.bonus}
                     stockCompensation={submission.stockCompensation}
+                    currency={submission.currency}
                     yearsOfExperience={submission.yearsOfExperience}
                     level={submission.level}
                   />

@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react'
 import { getUserSubmissions, type UserSubmission } from '@/app/actions/get-user-submissions'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { DollarSign, Briefcase, MapPin, TrendingUp, Calendar, User, LogOut } from 'lucide-react'
+import Image from 'next/image'
+import { DollarSign, Briefcase, MapPin, TrendingUp, Calendar, User, LogOut, Menu, X } from 'lucide-react'
 
 export default function DashboardPage() {
   const { user, loading, signOut } = useAuth()
@@ -15,6 +16,7 @@ export default function DashboardPage() {
   const [submissions, setSubmissions] = useState<UserSubmission[]>([])
   const [loadingSubmissions, setLoadingSubmissions] = useState(true)
   const [activeTab, setActiveTab] = useState('submissions')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     if (!loading && !user) {
@@ -30,6 +32,18 @@ export default function DashboardPage() {
       })
     }
   }, [user, token])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
 
   if (loading || !user) {
     return (
@@ -63,9 +77,24 @@ export default function DashboardPage() {
       <header className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-base font-bold text-gray-900">
-              Transpayra
-            </Link>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="lg:hidden p-2 text-brand-secondary hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label="Open menu"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+              <Link href="/" className="flex-shrink-0">
+                <Image
+                  src="/transpayra_main.png"
+                  alt="Transpayra"
+                  width={200}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+              </Link>
+            </div>
             <button
               onClick={signOut}
               className="px-4 py-2 text-sm font-medium text-brand-secondary bg-white border border-gray-300 rounded-lg hover:bg-brand-primary transition-colors"
@@ -76,9 +105,86 @@ export default function DashboardPage() {
         </div>
       </header>
 
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto">
+          <div className="p-6">
+            {/* Close Button */}
+            <div className="flex justify-end mb-6">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 text-brand-secondary hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Profile Section */}
+            <div className="mb-8">
+              <div className="flex items-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                  {getInitials(user.email || '')}
+                </div>
+                <div>
+                  <h2 className="text-lg font-bold text-gray-900">
+                    {user.user_metadata?.full_name || user.email?.split('@')[0]}
+                  </h2>
+                  <p className="text-sm text-gray-500">{user.email}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="space-y-1">
+              <button
+                onClick={() => {
+                  setActiveTab('submissions')
+                  setIsMobileMenuOpen(false)
+                }}
+                className={`w-full text-left block py-3 px-3 text-sm rounded-lg transition-colors ${
+                  activeTab === 'submissions'
+                    ? 'text-brand-secondary font-medium bg-brand-primary'
+                    : 'text-gray-800 hover:text-brand-secondary hover:bg-gray-50'
+                }`}
+              >
+                My Submissions
+              </button>
+              <button
+                onClick={() => {
+                  setActiveTab('stats')
+                  setIsMobileMenuOpen(false)
+                }}
+                className={`w-full text-left block py-3 px-3 text-sm rounded-lg transition-colors ${
+                  activeTab === 'stats'
+                    ? 'text-brand-secondary font-medium bg-brand-primary'
+                    : 'text-gray-800 hover:text-brand-secondary hover:bg-gray-50'
+                }`}
+              >
+                Statistics
+              </button>
+              <Link
+                href="/"
+                className="block py-3 px-3 text-sm text-gray-800 hover:text-brand-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Browse Salaries
+              </Link>
+              <Link
+                href="/contribute"
+                className="block py-3 px-3 text-sm text-gray-800 hover:text-brand-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Add New Submission
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
+
       <div className="flex">
-        {/* Left Sidebar */}
-        <aside className="w-1/4 bg-white border-r border-gray-200 min-h-screen">
+        {/* Left Sidebar - Hidden on Mobile */}
+        <aside className="hidden lg:block w-1/4 bg-white border-r border-gray-200 min-h-screen">
           <div className="p-8">
             {/* Profile Section */}
             <div className="mb-8">
@@ -135,13 +241,13 @@ export default function DashboardPage() {
 
         {/* Main Content Area */}
         <main className="flex-1 bg-white">
-          <div className="p-16">
+          <div className="p-6 lg:p-16">
             {activeTab === 'submissions' && (
               <>
                 {/* Section Header */}
-                <div className="mb-12">
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">My Submissions</h1>
-                  <p className="text-base text-gray-500">
+                <div className="mb-8 lg:mb-12">
+                  <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">My Submissions</h1>
+                  <p className="text-sm lg:text-base text-gray-500">
                     View and manage your salary submissions
                   </p>
                 </div>
@@ -149,13 +255,13 @@ export default function DashboardPage() {
                 {loadingSubmissions ? (
                   <div className="text-center py-12 text-gray-500">Loading submissions...</div>
                 ) : submissions.length === 0 ? (
-                  <div className="text-center py-12">
-                    <DollarSign className="w-16 h-16 mx-auto text-gray-300 mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">No submissions yet</h3>
-                    <p className="text-gray-500 mb-6">Start contributing to unlock salary data</p>
+                  <div className="text-center py-12 px-4">
+                    <DollarSign className="w-12 h-12 lg:w-16 lg:h-16 mx-auto text-gray-300 mb-4" />
+                    <h3 className="text-base lg:text-lg font-medium text-gray-900 mb-2">No submissions yet</h3>
+                    <p className="text-sm lg:text-base text-gray-500 mb-6">Start contributing to unlock salary data</p>
                     <Link
                       href="/contribute"
-                      className="inline-block px-6 py-3 bg-brand-secondary text-white rounded-lg hover:bg-brand-accent transition-colors"
+                      className="inline-block px-5 py-2.5 lg:px-6 lg:py-3 text-sm lg:text-base bg-brand-secondary text-white rounded-lg hover:bg-brand-accent transition-colors"
                     >
                       Add Your First Salary
                     </Link>
@@ -165,12 +271,12 @@ export default function DashboardPage() {
                     {submissions.map((submission) => (
                       <div
                         key={submission.submissionId}
-                        className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all cursor-pointer"
+                        className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all cursor-pointer"
                       >
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-3">
-                              <h3 className="text-lg font-bold text-gray-900">
+                            <div className="flex flex-wrap items-center gap-2 lg:gap-3 mb-3">
+                              <h3 className="text-base lg:text-lg font-bold text-gray-900">
                                 {submission.jobTitle}
                               </h3>
                               {submission.level && (
@@ -180,7 +286,7 @@ export default function DashboardPage() {
                               )}
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4 mb-4">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4 mb-4">
                               <div className="flex items-center gap-2 text-sm text-gray-600">
                                 <Briefcase className="w-4 h-4" />
                                 {submission.company}
@@ -199,15 +305,15 @@ export default function DashboardPage() {
                               </div>
                             </div>
 
-                            <div className="flex items-center gap-6">
+                            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
                               <div>
                                 <div className="text-xs text-gray-500 mb-1">Total Compensation</div>
-                                <div className="text-2xl font-bold text-brand-secondary">
+                                <div className="text-xl lg:text-2xl font-bold text-brand-secondary">
                                   {formatCurrency(submission.totalCompensation)}
                                 </div>
                               </div>
-                              <div className="h-8 w-px bg-gray-200" />
-                              <div className="flex gap-4 text-sm">
+                              <div className="hidden lg:block h-8 w-px bg-gray-200" />
+                              <div className="flex gap-4 lg:gap-6 text-sm">
                                 <div>
                                   <div className="text-gray-500">Base</div>
                                   <div className="font-medium">{formatCurrency(submission.baseSalary)}</div>
@@ -234,64 +340,64 @@ export default function DashboardPage() {
             {activeTab === 'stats' && (
               <>
                 {/* Section Header */}
-                <div className="mb-12">
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">Statistics</h1>
-                  <p className="text-base text-gray-500">
+                <div className="mb-8 lg:mb-12">
+                  <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Statistics</h1>
+                  <p className="text-sm lg:text-base text-gray-500">
                     Overview of your salary submission data
                   </p>
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
                   {/* Total Submissions Card */}
-                  <div className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-base font-bold text-gray-900 mb-2">Total Submissions</h3>
-                        <p className="text-4xl font-bold text-brand-secondary">{totalSubmissions}</p>
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Total Submissions</h3>
+                        <p className="text-3xl lg:text-4xl font-bold text-brand-secondary">{totalSubmissions}</p>
                       </div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
-                        <DollarSign className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
+                        <DollarSign className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                     </div>
                   </div>
 
                   {/* Average Compensation Card */}
-                  <div className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-base font-bold text-gray-900 mb-2">Avg Compensation</h3>
-                        <p className="text-4xl font-bold text-brand-secondary">
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Avg Compensation</h3>
+                        <p className="text-2xl lg:text-4xl font-bold text-brand-secondary">
                           {avgCompensation > 0 ? formatCurrency(avgCompensation) : '$0'}
                         </p>
                       </div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
-                        <TrendingUp className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
+                        <TrendingUp className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                     </div>
                   </div>
 
                   {/* Account Type Card */}
-                  <div className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-base font-bold text-gray-900 mb-2">Account Type</h3>
-                        <p className="text-sm text-gray-500">
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Account Type</h3>
+                        <p className="text-xs lg:text-sm text-gray-500">
                           {user.app_metadata?.provider ? `Signed in with ${user.app_metadata.provider}` : 'Email'}
                         </p>
                       </div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
-                        <User className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
+                        <User className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                     </div>
                   </div>
 
                   {/* Member Since Card */}
-                  <div className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-base font-bold text-gray-900 mb-2">Member Since</h3>
-                        <p className="text-sm text-gray-500">
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Member Since</h3>
+                        <p className="text-xs lg:text-sm text-gray-500">
                           {new Date(user.created_at || '').toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',
@@ -299,8 +405,8 @@ export default function DashboardPage() {
                           })}
                         </p>
                       </div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
-                        <Calendar className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
+                        <Calendar className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                     </div>
                   </div>

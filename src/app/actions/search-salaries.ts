@@ -62,6 +62,7 @@ export async function searchSalaries(filters: SearchFilters): Promise<SalaryResu
         baseSalary: salarySubmission.baseSalary,
         bonus: salarySubmission.bonus,
         stockCompensation: salarySubmission.stockCompensation,
+        currency: salarySubmission.currency,
         yearsOfExperience: salarySubmission.yearsOfExperience,
         yearsAtCompany: salarySubmission.yearsAtCompany,
         submissionDate: salarySubmission.submissionDate,
@@ -94,7 +95,7 @@ export async function searchSalaries(filters: SearchFilters): Promise<SalaryResu
         yearsOfExperience: r.yearsOfExperience,
         yearsAtCompany: r.yearsAtCompany,
         submissionDate: r.submissionDate,
-        currency: 'USD', // TODO: Add currency to schema
+        currency: r.currency || 'XOF',
       }
     })
   } catch (error) {
