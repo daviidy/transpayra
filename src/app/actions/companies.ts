@@ -1,7 +1,7 @@
 'use server'
 
 import { db } from '@/lib/db'
-import { company, salarySubmission, jobTitle, location, level } from '@/lib/db/schema'
+import { company, industry, salarySubmission, jobTitle, location, level } from '@/lib/db/schema'
 import { eq, desc, sql } from 'drizzle-orm'
 
 export interface CompanyDetails {
@@ -26,6 +26,7 @@ export interface CompanySalarySubmission {
   baseSalary: string
   bonus?: string
   stockCompensation?: string
+  currency: string
   yearsOfExperience: number
   yearsAtCompany: number
   submissionDate: Date
@@ -46,13 +47,14 @@ export async function getCompanyDetails(companyId: number): Promise<CompanyDetai
       name: company.name,
       logoUrl: company.logoUrl,
       website: company.website,
-      industry: company.industry,
+      industry: industry.name,
       headquarters: company.headquarters,
       founded: company.founded,
       companyType: company.companyType,
       description: company.description,
     })
     .from(company)
+    .leftJoin(industry, eq(company.industryId, industry.industryId))
     .where(eq(company.companyId, companyId))
     .limit(1)
 
@@ -78,6 +80,7 @@ export async function getCompanySalaries(
       baseSalary: salarySubmission.baseSalary,
       bonus: salarySubmission.bonus,
       stockCompensation: salarySubmission.stockCompensation,
+      currency: salarySubmission.currency,
       yearsOfExperience: salarySubmission.yearsOfExperience,
       yearsAtCompany: salarySubmission.yearsAtCompany,
       submissionDate: salarySubmission.submissionDate,
@@ -108,6 +111,7 @@ export async function getCompanySalaries(
       baseSalary: sub.baseSalary,
       bonus: sub.bonus || undefined,
       stockCompensation: sub.stockCompensation || undefined,
+      currency: sub.currency || 'XOF',
       yearsOfExperience: sub.yearsOfExperience,
       yearsAtCompany: sub.yearsAtCompany,
       submissionDate: sub.submissionDate,

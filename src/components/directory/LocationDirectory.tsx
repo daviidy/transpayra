@@ -33,7 +33,6 @@ const countryFlags: Record<string, string> = {
 
 export function LocationDirectory() {
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedRole, setSelectedRole] = useState('Software Engineer')
   const [locations, setLocations] = useState<Location[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -82,10 +81,9 @@ export function LocationDirectory() {
         </p>
       </div>
 
-      {/* Search & Filters Row */}
-      <div className="flex flex-col md:flex-row gap-4 mb-12 items-center">
-        {/* Search Bar */}
-        <div className="relative flex-1 max-w-2xl w-full">
+      {/* Search Bar */}
+      <div className="flex justify-center mb-12">
+        <div className="relative w-full max-w-4xl">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <Search className="h-5 w-5 text-gray-400" />
           </div>
@@ -96,21 +94,6 @@ export function LocationDirectory() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-        </div>
-
-        {/* Role Dropdown */}
-        <div className="w-full md:w-auto">
-          <select
-            className="px-6 py-4 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-transparent shadow-sm min-w-48"
-            value={selectedRole}
-            onChange={(e) => setSelectedRole(e.target.value)}
-          >
-            <option>Software Engineer</option>
-            <option>Product Manager</option>
-            <option>Data Scientist</option>
-            <option>UI/UX Designer</option>
-            <option>DevOps Engineer</option>
-          </select>
         </div>
       </div>
 

@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { getCompanySalaries } from '@/app/actions/companies'
 import type { CompanySalarySubmission } from '@/app/actions/companies'
+import { useCurrency } from '@/contexts/CurrencyContext'
+import { Currency } from '@/lib/currency'
 
 interface SalariesTabProps {
   companyId: number
@@ -23,6 +25,7 @@ export function SalariesTab({ companyId, companyName }: SalariesTabProps) {
   const [unlocked, setUnlocked] = useState(false)
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set())
   const router = useRouter()
+  const { formatAmount } = useCurrency()
 
   useEffect(() => {
     async function fetchData() {
@@ -35,17 +38,16 @@ export function SalariesTab({ companyId, companyName }: SalariesTabProps) {
     fetchData()
   }, [companyId])
 
-  const formatCurrency = (amount: string | number | undefined) => {
+  const formatCurrency = (amount: string | number | undefined, currency: string) => {
     if (!amount) return 'N/A'
     const num = typeof amount === 'string' ? parseFloat(amount) : amount
-    return `$${Math.round(num).toLocaleString('en-US')}`
+    return formatAmount(num, currency as Currency)
   }
 
-  const formatShortCurrency = (amount: string | number | undefined) => {
+  const formatShortCurrency = (amount: string | number | undefined, currency: string) => {
     if (!amount) return 'N/A'
     const num = typeof amount === 'string' ? parseFloat(amount) : amount
-    const thousands = Math.round(num / 1000)
-    return `${thousands}K`
+    return formatAmount(num, currency as Currency, { compact: true })
   }
 
   const getTimeAgo = (date: Date) => {
@@ -176,12 +178,12 @@ export function SalariesTab({ companyId, companyName }: SalariesTabProps) {
                         </div>
                         <div>
                           <div className="font-bold text-lg text-black">
-                            {formatCurrency(submission.totalCompensation)}
+                            {formatCurrency(submission.totalCompensation, submission.currency)}
                           </div>
                           <div className="text-sm text-gray-600 mt-1">
-                            {formatShortCurrency(submission.baseSalary)} |{' '}
-                            {formatShortCurrency(submission.stockCompensation)} |{' '}
-                            {formatShortCurrency(submission.bonus)}
+                            {formatShortCurrency(submission.baseSalary, submission.currency)} |{' '}
+                            {formatShortCurrency(submission.stockCompensation, submission.currency)} |{' '}
+                            {formatShortCurrency(submission.bonus, submission.currency)}
                           </div>
                         </div>
                       </Link>
@@ -218,12 +220,12 @@ export function SalariesTab({ companyId, companyName }: SalariesTabProps) {
                               </div>
                               <div>
                                 <div className="font-bold text-lg text-black">
-                                  {formatCurrency(submission.totalCompensation)}
+                                  {formatCurrency(submission.totalCompensation, submission.currency)}
                                 </div>
                                 <div className="text-sm text-gray-600 mt-1">
-                                  {formatShortCurrency(submission.baseSalary)} |{' '}
-                                  {formatShortCurrency(submission.stockCompensation)} |{' '}
-                                  {formatShortCurrency(submission.bonus)}
+                                  {formatShortCurrency(submission.baseSalary, submission.currency)} |{' '}
+                                  {formatShortCurrency(submission.stockCompensation, submission.currency)} |{' '}
+                                  {formatShortCurrency(submission.bonus, submission.currency)}
                                 </div>
                               </div>
                             </div>

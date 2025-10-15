@@ -1,19 +1,17 @@
-import { getLocationSalaryStats } from '@/app/actions/salary-breakdown'
+import { getLocationJobTitles } from '@/app/actions/location-job-titles'
 import { Navbar } from '@/components/navbar/Navbar'
 import { Footer } from '@/components/Footer'
-import { LocationSalaryBreakdown } from '@/components/salary-breakdown/LocationSalaryBreakdown'
+import { LocationJobTitles } from '@/components/location/LocationJobTitles'
 import { notFound } from 'next/navigation'
 
 interface PageProps {
   params: Promise<{ slug: string }>
-  searchParams: Promise<{ role?: string; level?: string }>
 }
 
-export default async function LocationSalaryPage({ params, searchParams }: PageProps) {
+export default async function LocationPage({ params }: PageProps) {
   const { slug } = await params
-  const { role = 'Software Engineer', level } = await searchParams
 
-  const data = await getLocationSalaryStats(slug, role, level)
+  const data = await getLocationJobTitles(slug)
 
   if (!data) {
     notFound()
@@ -22,9 +20,7 @@ export default async function LocationSalaryPage({ params, searchParams }: PageP
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gray-50">
-        <LocationSalaryBreakdown data={data} initialRole={role} initialLevel={level} />
-      </main>
+      <LocationJobTitles data={data} />
       <Footer />
     </>
   )

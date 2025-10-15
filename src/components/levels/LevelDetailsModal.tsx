@@ -1,6 +1,7 @@
 'use client'
 
 import { X } from 'lucide-react'
+import { useCurrency } from '@/contexts/CurrencyContext'
 
 interface LevelDetailsModalProps {
   isOpen: boolean
@@ -27,11 +28,18 @@ export function LevelDetailsModal({
   stockCompensation,
   dataPointCount,
 }: LevelDetailsModalProps) {
+  const { formatAmount } = useCurrency()
+
   if (!isOpen) return null
 
   const basePercent = (baseSalary / totalCompensation) * 100
   const bonusPercent = (bonus / totalCompensation) * 100
   const stockPercent = (stockCompensation / totalCompensation) * 100
+
+  // Assume aggregated stats are in XOF (base currency)
+  const formatCurrency = (amount: number) => {
+    return formatAmount(amount, 'XOF')
+  }
 
   return (
     <div
@@ -64,7 +72,7 @@ export function LevelDetailsModal({
           <div className="text-center">
             <p className="text-sm text-gray-600 mb-2">Average Total Compensation</p>
             <p className="text-5xl font-bold text-brand-secondary">
-              ${totalCompensation.toLocaleString()}
+              {formatCurrency(totalCompensation)}
             </p>
             <p className="text-xs text-gray-500 mt-2">
               Based on {dataPointCount} data point{dataPointCount !== 1 ? 's' : ''}
@@ -77,16 +85,16 @@ export function LevelDetailsModal({
             <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-700">Base Salary</span>
-                <span className="font-semibold text-black">${baseSalary.toLocaleString()}</span>
+                <span className="font-semibold text-black">{formatCurrency(baseSalary)}</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-700">Bonus</span>
-                <span className="font-semibold text-black">${bonus.toLocaleString()}</span>
+                <span className="font-semibold text-black">{formatCurrency(bonus)}</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-700">Stock Compensation</span>
                 <span className="font-semibold text-black">
-                  ${stockCompensation.toLocaleString()}
+                  {formatCurrency(stockCompensation)}
                 </span>
               </div>
             </div>

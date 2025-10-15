@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import type { LocationSalaryData } from '@/app/actions/salary-breakdown'
+import { useCurrency } from '@/contexts/CurrencyContext'
 
 interface LocationSalaryBreakdownProps {
   data: LocationSalaryData
@@ -14,13 +15,15 @@ interface LocationSalaryBreakdownProps {
 export function LocationSalaryBreakdown({ data, initialRole, initialLevel }: LocationSalaryBreakdownProps) {
   const router = useRouter()
   const [selectedLevel, setSelectedLevel] = useState(initialLevel || 'all')
+  const { formatAmount } = useCurrency()
 
+  // Assume aggregated stats are in XOF (base currency)
   const formatCurrency = (amount: number) => {
-    return `$${Math.round(amount / 1000)}K`
+    return formatAmount(amount, 'XOF', { compact: true })
   }
 
   const formatCurrencyLong = (amount: number) => {
-    return `$${amount.toLocaleString('en-US', { maximumFractionDigits: 0 })}`
+    return formatAmount(amount, 'XOF')
   }
 
   const formatDate = (date: Date) => {

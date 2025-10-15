@@ -107,9 +107,16 @@ export async function getIndustryOverviewData(
   // Calculate median for each role
   const topRoles: TopRoleSalary[] = topRolesQuery
     .map((role) => {
-      const salaries = (role.salaries as unknown as string[])
-        .map((s) => parseFloat(s))
+      // Handle cases where salaries might not be an array
+      const salariesRaw = role.salaries as unknown
+      const salariesArray = Array.isArray(salariesRaw) ? salariesRaw : []
+
+      const salaries = salariesArray
+        .filter((s) => s != null && s !== '')
+        .map((s) => parseFloat(String(s)))
+        .filter((s) => !isNaN(s))
         .sort((a, b) => a - b)
+
       const median =
         salaries.length > 0
           ? salaries[Math.floor(salaries.length / 2)]
@@ -120,6 +127,7 @@ export async function getIndustryOverviewData(
         medianSalary: Math.round(median),
       }
     })
+    .filter((role) => role.medianSalary > 0)
     .sort((a, b) => b.medianSalary - a.medianSalary)
     .slice(0, 4)
 
@@ -195,9 +203,16 @@ export async function getIndustryOverviewData(
 
   const topCompanies: TopPayingCompany[] = topCompaniesQuery
     .map((c) => {
-      const salaries = (c.salaries as unknown as string[])
-        .map((s) => parseFloat(s))
+      // Handle cases where salaries might not be an array
+      const salariesRaw = c.salaries as unknown
+      const salariesArray = Array.isArray(salariesRaw) ? salariesRaw : []
+
+      const salaries = salariesArray
+        .filter((s) => s != null && s !== '')
+        .map((s) => parseFloat(String(s)))
+        .filter((s) => !isNaN(s))
         .sort((a, b) => a - b)
+
       const median =
         salaries.length > 0
           ? salaries[Math.floor(salaries.length / 2)]
@@ -209,6 +224,7 @@ export async function getIndustryOverviewData(
         medianSalary: Math.round(median),
       }
     })
+    .filter((c) => c.medianSalary > 0)
     .sort((a, b) => b.medianSalary - a.medianSalary)
     .slice(0, 4)
 
@@ -235,9 +251,16 @@ export async function getIndustryOverviewData(
 
   const topLocations: TopPayingLocation[] = topLocationsQuery
     .map((loc) => {
-      const salaries = (loc.salaries as unknown as string[])
-        .map((s) => parseFloat(s))
+      // Handle cases where salaries might not be an array
+      const salariesRaw = loc.salaries as unknown
+      const salariesArray = Array.isArray(salariesRaw) ? salariesRaw : []
+
+      const salaries = salariesArray
+        .filter((s) => s != null && s !== '')
+        .map((s) => parseFloat(String(s)))
+        .filter((s) => !isNaN(s))
         .sort((a, b) => a - b)
+
       const median =
         salaries.length > 0
           ? salaries[Math.floor(salaries.length / 2)]
@@ -251,6 +274,7 @@ export async function getIndustryOverviewData(
         medianSalary: Math.round(median),
       }
     })
+    .filter((loc) => loc.medianSalary > 0)
     .sort((a, b) => b.medianSalary - a.medianSalary)
     .slice(0, 4)
 

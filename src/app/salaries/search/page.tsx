@@ -2,6 +2,7 @@ import { Navbar } from '@/components/navbar/Navbar'
 import { Footer } from '@/components/Footer'
 import { searchSalaries, SearchFilters } from '@/app/actions/search-salaries'
 import { SalaryResultsList } from '@/components/search/SalaryResultsList'
+import { SearchStatsCard } from '@/components/search/SearchStatsCard'
 import { db } from '@/lib/db'
 import { company, jobTitle, location, industry } from '@/lib/db/schema'
 import { eq } from 'drizzle-orm'
@@ -139,74 +140,14 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
           {/* Hero Stats Card */}
           {results.length > 0 ? (
             <>
-              <div className="bg-white rounded-2xl shadow-lg mb-12 overflow-hidden">
-                {/* Top Section */}
-                <div className="p-8">
-                  <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8">
-                    {/* Left: Main Salary */}
-                    <div className="mb-6 lg:mb-0">
-                      <div className="text-5xl font-bold text-green-600 mb-2">
-                        ${Math.round(medianCompensation).toLocaleString()}
-                      </div>
-                      <div className="text-gray-600 text-lg">Median Total Comp</div>
-                    </div>
-
-                    {/* Center: Percentile Stats */}
-                    <div className="flex flex-wrap gap-6 mb-6 lg:mb-0">
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-green-400">
-                          ${Math.round(p25 / 1000)}K
-                        </div>
-                        <div className="text-gray-500 text-sm">25th percentile</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-green-600">
-                          ${Math.round(p75 / 1000)}K
-                        </div>
-                        <div className="text-gray-500 text-sm">75th percentile</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-green-800">
-                          ${Math.round(p90 / 1000)}K
-                        </div>
-                        <div className="text-gray-500 text-sm">90th percentile</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Middle Row: CTAs */}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                    <Link
-                      href="/contribute"
-                      className="bg-brand-secondary hover:bg-brand-accent text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
-                    >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                        ></path>
-                      </svg>
-                      <span>Contribute Your Salary</span>
-                    </Link>
-                  </div>
-
-                  {/* Bottom Row: Fine Print */}
-                  <div className="text-center text-gray-500 text-sm mb-6">
-                    <p>
-                      Based on {results.length} anonymous{' '}
-                      {results.length === 1 ? 'submission' : 'submissions'}. Last updated:{' '}
-                      {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <SearchStatsCard
+                median={medianCompensation}
+                p25={p25}
+                p75={p75}
+                p90={p90}
+                submissionCount={results.length}
+                filterName={filterName}
+              />
 
               {/* Salary Submissions List */}
               <SalaryResultsList results={results} />

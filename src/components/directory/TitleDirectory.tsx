@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { WhatsAppBanner } from './WhatsAppBanner'
 import { getIndustriesWithSubmissions } from '@/app/actions/directories'
 import type { IndustryWithSubmissions } from '@/app/actions/directories'
 
@@ -54,36 +55,8 @@ export function TitleDirectory() {
           </div>
         </div>
 
-        {/* Promotional Banner (Right Side - 1/3 width) */}
-        <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-          {/* Visual cue: Numbered circles */}
-          <div className="flex space-x-2 mb-4">
-            <div className="w-8 h-8 bg-brand-secondary text-white rounded-full flex items-center justify-center text-sm font-bold">
-              1
-            </div>
-            <div className="w-8 h-8 bg-brand-secondary text-white rounded-full flex items-center justify-center text-sm font-bold">
-              2
-            </div>
-            <div className="w-8 h-8 bg-brand-secondary text-white rounded-full flex items-center justify-center text-sm font-bold">
-              3
-            </div>
-          </div>
-
-          <h3 className="text-lg font-bold text-gray-900 mb-2">
-            Looking for the highest paying companies?
-          </h3>
-          <p className="text-gray-600 text-sm mb-4">
-            Check out our live leaderboard of top paying companies.
-          </p>
-
-          <Link
-            href="/leaderboard"
-            className="bg-brand-secondary hover:bg-brand-accent text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center space-x-2 w-fit"
-          >
-            <span>View Now</span>
-            <span>→</span>
-          </Link>
-        </div>
+        {/* WhatsApp Community Banner (Right Side - 1/3 width) */}
+        <WhatsAppBanner />
       </div>
 
       {/* Industries Grid */}

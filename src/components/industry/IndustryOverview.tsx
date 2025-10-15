@@ -5,26 +5,26 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { CompanyLogo } from '../CompanyLogo'
 import type { IndustryOverviewData } from '@/app/actions/industry-overview'
+import { useCurrency } from '@/contexts/CurrencyContext'
 
 interface IndustryOverviewProps {
   data: IndustryOverviewData
-  initialLocation?: string
 }
 
-export function IndustryOverview({ data, initialLocation }: IndustryOverviewProps) {
+export function IndustryOverview({ data }: IndustryOverviewProps) {
   const router = useRouter()
-  const [selectedLocation, setSelectedLocation] = useState(initialLocation || 'all')
   const [searchQuery, setSearchQuery] = useState('')
   const [unlocked, setUnlocked] = useState(false)
+  const { formatAmount } = useCurrency()
 
+  // Assume aggregated stats are in XOF (base currency)
   const formatCurrency = (amount: number) => {
-    return `$${Math.round(amount).toLocaleString('en-US')}`
+    return formatAmount(amount, 'XOF')
   }
 
   const formatShortCurrency = (amount: string | number) => {
     const num = typeof amount === 'string' ? parseFloat(amount) : amount
-    const thousands = Math.round(num / 1000)
-    return `${thousands}K`
+    return formatAmount(num, 'XOF', { compact: true })
   }
 
   const getTimeAgo = (date: Date) => {
@@ -42,16 +42,23 @@ export function IndustryOverview({ data, initialLocation }: IndustryOverviewProp
     return `${Math.floor(days / 7)} weeks ago`
   }
 
-  const handleLocationChange = (location: string) => {
-    setSelectedLocation(location)
-    const params = new URLSearchParams()
-    if (location !== 'all') params.set('location', location)
-    router.push(`/salaries/industry/${data.industrySlug}?${params.toString()}`)
-  }
+  // Filter submissions by search query
+  const filteredSubmissions = data.submissions.filter((submission) => {
+    if (!searchQuery) return true
+    const search = searchQuery.toLowerCase()
+    return (
+      submission.companyName.toLowerCase().includes(search) ||
+      submission.jobTitle.toLowerCase().includes(search) ||
+      submission.city.toLowerCase().includes(search) ||
+      submission.country.toLowerCase().includes(search) ||
+      (submission.state && submission.state.toLowerCase().includes(search)) ||
+      (submission.levelName && submission.levelName.toLowerCase().includes(search))
+    )
+  })
 
   // Show only first 3 submissions unless unlocked
-  const visibleSubmissions = unlocked ? data.submissions : data.submissions.slice(0, 3)
-  const lockedSubmissions = unlocked ? [] : data.submissions.slice(3)
+  const visibleSubmissions = unlocked ? filteredSubmissions : filteredSubmissions.slice(0, 3)
+  const lockedSubmissions = unlocked ? [] : filteredSubmissions.slice(3)
 
   return (
     <div>
@@ -74,33 +81,13 @@ export function IndustryOverview({ data, initialLocation }: IndustryOverviewProp
 
       {/* Top Salary Cards */}
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex flex-wrap gap-6 items-center justify-between">
-          {/* Salary Cards */}
-          <div className="flex flex-wrap gap-4 flex-1">
-            {data.topRoles.map((role) => (
-              <div key={role.jobTitleId} className="bg-white rounded-lg shadow-md p-6 min-w-[200px]">
-                <h3 className="text-gray-700 font-medium mb-2">{role.jobTitle}</h3>
-                <p className="text-2xl font-bold text-green-600">{formatCurrency(role.medianSalary)}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Location Dropdown */}
-          <div className="flex-shrink-0">
-            <select
-              value={selectedLocation}
-              onChange={(e) => handleLocationChange(e.target.value)}
-              className="bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="all">Choose Location</option>
-              {data.topLocations.map((loc) => (
-                <option key={loc.locationId} value={loc.slug}>
-                  {loc.city}
-                  {loc.state && `, ${loc.state}`}, {loc.country}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div className="flex flex-wrap gap-4">
+          {data.topRoles.map((role) => (
+            <div key={role.jobTitleId} className="bg-white rounded-lg shadow-md p-6 min-w-[200px]">
+              <h3 className="text-gray-700 font-medium mb-2">{role.jobTitle}</h3>
+              <p className="text-2xl font-bold text-green-600">{formatCurrency(role.medianSalary)}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -123,26 +110,15 @@ export function IndustryOverview({ data, initialLocation }: IndustryOverviewProp
 
           {/* Search and Controls */}
           <div className="flex flex-wrap gap-4 items-center justify-between mb-6">
-            <div className="flex gap-4 flex-1">
-              <input
-                type="text"
-                placeholder="Search City, Tag, Etc"
-                className="flex-1 max-w-md bg-white border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <select className="bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option>All Filters</option>
-                <option>Experience Level</option>
-                <option>Company Size</option>
-                <option>Job Family</option>
-              </select>
-            </div>
+            <input
+              type="text"
+              placeholder="Search City, Company, Job Title, Etc"
+              className="flex-1 max-w-md bg-white border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
 
             <div className="flex gap-3">
-              <button className="bg-gray-100 text-gray-700 px-4 py-3 rounded-lg hover:bg-gray-200 transition-colors">
-                🔔 Subscribe
-              </button>
               <Link
                 href="/contribute"
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
@@ -160,8 +136,8 @@ export function IndustryOverview({ data, initialLocation }: IndustryOverviewProp
               <tr>
                 <th className="text-left py-4 px-6 font-semibold">Company</th>
                 <th className="text-left py-4 px-6 font-semibold">Job Family</th>
-                <th className="text-left py-4 px-6 font-semibold">Years of Experience</th>
-                <th className="text-left py-4 px-6 font-semibold">Total Compensation (USD)</th>
+                <th className="text-left py-4 px-6 font-semibold">Experience</th>
+                <th className="text-left py-4 px-6 font-semibold">Total Compensation</th>
               </tr>
             </thead>
             <tbody>
@@ -195,18 +171,19 @@ export function IndustryOverview({ data, initialLocation }: IndustryOverviewProp
                   </td>
                   <td className="py-4 px-6">
                     <div>
-                      <p className="font-medium">{submission.jobTitle}</p>
+                      <p className="font-medium text-black">{submission.jobTitle}</p>
                       <p className="text-sm text-gray-500">{submission.levelName || '–'}</p>
                     </div>
                   </td>
                   <td className="py-4 px-6">
-                    <p>
-                      {submission.yearsOfExperience} / {submission.yearsAtCompany}
-                    </p>
+                    <div>
+                      <p className="text-black font-medium">{submission.yearsOfExperience} yrs total</p>
+                      <p className="text-sm text-gray-500">{submission.yearsAtCompany} yrs at company</p>
+                    </div>
                   </td>
                   <td className="py-4 px-6">
                     <div>
-                      <p className="font-bold text-lg">{formatCurrency(submission.totalCompensation)}</p>
+                      <p className="font-bold text-lg text-black">{formatCurrency(submission.totalCompensation)}</p>
                       <p className="text-sm text-gray-500">
                         {formatShortCurrency(submission.baseSalary)} |{' '}
                         {formatShortCurrency(submission.stockCompensation)} |{' '}
@@ -246,18 +223,19 @@ export function IndustryOverview({ data, initialLocation }: IndustryOverviewProp
                       </td>
                       <td className="py-4 px-6">
                         <div>
-                          <p className="font-medium">{submission.jobTitle}</p>
+                          <p className="font-medium text-black">{submission.jobTitle}</p>
                           <p className="text-sm text-gray-500">{submission.levelName || '–'}</p>
                         </div>
                       </td>
                       <td className="py-4 px-6">
-                        <p>
-                          {submission.yearsOfExperience} / {submission.yearsAtCompany}
-                        </p>
+                        <div>
+                          <p className="text-black font-medium">{submission.yearsOfExperience} yrs total</p>
+                          <p className="text-sm text-gray-500">{submission.yearsAtCompany} yrs at company</p>
+                        </div>
                       </td>
                       <td className="py-4 px-6">
                         <div>
-                          <p className="font-bold text-lg">{formatCurrency(submission.totalCompensation)}</p>
+                          <p className="font-bold text-lg text-black">{formatCurrency(submission.totalCompensation)}</p>
                           <p className="text-sm text-gray-500">
                             {formatShortCurrency(submission.baseSalary)} |{' '}
                             {formatShortCurrency(submission.stockCompensation)} |{' '}
@@ -307,71 +285,6 @@ export function IndustryOverview({ data, initialLocation }: IndustryOverviewProp
         </div>
       </div>
 
-      {/* Two Column Layout */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Top Paying Companies */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-gray-900">Top Paying Companies</h3>
-              <Link
-                href="/leaderboard"
-                className="bg-white border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
-              >
-                🏆 See our Leaderboard
-              </Link>
-            </div>
-
-            <div className="space-y-4">
-              {data.topCompanies.map((company) => (
-                <Link
-                  key={company.companyId}
-                  href={`/company/${company.companyId}?tab=salaries`}
-                  className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <CompanyLogo companyName={company.companyName} logoUrl={company.companyLogo} size="sm" />
-                    <span className="text-blue-600 font-medium hover:underline">{company.companyName}</span>
-                  </div>
-                  <span className="font-bold text-gray-900">{formatCurrency(company.medianSalary)}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Top Paying Locations */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-gray-900">Top Paying Locations</h3>
-              <Link
-                href="/salaries/by-location"
-                className="bg-white border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
-              >
-                🌐 See all locations
-              </Link>
-            </div>
-
-            <div className="space-y-4">
-              {data.topLocations.map((location) => (
-                <Link
-                  key={location.locationId}
-                  href={`/salaries/location/${location.slug}`}
-                  className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-red-500">📍</span>
-                    <span className="text-blue-600 font-medium hover:underline">
-                      {location.city}
-                      {location.state && `, ${location.state}`}, {location.country}
-                    </span>
-                  </div>
-                  <span className="font-bold text-gray-900">{formatCurrency(location.medianSalary)}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
