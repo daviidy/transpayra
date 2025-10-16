@@ -57,7 +57,6 @@ const frenchToEnglish: Record<string, string> = {
   'junior': 'Junior',
   'principal': 'Principal',
   'adjoint': 'Deputy',
-  'assistant': 'Assistant',
 
   // Business functions
   'gestion': 'Management',
@@ -263,8 +262,9 @@ async function translateAndDedupeJobsV2() {
             .set({ title: newTitle })
             .where(eq(jobTitle.jobTitleId, jobTitleId))
           updated++
-        } catch (error: any) {
-          console.error(`  ✗ Failed to update ID ${jobTitleId}: ${error.message}`)
+        } catch (error: unknown) {
+          const message = error && typeof error === 'object' && 'message' in error ? String(error.message) : 'Unknown error'
+          console.error(`  ✗ Failed to update ID ${jobTitleId}: ${message}`)
         }
 
         if (updated % 50 === 0) {

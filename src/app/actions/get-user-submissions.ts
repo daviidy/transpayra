@@ -12,11 +12,11 @@ export interface UserSubmission {
   location: string
   level: string | null
   baseSalary: string
-  bonus: string
-  stockCompensation: string
+  bonus: string | null
+  stockCompensation: string | null
   totalCompensation: string
   yearsOfExperience: number
-  yearsAtCompany: number
+  yearsAtCompany: number | null
   submissionDate: Date
 }
 
@@ -75,8 +75,8 @@ export async function getUserSubmissions(
       stockCompensation: row.stockCompensation,
       totalCompensation: (
         parseFloat(row.baseSalary) +
-        parseFloat(row.bonus) +
-        parseFloat(row.stockCompensation)
+        parseFloat(row.bonus || '0') +
+        parseFloat(row.stockCompensation || '0')
       ).toString(),
       yearsOfExperience: row.yearsOfExperience,
       yearsAtCompany: row.yearsAtCompany,

@@ -86,7 +86,7 @@ export function Step5Bonus({ formData, updateFormData, errors }: Step5Props) {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
         <h3 className="font-semibold text-gray-900 mb-2">💡 About Bonuses</h3>
         <p className="text-sm text-gray-700">
-          We use your actual bonus if provided. If not, we'll estimate using your target bonus
+          We use your actual bonus if provided. If not, we&apos;ll estimate using your target bonus
           percentage. This helps us calculate your total compensation accurately.
         </p>
       </div>

@@ -64,7 +64,7 @@ export function TitleDirectory() {
         <div className="text-center py-12 text-gray-500">Loading industries...</div>
       ) : filteredIndustries.length === 0 ? (
         <div className="text-center py-12 text-gray-500">
-          No industries found matching "{searchQuery}"
+          No industries found matching &quot;{searchQuery}&quot;
         </div>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

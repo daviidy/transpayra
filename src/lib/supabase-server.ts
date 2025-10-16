@@ -30,7 +30,7 @@ export const createServerComponentClient = async () => {
 }
 
 // Server-side client for API routes and Server Actions
-export const createRouteHandlerClient = (cookieStore: any) =>
+export const createRouteHandlerClient = (cookieStore: Awaited<ReturnType<typeof cookies>>) =>
   createServerClient(supabaseUrl, supabaseAnonKey, {
     cookies: {
       getAll() {

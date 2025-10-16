@@ -90,7 +90,6 @@ const translations: Record<string, string> = {
   'les': 'the',
   'general': 'general',
   'général': 'general',
-  'adjoint': 'assistant',
   'charge': 'manager',
   'chargé': 'manager',
 }

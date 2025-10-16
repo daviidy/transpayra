@@ -141,6 +141,7 @@ export function OverviewTab({ companyId, company, onViewAllSalaries }: OverviewT
                 stockCompensation={submission.stockCompensation || '0'}
                 yearsOfExperience={submission.yearsOfExperience}
                 level={submission.levelName}
+                currency={submission.currency}
               />
             ))}
           </div>

@@ -35,8 +35,8 @@ export function SearchAutocomplete({
 
   const inputRef = useRef<HTMLInputElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const debounceTimerRef = useRef<NodeJS.Timeout>()
-  const abortControllerRef = useRef<AbortController>()
+  const debounceTimerRef = useRef<NodeJS.Timeout | undefined>(undefined)
+  const abortControllerRef = useRef<AbortController | undefined>(undefined)
 
   // Flatten suggestions for keyboard navigation
   const flatSuggestions = [
@@ -269,7 +269,7 @@ export function SearchAutocomplete({
 
           {!loading && error && (
             <div className="px-3 py-4 text-sm text-gray-500 text-center">
-              Couldn't load suggestions. Try again.
+              Couldn&apos;t load suggestions. Try again.
             </div>
           )}
 

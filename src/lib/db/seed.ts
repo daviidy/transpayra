@@ -26,32 +26,32 @@ async function seed() {
 
   // Insert companies
   const companies = await db.insert(company).values([
-    { name: 'Google', website: 'https://google.com', logoUrl: null },
-    { name: 'Meta', website: 'https://meta.com', logoUrl: null },
-    { name: 'Amazon', website: 'https://amazon.com', logoUrl: null },
-    { name: 'Microsoft', website: 'https://microsoft.com', logoUrl: null },
-    { name: 'Apple', website: 'https://apple.com', logoUrl: null },
+    { name: 'Google', slug: 'google', website: 'https://google.com', logoUrl: null },
+    { name: 'Meta', slug: 'meta', website: 'https://meta.com', logoUrl: null },
+    { name: 'Amazon', slug: 'amazon', website: 'https://amazon.com', logoUrl: null },
+    { name: 'Microsoft', slug: 'microsoft', website: 'https://microsoft.com', logoUrl: null },
+    { name: 'Apple', slug: 'apple', website: 'https://apple.com', logoUrl: null },
   ]).returning()
   console.log('Companies seeded:', companies.length)
 
   // Insert job titles
   const jobTitles = await db.insert(jobTitle).values([
-    { title: 'Software Engineer' },
-    { title: 'Product Manager' },
-    { title: 'Data Scientist' },
-    { title: 'UI/UX Designer' },
-    { title: 'DevOps Engineer' },
+    { title: 'Software Engineer', slug: 'software-engineer' },
+    { title: 'Product Manager', slug: 'product-manager' },
+    { title: 'Data Scientist', slug: 'data-scientist' },
+    { title: 'UI/UX Designer', slug: 'ui-ux-designer' },
+    { title: 'DevOps Engineer', slug: 'devops-engineer' },
   ]).returning()
   console.log('Job titles seeded:', jobTitles.length)
 
   // Insert locations
   const locations = await db.insert(location).values([
-    { city: 'London', state: null, country: 'United Kingdom' },
-    { city: 'Berlin', state: null, country: 'Germany' },
-    { city: 'Paris', state: null, country: 'France' },
-    { city: 'Amsterdam', state: null, country: 'Netherlands' },
-    { city: 'Lagos', state: 'Lagos', country: 'Nigeria' },
-    { city: 'Nairobi', state: null, country: 'Kenya' },
+    { city: 'London', slug: 'london-united-kingdom', state: null, country: 'United Kingdom' },
+    { city: 'Berlin', slug: 'berlin-germany', state: null, country: 'Germany' },
+    { city: 'Paris', slug: 'paris-france', state: null, country: 'France' },
+    { city: 'Amsterdam', slug: 'amsterdam-netherlands', state: null, country: 'Netherlands' },
+    { city: 'Lagos', slug: 'lagos-nigeria', state: 'Lagos', country: 'Nigeria' },
+    { city: 'Nairobi', slug: 'nairobi-kenya', state: null, country: 'Kenya' },
   ]).returning()
   console.log('Locations seeded:', locations.length)
 

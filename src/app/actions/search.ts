@@ -96,7 +96,7 @@ export async function getSearchSuggestions(
     .limit(3)
 
   // Search levels (contextual if job title provided)
-  let levelsPromise = Promise.resolve([])
+  let levelsPromise: Promise<Array<{ id: number; name: string; companyName: string }>> = Promise.resolve([])
   if (contextJobTitle) {
     levelsPromise = db
       .select({
@@ -149,7 +149,7 @@ export async function getSearchSuggestions(
       type: 'industry' as const,
       submissionCount: Number(i.submissionCount),
     })),
-    levels: levelsData.map((lv: any) => ({
+    levels: levelsData.map((lv) => ({
       id: lv.id,
       name: `${lv.name} (${lv.companyName})`,
       type: 'level' as const,

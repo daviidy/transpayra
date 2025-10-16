@@ -28,7 +28,7 @@ export interface CompanySalarySubmission {
   stockCompensation?: string
   currency: string
   yearsOfExperience: number
-  yearsAtCompany: number
+  yearsAtCompany: number | null
   submissionDate: Date
   totalCompensation: number
 }

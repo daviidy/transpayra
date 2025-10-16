@@ -73,14 +73,15 @@ async function finalCleanup() {
             await db.update(jobTitle).set({ title: correct }).where(eq(jobTitle.jobTitleId, found.jobTitleId))
             console.log(`✓ Fixed: "${incorrect}" → "${correct}"`)
             fixedCount++
-          } catch (error: any) {
-            if (error.message.includes('duplicate key')) {
+          } catch (error: unknown) {
+            if (error && typeof error === 'object' && 'message' in error && typeof error.message === 'string' && error.message.includes('duplicate key')) {
               // Another record with this name exists, delete this one
               await db.delete(jobTitle).where(eq(jobTitle.jobTitleId, found.jobTitleId))
               console.log(`✓ Deleted: "${incorrect}" (duplicate of "${correct}")`)
               deletedCount++
             } else {
-              console.error(`✗ Failed: "${incorrect}" - ${error.message}`)
+              const message = error && typeof error === 'object' && 'message' in error ? String(error.message) : 'Unknown error'
+              console.error(`✗ Failed: "${incorrect}" - ${message}`)
             }
           }
         }

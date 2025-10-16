@@ -11,11 +11,11 @@ export interface SalaryResult {
   location: string
   level: string | null
   baseSalary: string
-  bonus: string
-  stockCompensation: string
+  bonus: string | null
+  stockCompensation: string | null
   totalCompensation: number
   yearsOfExperience: number
-  yearsAtCompany: number
+  yearsAtCompany: number | null
   submissionDate: Date
   currency: string
 }
@@ -78,8 +78,8 @@ export async function searchSalaries(filters: SearchFilters): Promise<SalaryResu
 
     return results.map((r) => {
       const base = parseFloat(r.baseSalary)
-      const bonus = parseFloat(r.bonus)
-      const stock = parseFloat(r.stockCompensation)
+      const bonus = parseFloat(r.bonus || '0')
+      const stock = parseFloat(r.stockCompensation || '0')
       const total = base + bonus + stock
 
       return {

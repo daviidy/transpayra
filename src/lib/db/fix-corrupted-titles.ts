@@ -91,8 +91,9 @@ async function fixCorruptedTitles() {
             console.log(`  ✓ Updated "${oldTitle}" → "${newTitle}"`)
           }
           fixed++
-        } catch (error: any) {
-          console.error(`  ✗ Failed to fix "${oldTitle}": ${error.message}`)
+        } catch (error: unknown) {
+          const message = error && typeof error === 'object' && 'message' in error ? String(error.message) : 'Unknown error'
+          console.error(`  ✗ Failed to fix "${oldTitle}": ${message}`)
         }
       }
 

@@ -125,14 +125,14 @@ const frenchToEnglish: Record<string, string> = {
   'Responsable Contrôle': 'Control Manager',
   'Responsable Risques': 'Risk Manager',
   'Responsable Commercial Banque': 'Bank Sales Manager',
-  'Manager 'ÉQuipe/Plateau': 'Team Manager',
+  'Manager \'ÉQuipe/Plateau': 'Team Manager',
   '\'ÉQuipe/Plateau': 'Team',
   'Responsable Actuariat': 'Actuarial Manager',
   'Justice Responsable': 'Legal Manager',
   'Responsable Fiscal': 'Tax Manager',
   'Responsable Informatique': 'IT Manager',
   'Transverses Responsable': 'Cross-functional Manager',
-  'Responsable 'ÉTudes': 'Research Manager',
+  'Responsable \'ÉTudes': 'Research Manager',
   'Commissioning Responsable': 'Commissioning Manager',
   'Responsable Gmao': 'CMMS Manager',
   'Responsable Méthodes': 'Methods Manager',
@@ -140,7 +140,7 @@ const frenchToEnglish: Record<string, string> = {
   'Travaux Neufs': 'New Works',
   'Responsable de Maintenance Adjoint': 'Deputy Maintenance Manager',
   'Responsable Bureau d\'ÉTudes': 'Design Office Manager',
-  'Manager Bureau d'ÉTudes': 'Design Office Manager',
+  'Manager Bureau d\'ÉTudes': 'Design Office Manager',
   'Responsable Immobilier': 'Real Estate Manager',
   'Responsable Salle': 'Room Manager',
   'Responsable Sav': 'After-Sales Manager',
@@ -389,7 +389,6 @@ const frenchToEnglish: Record<string, string> = {
   'Assistant Sales': 'Sales Assistant',
   'Assistant Commercial': 'Sales Assistant',
   'Assistant Commercial/ \'Agence': 'Branch Sales Assistant',
-  'Assistant Achats': 'Purchasing Assistant',
   'Assistant Logistique': 'Logistics Assistant',
   'Services Généraux': 'General Services',
   'Généraux': 'General',
@@ -439,7 +438,6 @@ const frenchToEnglish: Record<string, string> = {
   'Chargé de Formation': 'Training Manager',
   'ChargÉ of Recruitment/ Recruteur': 'Recruiter',
   'Chargé RH': 'HR Manager',
-  'ChargÉ/ Administrator': 'Payroll Administrator',
   'Chargé Rse': 'CSR Manager',
   'Administrateur': 'Administrator',
   'Administrateur Systèmes/ Réseaux': 'Systems Network Administrator',
@@ -473,7 +471,6 @@ const frenchToEnglish: Record<string, string> = {
   'Juriste': 'Lawyer',
   'Juriste Bancaire': 'Banking Lawyer',
   'Juriste Fiscaliste': 'Tax Lawyer',
-  'Justice Responsable': 'Legal Manager',
   'ÉLectricien': 'Electrician',
   'ÉLectricien Automobile': 'Automotive Electrician',
   'Maintenance/ ÉLectricien': 'Maintenance Electrician',
@@ -494,7 +491,6 @@ const frenchToEnglish: Record<string, string> = {
   'Hardware/Web Responsable': 'Hardware Web Manager',
   'Superviseur': 'Supervisor',
   'Superviseur Call Center': 'Call Center Supervisor',
-  'Superviseur/ Manager Télévente': 'Telesales Manager',
   'Médias Superviseur': 'Media Supervisor',
   'Boucher, Boulanger, Caissier…': 'Butcher Baker Cashier',
   'Vendeur & ÉQuipier Polyvalent': 'Sales Associate',
@@ -524,8 +520,9 @@ async function restoreAndTranslateProperly() {
           await db.update(jobTitle).set({ title: correct }).where(eq(jobTitle.jobTitleId, found.jobTitleId))
           console.log(`✓ Restored: "${corrupted}" → "${correct}"`)
           restoredCount++
-        } catch (error: any) {
-          console.error(`✗ Failed: "${corrupted}" - ${error.message}`)
+        } catch (error: unknown) {
+          const message = error && typeof error === 'object' && 'message' in error ? String(error.message) : 'Unknown error'
+          console.error(`✗ Failed: "${corrupted}" - ${message}`)
         }
       }
     }
@@ -551,8 +548,9 @@ async function restoreAndTranslateProperly() {
             await db.update(jobTitle).set({ title: english }).where(eq(jobTitle.jobTitleId, found.jobTitleId))
             console.log(`✓ Translated: "${french}" → "${english}"`)
             translatedCount++
-          } catch (error: any) {
-            console.error(`✗ Failed: "${french}" - ${error.message}`)
+          } catch (error: unknown) {
+            const message = error && typeof error === 'object' && 'message' in error ? String(error.message) : 'Unknown error'
+            console.error(`✗ Failed: "${french}" - ${message}`)
           }
         }
       }

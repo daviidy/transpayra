@@ -75,7 +75,7 @@ export function LevelsComparison({ jobTitle }: { jobTitle: string }) {
       setCompanyLevels(newLevels)
     } else {
       // Select company
-      let newSelected = [...selectedCompanies, companyName]
+      const newSelected = [...selectedCompanies, companyName]
 
       // FIFO: if already 3, remove the oldest
       if (newSelected.length > 3) {

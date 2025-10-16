@@ -37,7 +37,8 @@ export function SalaryResultsTable({ results }: SalaryResultsTableProps) {
     return 0
   })
 
-  const formatCurrency = (value: string | number) => {
+  const formatCurrency = (value: string | number | null) => {
+    if (value === null) return '$0'
     const num = typeof value === 'string' ? parseFloat(value) : value
     return `$${Math.round(num).toLocaleString()}`
   }

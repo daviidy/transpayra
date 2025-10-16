@@ -23,7 +23,7 @@ export default async function IndustryOverviewPage({ params, searchParams }: Pag
     <>
       <Navbar />
       <main className="min-h-screen bg-gray-50">
-        <IndustryOverview data={data} initialLocation={location} />
+        <IndustryOverview data={data} />
       </main>
       <Footer />
     </>

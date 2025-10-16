@@ -26,7 +26,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (user) {
-      getUserSubmissions(user.id, token).then((data) => {
+      getUserSubmissions(user.id, token ?? undefined).then((data) => {
         setSubmissions(data)
         setLoadingSubmissions(false)
       })
@@ -320,11 +320,11 @@ export default function DashboardPage() {
                                 </div>
                                 <div>
                                   <div className="text-gray-500">Stock</div>
-                                  <div className="font-medium">{formatCurrency(submission.stockCompensation)}</div>
+                                  <div className="font-medium">{formatCurrency(submission.stockCompensation ?? '0')}</div>
                                 </div>
                                 <div>
                                   <div className="text-gray-500">Bonus</div>
-                                  <div className="font-medium">{formatCurrency(submission.bonus)}</div>
+                                  <div className="font-medium">{formatCurrency(submission.bonus ?? '0')}</div>
                                 </div>
                               </div>
                             </div>

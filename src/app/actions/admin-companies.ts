@@ -40,19 +40,17 @@ export async function getAllCompanies(
     }
 
     // Get total count with same filter
-    const totalQuery = db
+    const totalQueryBase = db
       .select({ count: sql<number>`count(*)` })
       .from(company)
 
-    if (whereConditions) {
-      totalQuery.where(whereConditions)
-    }
-
-    const totalResult = await totalQuery.execute()
+    const totalResult = whereConditions
+      ? await totalQueryBase.where(whereConditions).execute()
+      : await totalQueryBase.execute()
     const total = Number(totalResult[0]?.count || 0)
 
     // Get companies with filter and include industry name
-    let query = db
+    const queryBase = db
       .select({
         companyId: company.companyId,
         name: company.name,
@@ -69,14 +67,16 @@ export async function getAllCompanies(
       .from(company)
       .leftJoin(industry, eq(company.industryId, industry.industryId))
 
-    if (whereConditions) {
-      query = query.where(whereConditions) as any
-    }
-
-    const companies = await query
-      .orderBy(company.name)
-      .limit(limit)
-      .offset(offset)
+    const companies = whereConditions
+      ? await queryBase
+          .where(whereConditions)
+          .orderBy(company.name)
+          .limit(limit)
+          .offset(offset)
+      : await queryBase
+          .orderBy(company.name)
+          .limit(limit)
+          .offset(offset)
 
     return { success: true, data: companies, total }
   } catch (error) {
@@ -106,15 +106,15 @@ export async function createCompany(
       .returning()
 
     return { success: true, data: newCompany }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error creating company:', error)
 
     // Handle unique constraint violations
-    if (error.code === '23505') {
-      if (error.constraint?.includes('name')) {
+    if (error && typeof error === 'object' && 'code' in error && error.code === '23505') {
+      if ('constraint' in error && typeof error.constraint === 'string' && error.constraint.includes('name')) {
         return { success: false, error: 'A company with this name already exists' }
       }
-      if (error.constraint?.includes('slug')) {
+      if ('constraint' in error && typeof error.constraint === 'string' && error.constraint.includes('slug')) {
         return { success: false, error: 'A company with this slug already exists' }
       }
     }
@@ -150,15 +150,15 @@ export async function updateCompany(
     }
 
     return { success: true, data: updatedCompany }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error updating company:', error)
 
     // Handle unique constraint violations
-    if (error.code === '23505') {
-      if (error.constraint?.includes('name')) {
+    if (error && typeof error === 'object' && 'code' in error && error.code === '23505') {
+      if ('constraint' in error && typeof error.constraint === 'string' && error.constraint.includes('name')) {
         return { success: false, error: 'A company with this name already exists' }
       }
-      if (error.constraint?.includes('slug')) {
+      if ('constraint' in error && typeof error.constraint === 'string' && error.constraint.includes('slug')) {
         return { success: false, error: 'A company with this slug already exists' }
       }
     }
@@ -179,11 +179,11 @@ export async function deleteCompany(
     await db.delete(company).where(eq(company.companyId, companyId))
 
     return { success: true }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error deleting company:', error)
 
     // Handle foreign key constraint violations
-    if (error.code === '23503') {
+    if (error && typeof error === 'object' && 'code' in error && error.code === '23503') {
       return {
         success: false,
         error: 'Cannot delete company: it has related salary submissions or levels'

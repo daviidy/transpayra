@@ -25,7 +25,7 @@ export function SalaryResultsList({ results }: SalaryResultsListProps) {
   // Check if user has access on mount
   useEffect(() => {
     async function verifyAccess() {
-      const hasAccess = await checkUserHasAccess(token, user?.id)
+      const hasAccess = await checkUserHasAccess(token ?? undefined, user?.id)
       setUnlocked(hasAccess)
       setCheckingAccess(false)
     }
@@ -145,13 +145,13 @@ export function SalaryResultsList({ results }: SalaryResultsListProps) {
                   <div className="flex justify-between">
                     <span>Stock:</span>
                     <span className="font-medium">
-                      {formatShortCurrencyWithConversion(submission.stockCompensation, submission.currency)}
+                      {formatShortCurrencyWithConversion(submission.stockCompensation ?? undefined, submission.currency)}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span>Bonus:</span>
                     <span className="font-medium">
-                      {formatShortCurrencyWithConversion(submission.bonus, submission.currency)}
+                      {formatShortCurrencyWithConversion(submission.bonus ?? undefined, submission.currency)}
                     </span>
                   </div>
                 </div>
@@ -240,13 +240,13 @@ export function SalaryResultsList({ results }: SalaryResultsListProps) {
                       <div className="flex justify-between">
                         <span>Stock:</span>
                         <span className="font-medium">
-                          {formatShortCurrencyWithConversion(submission.stockCompensation, submission.currency)}
+                          {formatShortCurrencyWithConversion(submission.stockCompensation ?? undefined, submission.currency)}
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span>Bonus:</span>
                         <span className="font-medium">
-                          {formatShortCurrencyWithConversion(submission.bonus, submission.currency)}
+                          {formatShortCurrencyWithConversion(submission.bonus ?? undefined, submission.currency)}
                         </span>
                       </div>
                     </div>

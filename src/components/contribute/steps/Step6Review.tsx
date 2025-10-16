@@ -193,7 +193,7 @@ export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
               Share anonymously according to our privacy policy
             </span>
             <p className="text-sm text-gray-600 mt-1">
-              Your submission will be completely anonymous. We don't store any personally identifiable
+              Your submission will be completely anonymous. We don&apos;t store any personally identifiable
               information.
             </p>
             {errors.privacyConsent && (
