@@ -1,6 +1,6 @@
 'use client'
 
-import { Building2, MapPin, TrendingUp } from "lucide-react"
+import { MapPin } from "lucide-react"
 import Link from "next/link"
 import { CompanyLogo } from "./CompanyLogo"
 import { useCurrency } from "@/contexts/CurrencyContext"
@@ -27,67 +27,39 @@ export function SalaryCard({
   jobTitle,
   location,
   baseSalary,
-  bonus,
-  stockCompensation,
   currency,
-  yearsOfExperience,
-  level,
 }: SalaryCardProps) {
   const { formatAmount } = useCurrency()
-
-  const totalComp = parseFloat(baseSalary) + parseFloat(bonus) + parseFloat(stockCompensation)
-  const formattedTotal = formatAmount(totalComp, currency as Currency)
   const formattedBase = formatAmount(parseFloat(baseSalary), currency as Currency)
-  const formattedBonus = formatAmount(parseFloat(bonus), currency as Currency)
-  const formattedStock = formatAmount(parseFloat(stockCompensation), currency as Currency)
 
   return (
     <Link
       href={`/submission/${id}`}
-      className="block w-full px-4 py-3 bg-white rounded-md shadow-md border border-gray-200 hover:shadow-lg transition-shadow cursor-pointer"
+      className="block w-60 flex flex-col bg-white border border-gray-200 rounded-xl pb-4 hover:shadow-lg transition-shadow cursor-pointer"
     >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm font-light text-black">
-          <CompanyLogo companyName={company} logoUrl={companyLogoUrl} size="sm" />
-          <span>{company}</span>
-        </div>
-        {level && (
-          <span className="px-3 py-1 text-xs text-brand-secondary uppercase bg-brand-primary rounded-full font-medium">
-            {level}
-          </span>
-        )}
-      </div>
-
-      <div>
-        <h3 className="mt-2 text-lg font-semibold text-black">{jobTitle}</h3>
-        <div className="flex items-center gap-2 mt-1 text-sm text-gray-600">
-          <MapPin className="w-4 h-4" />
-          <span>{location}</span>
+      {/* Decorative Header with Logo */}
+      <div className="h-14 relative rounded-t-xl bg-gradient-to-r from-brand-primary to-brand-secondary/20">
+        <div className="absolute -bottom-7 left-3 z-10">
+          <CompanyLogo companyName={company} logoUrl={companyLogoUrl} size="lg" />
         </div>
       </div>
 
-      <div className="mt-3 space-y-1">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-black font-medium">Total Compensation:</span>
-          <span className="text-brand-secondary font-bold text-lg">{formattedTotal}</span>
-        </div>
-        <div className="flex items-center justify-between text-xs text-gray-600">
-          <span>Base Salary:</span>
-          <span className="font-medium">{formattedBase}</span>
-        </div>
-        <div className="flex items-center justify-between text-xs text-gray-600">
-          <span>Bonus:</span>
-          <span className="font-medium">{formattedBonus}</span>
-        </div>
-        <div className="flex items-center justify-between text-xs text-gray-600">
-          <span>Stock:</span>
-          <span className="font-medium">{formattedStock}</span>
-        </div>
-      </div>
+      {/* Card Content */}
+      <div className="mt-10 px-4 flex flex-col">
+        <h4 className="text-sm font-semibold text-gray-900">
+          {jobTitle}
+        </h4>
+        <p className="text-xs font-medium text-gray-700 mt-0.5">
+          {company}
+        </p>
+        <p className="text-xs mt-1 text-gray-600 flex items-center gap-1">
+          <MapPin className="w-3 h-3" />
+          {location}
+        </p>
 
-      <div className="flex items-center gap-1 mt-3 text-xs text-gray-600">
-        <TrendingUp className="w-3 h-3" />
-        <span>{yearsOfExperience} years of experience</span>
+        <hr className="border-[1.5px] w-12 mt-6 mb-2 border-gray-200 rounded" />
+
+        <p className="text-lg font-bold text-brand-secondary">{formattedBase}</p>
       </div>
     </Link>
   )

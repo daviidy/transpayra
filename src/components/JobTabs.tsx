@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { Code, Briefcase, Database, Palette, Server } from 'lucide-react'
 import { SalaryCard } from './SalaryCard'
-import { LevelsComparison } from './levels/LevelsComparison'
 import { getSalariesByJobTitle } from '@/app/actions/salaries'
 
 interface Submission {
@@ -58,52 +57,30 @@ export function JobTabs() {
     <section className="bg-white py-12">
       <div className="container px-6 mx-auto">
         {/* Tabs with More link */}
-        <div className="flex flex-wrap justify-center items-center gap-3 mb-10 relative">
-          <div className="flex flex-wrap justify-center gap-3">
-            {jobCategories.map((category) => {
-              const Icon = category.icon
-              const isActive = activeTab === category.id
+        <div className="flex flex-wrap justify-center items-center gap-2 mb-10">
+          {jobCategories.map((category) => {
+            const Icon = category.icon
+            const isActive = activeTab === category.id
 
-              return (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveTab(category.id)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-all duration-200 ${
-                    isActive
-                      ? 'bg-brand-secondary text-white shadow-md'
-                      : 'bg-gray-100 text-black hover:bg-gray-200'
-                  }`}
-                >
-                  <Icon className="w-4 h-4" />
-                  <span>{category.label}</span>
-                </button>
-              )
-            })}
-          </div>
-
-          {/* More link */}
-          <a
-            href="/salaries/by-industry"
-            className="text-sm font-medium text-brand-secondary hover:text-brand-accent transition-colors flex items-center gap-1"
-          >
-            More →
-          </a>
+            return (
+              <button
+                key={category.id}
+                onClick={() => setActiveTab(category.id)}
+                className={`flex items-center gap-2 px-6 py-2 h-10 rounded-full font-medium text-sm transition-all duration-200 ${
+                  isActive
+                    ? 'bg-brand-primary text-brand-secondary'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                <span>{category.label}</span>
+              </button>
+            )
+          })}
         </div>
 
         {/* Content */}
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-black">
-              {activeCategory?.label} Salaries
-            </h2>
-            <a
-              href={`/salaries/${activeTab}`}
-              className="text-sm font-medium text-brand-secondary hover:text-brand-accent underline"
-            >
-              View All →
-            </a>
-          </div>
-
           {loading ? (
             <div className="text-center py-12 text-gray-500">Loading...</div>
           ) : submissions.length === 0 ? (
@@ -111,29 +88,24 @@ export function JobTabs() {
               No salary data available for this role yet.
             </div>
           ) : (
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {submissions.map((submission) => (
-                  <SalaryCard
-                    key={submission.id}
-                    id={submission.id}
-                    company={submission.company}
-                    companyLogoUrl={submission.companyLogoUrl}
-                    jobTitle={submission.jobTitle}
-                    location={submission.location}
-                    baseSalary={submission.baseSalary}
-                    bonus={submission.bonus}
-                    stockCompensation={submission.stockCompensation}
-                    currency={submission.currency}
-                    yearsOfExperience={submission.yearsOfExperience}
-                    level={submission.level}
-                  />
-                ))}
-              </div>
-
-              {/* Levels Comparison Section */}
-              <LevelsComparison jobTitle={activeCategory?.label || ''} />
-            </>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {submissions.map((submission) => (
+                <SalaryCard
+                  key={submission.id}
+                  id={submission.id}
+                  company={submission.company}
+                  companyLogoUrl={submission.companyLogoUrl}
+                  jobTitle={submission.jobTitle}
+                  location={submission.location}
+                  baseSalary={submission.baseSalary}
+                  bonus={submission.bonus}
+                  stockCompensation={submission.stockCompensation}
+                  currency={submission.currency}
+                  yearsOfExperience={submission.yearsOfExperience}
+                  level={submission.level}
+                />
+              ))}
+            </div>
           )}
         </div>
       </div>
