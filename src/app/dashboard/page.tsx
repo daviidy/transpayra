@@ -33,15 +33,23 @@ export default function DashboardPage() {
     }
   }, [user, token])
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll and handle escape key when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
+    if (!isMobileMenuOpen) return
+
+    // Lock body scroll
+    document.body.style.overflow = 'hidden'
+
+    // Handle escape key
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileMenuOpen(false)
     }
+
+    document.addEventListener('keydown', handleEscape)
+
     return () => {
       document.body.style.overflow = ''
+      document.removeEventListener('keydown', handleEscape)
     }
   }, [isMobileMenuOpen])
 
@@ -82,6 +90,7 @@ export default function DashboardPage() {
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="lg:hidden p-2 text-brand-secondary hover:bg-gray-100 rounded-lg transition-colors"
                 aria-label="Open menu"
+                aria-expanded={isMobileMenuOpen}
               >
                 <Menu className="w-6 h-6" />
               </button>
@@ -107,13 +116,22 @@ export default function DashboardPage() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto">
-          <div className="p-6">
-            {/* Close Button */}
-            <div className="flex justify-end mb-6">
+        <div className="fixed inset-0 z-50 bg-white lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile dashboard menu">
+          <div className="flex flex-col h-full">
+            {/* Header with close button */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                <Image
+                  src="/transpayra_main.png"
+                  alt="Transpayra"
+                  width={200}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+              </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 text-brand-secondary hover:bg-gray-100 rounded-lg transition-colors"
+                className="text-brand-secondary hover:text-brand-accent p-2"
                 aria-label="Close menu"
               >
                 <X className="w-6 h-6" />
@@ -121,13 +139,13 @@ export default function DashboardPage() {
             </div>
 
             {/* Profile Section */}
-            <div className="mb-8">
-              <div className="flex items-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+            <div className="px-6 py-6 border-b border-gray-200">
+              <div className="flex items-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
                   {getInitials(user.email || '')}
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-gray-900">
+                  <h2 className="text-base font-bold text-gray-900">
                     {user.user_metadata?.full_name || user.email?.split('@')[0]}
                   </h2>
                   <p className="text-sm text-gray-500">{user.email}</p>
@@ -136,48 +154,72 @@ export default function DashboardPage() {
             </div>
 
             {/* Navigation Links */}
-            <nav className="space-y-1">
-              <button
-                onClick={() => {
-                  setActiveTab('submissions')
-                  setIsMobileMenuOpen(false)
-                }}
-                className={`w-full text-left block py-3 px-3 text-sm rounded-lg transition-colors ${
-                  activeTab === 'submissions'
-                    ? 'text-brand-secondary font-medium bg-brand-primary'
-                    : 'text-gray-800 hover:text-brand-secondary hover:bg-gray-50'
-                }`}
-              >
-                My Submissions
-              </button>
-              <button
-                onClick={() => {
-                  setActiveTab('stats')
-                  setIsMobileMenuOpen(false)
-                }}
-                className={`w-full text-left block py-3 px-3 text-sm rounded-lg transition-colors ${
-                  activeTab === 'stats'
-                    ? 'text-brand-secondary font-medium bg-brand-primary'
-                    : 'text-gray-800 hover:text-brand-secondary hover:bg-gray-50'
-                }`}
-              >
-                Statistics
-              </button>
-              <Link
-                href="/"
-                className="block py-3 px-3 text-sm text-gray-800 hover:text-brand-secondary hover:bg-gray-50 rounded-lg transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Browse Salaries
-              </Link>
-              <Link
-                href="/contribute"
-                className="block py-3 px-3 text-sm text-gray-800 hover:text-brand-secondary hover:bg-gray-50 rounded-lg transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Add New Submission
-              </Link>
+            <nav className="flex-1 overflow-y-auto px-6 py-8">
+              <ul className="space-y-4">
+                <li>
+                  <button
+                    onClick={() => {
+                      setActiveTab('submissions')
+                      setIsMobileMenuOpen(false)
+                    }}
+                    className={`w-full text-left block text-2xl font-medium py-3 transition-colors ${
+                      activeTab === 'submissions'
+                        ? 'text-brand-accent font-bold'
+                        : 'text-brand-secondary hover:text-brand-accent'
+                    }`}
+                  >
+                    My Submissions
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setActiveTab('stats')
+                      setIsMobileMenuOpen(false)
+                    }}
+                    className={`w-full text-left block text-2xl font-medium py-3 transition-colors ${
+                      activeTab === 'stats'
+                        ? 'text-brand-accent font-bold'
+                        : 'text-brand-secondary hover:text-brand-accent'
+                    }`}
+                  >
+                    Statistics
+                  </button>
+                </li>
+                <li>
+                  <Link
+                    href="/"
+                    className="block text-2xl font-medium text-brand-secondary hover:text-brand-accent py-3 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Browse Salaries
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contribute"
+                    className="block text-2xl font-medium text-brand-secondary hover:text-brand-accent py-3 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Add New Submission
+                  </Link>
+                </li>
+              </ul>
             </nav>
+
+            {/* Bottom action - Sign Out */}
+            <div className="px-6 py-6 border-t border-gray-200">
+              <button
+                onClick={() => {
+                  signOut()
+                  setIsMobileMenuOpen(false)
+                }}
+                className="w-full px-6 py-4 bg-brand-secondary text-white font-medium text-lg rounded-lg hover:bg-brand-accent transition-colors flex items-center justify-center gap-2"
+              >
+                <LogOut className="w-5 h-5" />
+                Sign Out
+              </button>
+            </div>
           </div>
         </div>
       )}
