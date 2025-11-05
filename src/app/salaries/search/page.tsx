@@ -12,6 +12,8 @@ interface SearchPageProps {
   searchParams: {
     type?: 'job' | 'company' | 'location' | 'industry' | 'level'
     id?: string
+    jobId?: string
+    locationId?: string
   }
 }
 
@@ -28,7 +30,7 @@ function calculatePercentile(values: number[], percentile: number): number {
 }
 
 async function getFilterInfo(type: string | undefined, id: number) {
-  if (!type) return null
+  if (!type || !id) return null
 
   try {
     switch (type) {
@@ -70,7 +72,7 @@ async function getFilterInfo(type: string | undefined, id: number) {
         return null
     }
   } catch (error) {
-    console.error('Error fetching filter info:', error)
+    console.error(`Error fetching ${type} info for ID ${id}:`, error)
     return null
   }
 }
@@ -78,6 +80,148 @@ async function getFilterInfo(type: string | undefined, id: number) {
 export default async function SearchResultsPage({ searchParams }: SearchPageProps) {
   const type = searchParams.type
   const id = searchParams.id ? parseInt(searchParams.id) : undefined
+  const jobId = searchParams.jobId ? parseInt(searchParams.jobId) : undefined
+  const locationId = searchParams.locationId ? parseInt(searchParams.locationId) : undefined
+
+  // Handle multiple filters (job + location)
+  if (jobId && locationId) {
+    try {
+      // Build filters for job + location
+      const filters: SearchFilters = {
+        jobTitleId: jobId,
+        locationId: locationId,
+      }
+
+      // Fetch data
+      const [results, jobName, locationName] = await Promise.all([
+        searchSalaries(filters),
+        getFilterInfo('job', jobId),
+        getFilterInfo('location', locationId),
+      ])
+
+      console.log('Search results:', { jobId, locationId, jobName, locationName, resultCount: results.length })
+
+      // Check if both names were found
+      if (!jobName) {
+        console.error(`Job title not found for ID: ${jobId}`)
+        return (
+          <>
+            <Navbar />
+            <main className="min-h-screen bg-gray-50">
+              <div className="container mx-auto px-6 py-12">
+                <div className="text-center">
+                  <h1 className="text-3xl font-bold text-gray-900 mb-4">Job Title Not Found</h1>
+                  <p className="text-gray-600">The requested job title (ID: {jobId}) could not be found in our database.</p>
+                  <Link
+                    href="/"
+                    className="inline-block mt-6 px-6 py-3 bg-brand-secondary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors"
+                  >
+                    Go Home
+                  </Link>
+                </div>
+              </div>
+            </main>
+            <Footer />
+          </>
+        )
+      }
+
+      if (!locationName) {
+        console.error(`Location not found for ID: ${locationId}`)
+        return (
+          <>
+            <Navbar />
+            <main className="min-h-screen bg-gray-50">
+              <div className="container mx-auto px-6 py-12">
+                <div className="text-center">
+                  <h1 className="text-3xl font-bold text-gray-900 mb-4">Location Not Found</h1>
+                  <p className="text-gray-600">The requested location (ID: {locationId}) could not be found in our database.</p>
+                  <p className="text-gray-500 mt-2">
+                    This might be an outdated link. Please go back to the location page and try again.
+                  </p>
+                  <Link
+                    href="/"
+                    className="inline-block mt-6 px-6 py-3 bg-brand-secondary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors"
+                  >
+                    Go Home
+                  </Link>
+                </div>
+              </div>
+            </main>
+            <Footer />
+          </>
+        )
+      }
+
+      // Calculate average base salary
+      const baseSalaries = results.map((r) => parseFloat(r.baseSalary))
+      const averageBaseSalary = baseSalaries.length > 0
+        ? baseSalaries.reduce((sum, salary) => sum + salary, 0) / baseSalaries.length
+        : 0
+
+      const filterName = `${jobName} in ${locationName}`
+
+    return (
+      <>
+        <Navbar />
+        <main className="min-h-screen bg-gray-50">
+          <div className="max-w-6xl mx-auto px-6 py-12">
+            {/* Page Header */}
+            <div className="text-center mb-12">
+              <h1 className="text-4xl font-bold text-gray-900">
+                {filterName}
+              </h1>
+            </div>
+
+            {/* Hero Stats Card */}
+            {results.length > 0 ? (
+              <>
+                <SearchStatsCard
+                  average={averageBaseSalary}
+                  submissionCount={results.length}
+                  filterName={filterName}
+                />
+
+                {/* Salary Submissions List */}
+                <SalaryResultsList results={results} />
+              </>
+            ) : (
+              <div className="bg-white rounded-lg shadow-md p-12 text-center">
+                <p className="text-gray-600 text-lg">No salary data found for this search.</p>
+                <p className="text-gray-500 mt-2">
+                  Try searching for a different job title, company, or location.
+                </p>
+              </div>
+            )}
+          </div>
+        </main>
+        <Footer />
+      </>
+    )
+    } catch (error) {
+      console.error('Error fetching combined search results:', error)
+      return (
+        <>
+          <Navbar />
+          <main className="min-h-screen bg-gray-50">
+            <div className="container mx-auto px-6 py-12">
+              <div className="text-center">
+                <h1 className="text-3xl font-bold text-gray-900 mb-4">Error</h1>
+                <p className="text-gray-600">There was an error loading the salary data.</p>
+                <Link
+                  href="/"
+                  className="inline-block mt-6 px-6 py-3 bg-brand-secondary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors"
+                >
+                  Go Home
+                </Link>
+              </div>
+            </div>
+          </main>
+          <Footer />
+        </>
+      )
+    }
+  }
 
   if (!type || !id) {
     return (
@@ -110,12 +254,11 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
     getFilterInfo(type, id),
   ])
 
-  // Calculate statistics
-  const totalCompensations = results.map((r) => r.totalCompensation)
-  const medianCompensation = calculatePercentile(totalCompensations, 50)
-  const p25 = calculatePercentile(totalCompensations, 25)
-  const p75 = calculatePercentile(totalCompensations, 75)
-  const p90 = calculatePercentile(totalCompensations, 90)
+  // Calculate average base salary
+  const baseSalaries = results.map((r) => parseFloat(r.baseSalary))
+  const averageBaseSalary = baseSalaries.length > 0
+    ? baseSalaries.reduce((sum, salary) => sum + salary, 0) / baseSalaries.length
+    : 0
 
   const typeLabels = {
     job: 'Job Title',
@@ -141,10 +284,7 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
           {results.length > 0 ? (
             <>
               <SearchStatsCard
-                median={medianCompensation}
-                p25={p25}
-                p75={p75}
-                p90={p90}
+                average={averageBaseSalary}
                 submissionCount={results.length}
                 filterName={filterName}
               />

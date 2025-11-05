@@ -4,102 +4,67 @@ import Link from 'next/link'
 import { useCurrency } from '@/contexts/CurrencyContext'
 
 interface SearchStatsCardProps {
-  median: number
-  p25: number
-  p75: number
-  p90: number
+  average: number
   submissionCount: number
   filterName: string | null
 }
 
 export function SearchStatsCard({
-  median,
-  p25,
-  p75,
-  p90,
+  average,
   submissionCount,
   filterName,
 }: SearchStatsCardProps) {
-  const { selectedCurrency, formatAmount } = useCurrency()
+  const { formatAmount } = useCurrency()
 
-  // For aggregated stats, we assume they're in XOF (the default currency)
-  // In a production app, you'd want to convert all salaries to a common currency before aggregating
   const formatStat = (amount: number) => {
     return formatAmount(amount, 'XOF')
   }
 
-  const formatStatCompact = (amount: number) => {
-    return formatAmount(amount, 'XOF', { compact: true })
-  }
-
   return (
-    <div className="bg-white rounded-2xl shadow-lg mb-12 overflow-hidden">
-      {/* Top Section */}
-      <div className="p-8">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8">
-          {/* Left: Main Salary */}
-          <div className="mb-6 lg:mb-0">
-            <div className="text-5xl font-bold text-green-600 mb-2">
-              {formatStat(median)}
-            </div>
-            <div className="text-gray-600 text-lg">Median Total Comp</div>
-          </div>
-
-          {/* Center: Percentile Stats */}
-          <div className="flex flex-wrap gap-6 mb-6 lg:mb-0">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-400">
-                {formatStatCompact(p25)}
-              </div>
-              <div className="text-gray-500 text-sm">25th percentile</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">
-                {formatStatCompact(p75)}
-              </div>
-              <div className="text-gray-500 text-sm">75th percentile</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-800">
-                {formatStatCompact(p90)}
-              </div>
-              <div className="text-gray-500 text-sm">90th percentile</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Middle Row: CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+    <section className="bg-gray-50 rounded-lg p-8 mb-8">
+      <div className="flex items-center justify-between">
+        {/* Left Side - Salary Info */}
+        <div className="flex-1">
+          <p className="text-sm text-gray-600 mb-2">Average Base Salary</p>
+          <p className="text-4xl font-bold text-black mb-4">
+            {formatStat(average)}
+          </p>
           <Link
             href="/contribute"
-            className="bg-brand-secondary hover:bg-brand-accent text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+            className="inline-block bg-brand-secondary hover:bg-brand-accent text-white font-medium px-6 py-2 rounded-md transition-colors"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-              ></path>
-            </svg>
-            <span>Contribute Your Salary</span>
+            Share Your Salary
           </Link>
         </div>
 
-        {/* Bottom Row: Fine Print */}
-        <div className="text-center text-gray-500 text-sm mb-6">
-          <p>
-            Based on {submissionCount} anonymous{' '}
-            {submissionCount === 1 ? 'submission' : 'submissions'}. Last updated:{' '}
-            {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-          </p>
+        {/* Right Side - Illustration */}
+        <div className="flex-shrink-0 ml-8 hidden md:block">
+          <svg width="120" height="80" viewBox="0 0 120 80" className="text-brand-secondary">
+            {/* Coins */}
+            <circle cx="90" cy="25" r="12" fill="#fbbf24" stroke="#f59e0b" strokeWidth="2" />
+            <circle cx="100" cy="35" r="12" fill="#fbbf24" stroke="#f59e0b" strokeWidth="2" />
+            <circle cx="80" cy="35" r="12" fill="#fbbf24" stroke="#f59e0b" strokeWidth="2" />
+            {/* Job Papers */}
+            <rect x="20" y="15" width="50" height="35" rx="4" fill="currentColor" opacity="0.1" />
+            <rect x="25" y="20" width="40" height="3" fill="currentColor" opacity="0.3" />
+            <rect x="25" y="26" width="30" height="2" fill="currentColor" opacity="0.2" />
+            <rect x="25" y="30" width="35" height="2" fill="currentColor" opacity="0.2" />
+            <rect x="15" y="25" width="50" height="35" rx="4" fill="currentColor" opacity="0.15" />
+            <rect x="20" y="30" width="40" height="3" fill="currentColor" opacity="0.4" />
+            <rect x="20" y="36" width="30" height="2" fill="currentColor" opacity="0.3" />
+            <rect x="20" y="40" width="35" height="2" fill="currentColor" opacity="0.3" />
+          </svg>
         </div>
       </div>
-    </div>
+
+      {/* Bottom: Fine Print */}
+      <div className="text-sm text-gray-500 mt-6">
+        <p>
+          Based on {submissionCount} anonymous{' '}
+          {submissionCount === 1 ? 'submission' : 'submissions'}. Last updated:{' '}
+          {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+    </section>
   )
 }

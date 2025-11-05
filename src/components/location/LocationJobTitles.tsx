@@ -71,7 +71,7 @@ export function LocationJobTitles({ data }: LocationJobTitlesProps) {
               {data.jobTitles.map((jobTitle, index) => (
                 <Link
                   key={jobTitle.jobTitleId}
-                  href={`/salaries/search?type=job&id=${jobTitle.jobTitleId}`}
+                  href={`/salaries/search?jobId=${jobTitle.jobTitleId}&locationId=${data.locationId}`}
                   className="block"
                 >
                   <div className="w-full flex flex-col bg-white border border-gray-200 rounded-xl pb-4 hover:shadow-lg transition-shadow duration-200">

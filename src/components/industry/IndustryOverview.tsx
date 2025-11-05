@@ -91,18 +91,6 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
         </div>
       </div>
 
-      {/* Contribution CTA */}
-      <div className="max-w-7xl mx-auto px-6 py-6">
-        <div className="text-center">
-          <Link
-            href="/contribute"
-            className="inline-block bg-white border-2 border-blue-500 text-blue-500 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-          >
-            💪 Contribute Your Salary
-          </Link>
-        </div>
-      </div>
-
       {/* Explore Salaries Section */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="mb-6">
@@ -113,7 +101,7 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
             <input
               type="text"
               placeholder="Search City, Company, Job Title, Etc"
-              className="flex-1 max-w-md bg-white border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 max-w-md bg-white border border-gray-300 rounded-full px-6 py-3 text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-brand-secondary"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -121,7 +109,7 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
             <div className="flex gap-3">
               <Link
                 href="/contribute"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="bg-brand-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-accent transition-colors"
               >
                 Add Compensation
               </Link>
@@ -137,7 +125,7 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
                 <th className="text-left py-4 px-6 font-semibold">Company</th>
                 <th className="text-left py-4 px-6 font-semibold">Job Family</th>
                 <th className="text-left py-4 px-6 font-semibold">Experience</th>
-                <th className="text-left py-4 px-6 font-semibold">Total Compensation</th>
+                <th className="text-left py-4 px-6 font-semibold">Base Salary</th>
               </tr>
             </thead>
             <tbody>
@@ -183,12 +171,7 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
                   </td>
                   <td className="py-4 px-6">
                     <div>
-                      <p className="font-bold text-lg text-black">{formatCurrency(submission.totalCompensation)}</p>
-                      <p className="text-sm text-gray-500">
-                        {formatShortCurrency(submission.baseSalary)} |{' '}
-                        {formatShortCurrency(submission.stockCompensation)} |{' '}
-                        {formatShortCurrency(submission.bonus)}
-                      </p>
+                      <p className="font-bold text-lg text-black">{formatShortCurrency(submission.baseSalary)}</p>
                     </div>
                   </td>
                 </tr>
@@ -235,12 +218,7 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
                       </td>
                       <td className="py-4 px-6">
                         <div>
-                          <p className="font-bold text-lg text-black">{formatCurrency(submission.totalCompensation)}</p>
-                          <p className="text-sm text-gray-500">
-                            {formatShortCurrency(submission.baseSalary)} |{' '}
-                            {formatShortCurrency(submission.stockCompensation)} |{' '}
-                            {formatShortCurrency(submission.bonus)}
-                          </p>
+                          <p className="font-bold text-lg text-black">{formatShortCurrency(submission.baseSalary)}</p>
                         </div>
                       </td>
                     </tr>
@@ -254,7 +232,7 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
           {lockedSubmissions.length > 0 && (
             <div className="relative bg-white border-t border-gray-200 p-8 text-center">
               <div className="mb-4">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">💰</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Unlock by Adding Your Salary!</h3>
@@ -263,7 +241,7 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
                 </p>
                 <button
                   onClick={() => router.push('/contribute')}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4"
+                  className="bg-brand-secondary text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent transition-colors mb-4"
                 >
                   + Add Salary
                 </button>

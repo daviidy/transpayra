@@ -67,207 +67,118 @@ export function SalaryResultsList({ results }: SalaryResultsListProps) {
   const lockedSubmissions = unlocked ? [] : results.slice(2)
 
   return (
-    <div className="space-y-4">
-      {/* Visible Cards */}
-      {visibleSubmissions.map((submission) => (
-        <Link
-          key={submission.submissionId}
-          href={`/submission/${submission.submissionId}`}
-          className="block"
-        >
-          <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-secondary cursor-pointer">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Company Info */}
-              <div>
-                <p className="text-gray-500 text-sm font-medium mb-1">Company</p>
-                <h3 className="text-xl font-bold text-brand-secondary hover:text-brand-accent mb-2">
-                  {submission.company}
-                </h3>
-                <div className="text-sm text-gray-600">
-                  <div className="flex items-center gap-1 mb-1">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    {submission.location}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {getTimeAgo(submission.submissionDate)}
-                  </div>
-                </div>
-              </div>
-
-              {/* Role & Level */}
-              <div>
-                <p className="text-gray-500 text-sm font-medium mb-1">Role & Level</p>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  {submission.level || 'Not specified'}
-                </h3>
-                <div className="text-sm text-gray-600">{submission.jobTitle}</div>
-              </div>
-
-              {/* Experience */}
-              <div>
-                <p className="text-gray-500 text-sm font-medium mb-1">Experience</p>
-                <div className="flex items-center gap-4">
-                  <div>
-                    <div className="text-2xl font-bold text-gray-800">
-                      {submission.yearsOfExperience}
+    <div>
+      {/* Table Section */}
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <table className="w-full">
+          <thead className="bg-gray-800 text-white">
+            <tr>
+              <th className="text-left py-4 px-6 font-semibold">Company</th>
+              <th className="text-left py-4 px-6 font-semibold">Job Family</th>
+              <th className="text-left py-4 px-6 font-semibold">Experience</th>
+              <th className="text-left py-4 px-6 font-semibold">Base Salary</th>
+            </tr>
+          </thead>
+          <tbody>
+            {visibleSubmissions.map((submission, index) => (
+              <tr
+                key={submission.submissionId}
+                className={`border-b border-gray-200 ${index % 2 === 1 ? 'bg-gray-50' : ''}`}
+              >
+                <td className="py-4 px-6">
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <Link
+                        href={`/submission/${submission.submissionId}`}
+                        className="text-blue-600 font-medium hover:underline"
+                      >
+                        {submission.company}
+                      </Link>
+                      <p className="text-sm text-gray-500">
+                        {submission.location} • {getTimeAgo(submission.submissionDate)}
+                      </p>
                     </div>
-                    <div className="text-sm text-gray-500">Years Total</div>
                   </div>
-                  <div className="h-12 w-px bg-gray-300"></div>
+                </td>
+                <td className="py-4 px-6">
                   <div>
-                    <div className="text-2xl font-bold text-gray-800">
-                      {submission.yearsAtCompany}
-                    </div>
-                    <div className="text-sm text-gray-500">At Company</div>
+                    <p className="font-medium text-black">{submission.jobTitle}</p>
+                    <p className="text-sm text-gray-500">{submission.level || '–'}</p>
                   </div>
-                </div>
-              </div>
-
-              {/* Total Compensation */}
-              <div>
-                <p className="text-gray-500 text-sm font-medium mb-1">Total Compensation</p>
-                <h3 className="text-2xl font-bold text-green-600 mb-2">
-                  {formatCurrencyWithConversion(submission.totalCompensation, submission.currency)}
-                </h3>
-                <div className="text-sm text-gray-600 space-y-1">
-                  <div className="flex justify-between">
-                    <span>Base:</span>
-                    <span className="font-medium">
-                      {formatShortCurrencyWithConversion(submission.baseSalary, submission.currency)}
-                    </span>
+                </td>
+                <td className="py-4 px-6">
+                  <div>
+                    <p className="text-black font-medium">{submission.yearsOfExperience} yrs total</p>
+                    <p className="text-sm text-gray-500">{submission.yearsAtCompany} yrs at company</p>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Stock:</span>
-                    <span className="font-medium">
-                      {formatShortCurrencyWithConversion(submission.stockCompensation ?? undefined, submission.currency)}
-                    </span>
+                </td>
+                <td className="py-4 px-6">
+                  <div>
+                    <p className="font-bold text-lg text-black">
+                      {formatCurrencyWithConversion(submission.baseSalary, submission.currency)}
+                    </p>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Bonus:</span>
-                    <span className="font-medium">
-                      {formatShortCurrencyWithConversion(submission.bonus ?? undefined, submission.currency)}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Link>
-      ))}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       {/* Locked Content */}
       {lockedSubmissions.length > 0 && !unlocked && (
-        <div className="relative">
-          {/* Blurred Cards */}
-          <div className="blur-[3px] pointer-events-none space-y-4">
-            {lockedSubmissions.slice(0, 3).map((submission, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {/* Company Info */}
-                  <div>
-                    <p className="text-gray-500 text-sm font-medium mb-1">Company</p>
-                    <h3 className="text-xl font-bold text-brand-secondary mb-2">
-                      {submission.company}
-                    </h3>
-                    <div className="text-sm text-gray-600">
-                      <div className="flex items-center gap-1 mb-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        {submission.location}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {getTimeAgo(submission.submissionDate)}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Role & Level */}
-                  <div>
-                    <p className="text-gray-500 text-sm font-medium mb-1">Role & Level</p>
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">
-                      {submission.level || 'Not specified'}
-                    </h3>
-                    <div className="text-sm text-gray-600">{submission.jobTitle}</div>
-                  </div>
-
-                  {/* Experience */}
-                  <div>
-                    <p className="text-gray-500 text-sm font-medium mb-1">Experience</p>
-                    <div className="flex items-center gap-4">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden mt-4">
+          <table className="w-full">
+            <tbody>
+              {lockedSubmissions.slice(0, 2).map((submission, index) => (
+                <tr
+                  key={`locked-${submission.submissionId}`}
+                  className={`border-b border-gray-200 blur-sm ${
+                    (visibleSubmissions.length + index) % 2 === 1 ? 'bg-gray-50' : ''
+                  }`}
+                >
+                  <td className="py-4 px-6">
+                    <div className="flex items-center gap-3">
                       <div>
-                        <div className="text-2xl font-bold text-gray-800">
-                          {submission.yearsOfExperience}
-                        </div>
-                        <div className="text-sm text-gray-500">Years Total</div>
-                      </div>
-                      <div className="h-12 w-px bg-gray-300"></div>
-                      <div>
-                        <div className="text-2xl font-bold text-gray-800">
-                          {submission.yearsAtCompany}
-                        </div>
-                        <div className="text-sm text-gray-500">At Company</div>
+                        <a href="#" className="text-blue-600 font-medium">
+                          {submission.company}
+                        </a>
+                        <p className="text-sm text-gray-500">
+                          {submission.location} • {getTimeAgo(submission.submissionDate)}
+                        </p>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Total Compensation */}
-                  <div>
-                    <p className="text-gray-500 text-sm font-medium mb-1">Total Compensation</p>
-                    <h3 className="text-2xl font-bold text-green-600 mb-2">
-                      {formatCurrencyWithConversion(submission.totalCompensation, submission.currency)}
-                    </h3>
-                    <div className="text-sm text-gray-600 space-y-1">
-                      <div className="flex justify-between">
-                        <span>Base:</span>
-                        <span className="font-medium">
-                          {formatShortCurrencyWithConversion(submission.baseSalary, submission.currency)}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Stock:</span>
-                        <span className="font-medium">
-                          {formatShortCurrencyWithConversion(submission.stockCompensation ?? undefined, submission.currency)}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Bonus:</span>
-                        <span className="font-medium">
-                          {formatShortCurrencyWithConversion(submission.bonus ?? undefined, submission.currency)}
-                        </span>
-                      </div>
+                  </td>
+                  <td className="py-4 px-6">
+                    <div>
+                      <p className="font-medium text-black">{submission.jobTitle}</p>
+                      <p className="text-sm text-gray-500">{submission.level || '–'}</p>
                     </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                  </td>
+                  <td className="py-4 px-6">
+                    <div>
+                      <p className="text-black font-medium">{submission.yearsOfExperience} yrs total</p>
+                      <p className="text-sm text-gray-500">{submission.yearsAtCompany} yrs at company</p>
+                    </div>
+                  </td>
+                  <td className="py-4 px-6">
+                    <div>
+                      <p className="font-bold text-lg text-black">
+                        {formatCurrencyWithConversion(submission.baseSalary, submission.currency)}
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
 
-          {/* Paywall Overlay */}
-          <div
-            className="absolute inset-0 flex items-center justify-center"
-            style={{
-              background:
-                'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,1) 100%)',
-            }}
-          >
-            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-8 max-w-md mx-4 text-center">
-              <div className="mb-4">
+          {/* Unlock Gate Overlay */}
+          <div className="relative bg-white border-t border-gray-200 p-8 text-center">
+            <div className="mb-4">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
-                  className="w-12 h-12 text-brand-secondary mx-auto mb-3"
+                  className="w-8 h-8 text-blue-600"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -280,30 +191,25 @@ export function SalaryResultsList({ results }: SalaryResultsListProps) {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-black mb-2">
-                Unlock by Adding Your Salary!
-              </h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Unlock by Adding Your Salary!</h3>
               <p className="text-gray-600 mb-6">
-                Add your salary anonymously in less than 60 seconds and continue exploring all
-                the data.
+                Help the community by anonymously sharing your compensation. Takes under 60 seconds.
               </p>
-
               <button
                 onClick={() => router.push('/contribute')}
-                className="w-full bg-brand-secondary hover:bg-brand-accent text-white font-semibold py-3 px-6 rounded-lg transition-colors mb-4"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4"
               >
                 + Add Salary
               </button>
-
-              <div className="flex items-center justify-center text-sm text-gray-600">
+              <div className="flex items-center justify-center gap-2">
                 <input
                   type="checkbox"
                   id="already-added"
+                  className="rounded"
                   checked={unlocked}
                   onChange={(e) => setUnlocked(e.target.checked)}
-                  className="mr-2 rounded border-gray-300 text-brand-secondary focus:ring-brand-secondary"
                 />
-                <label htmlFor="already-added" className="cursor-pointer">
+                <label htmlFor="already-added" className="text-sm text-gray-600">
                   Added mine already within last 1 year
                 </label>
               </div>
