@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Code, Briefcase, Database, Palette, Server } from 'lucide-react'
 import { SalaryCard } from './SalaryCard'
 import { getSalariesByJobTitle } from '@/app/actions/salaries'
+import { useTranslations } from 'next-intl'
 
 interface Submission {
   id: number
@@ -31,6 +32,7 @@ export function JobTabs() {
   const [activeTab, setActiveTab] = useState('software-engineer')
   const [submissions, setSubmissions] = useState<Submission[]>([])
   const [loading, setLoading] = useState(false)
+  const t = useTranslations()
 
   useEffect(() => {
     async function fetchData() {
@@ -82,10 +84,10 @@ export function JobTabs() {
         {/* Content */}
         <div className="max-w-7xl mx-auto">
           {loading ? (
-            <div className="text-center py-12 text-gray-500">Loading...</div>
+            <div className="text-center py-12 text-gray-500">{t('common.loading')}</div>
           ) : submissions.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
-              No salary data available for this role yet.
+              {t('home.noDataAvailable')}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

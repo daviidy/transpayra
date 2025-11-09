@@ -4,12 +4,14 @@ import { useAuth } from '@/contexts/AuthContext'
 import { useAnonymousToken } from '@/lib/hooks/useAnonymousToken'
 import { useEffect, useState } from 'react'
 import { getUserSubmissions, type UserSubmission } from '@/app/actions/get-user-submissions'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
+import { useRouter } from '@/i18n/routing'
+import { Link } from '@/i18n/routing'
 import Image from 'next/image'
 import { DollarSign, Briefcase, MapPin, TrendingUp, Calendar, User, LogOut, Menu, X } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export default function DashboardPage() {
+  const t = useTranslations()
   const { user, loading, signOut } = useAuth()
   const { token } = useAnonymousToken()
   const router = useRouter()
@@ -56,7 +58,7 @@ export default function DashboardPage() {
   if (loading || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-600">Loading...</div>
+        <div className="text-gray-600">{t('dashboard.loading')}</div>
       </div>
     )
   }
@@ -108,7 +110,7 @@ export default function DashboardPage() {
               onClick={signOut}
               className="px-4 py-2 text-sm font-medium text-brand-secondary bg-white border border-gray-300 rounded-lg hover:bg-brand-primary transition-colors"
             >
-              Sign Out
+              {t('nav.signOut')}
             </button>
           </div>
         </div>
@@ -168,7 +170,7 @@ export default function DashboardPage() {
                         : 'text-brand-secondary hover:text-brand-accent'
                     }`}
                   >
-                    My Submissions
+                    {t('dashboard.mySubmissions')}
                   </button>
                 </li>
                 <li>
@@ -183,7 +185,7 @@ export default function DashboardPage() {
                         : 'text-brand-secondary hover:text-brand-accent'
                     }`}
                   >
-                    Statistics
+                    {t('dashboard.statistics')}
                   </button>
                 </li>
                 <li>
@@ -192,7 +194,7 @@ export default function DashboardPage() {
                     className="block text-2xl font-medium text-brand-secondary hover:text-brand-accent py-3 transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Browse Salaries
+                    {t('dashboard.browseSalaries')}
                   </Link>
                 </li>
                 <li>
@@ -201,7 +203,7 @@ export default function DashboardPage() {
                     className="block text-2xl font-medium text-brand-secondary hover:text-brand-accent py-3 transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Add New Submission
+                    {t('dashboard.addNewSubmission')}
                   </Link>
                 </li>
               </ul>
@@ -217,7 +219,7 @@ export default function DashboardPage() {
                 className="w-full px-6 py-4 bg-brand-secondary text-white font-medium text-lg rounded-lg hover:bg-brand-accent transition-colors flex items-center justify-center gap-2"
               >
                 <LogOut className="w-5 h-5" />
-                Sign Out
+                {t('nav.signOut')}
               </button>
             </div>
           </div>
@@ -254,7 +256,7 @@ export default function DashboardPage() {
                 }`}
               >
                 <span className="text-lg">📋</span>
-                <span>My Submissions</span>
+                <span>{t('dashboard.mySubmissions')}</span>
               </button>
               <button
                 onClick={() => setActiveTab('stats')}
@@ -265,21 +267,21 @@ export default function DashboardPage() {
                 }`}
               >
                 <span className="text-lg">📊</span>
-                <span>Statistics</span>
+                <span>{t('dashboard.statistics')}</span>
               </button>
               <Link
                 href="/"
                 className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-xl transition-colors font-medium"
               >
                 <span className="text-lg">🔍</span>
-                <span>Browse Salaries</span>
+                <span>{t('dashboard.browseSalaries')}</span>
               </Link>
               <Link
                 href="/contribute"
                 className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-xl transition-colors font-medium"
               >
                 <span className="text-lg">➕</span>
-                <span>Add Submission</span>
+                <span>{t('dashboard.addSubmission')}</span>
               </Link>
             </nav>
           </div>
@@ -292,24 +294,24 @@ export default function DashboardPage() {
               <>
                 {/* Section Header */}
                 <div className="mb-8 lg:mb-12">
-                  <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">My Submissions</h1>
+                  <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">{t('dashboard.mySubmissions')}</h1>
                   <p className="text-sm lg:text-base text-gray-500">
-                    View and manage your salary submissions
+                    {t('dashboard.viewManage')}
                   </p>
                 </div>
 
                 {loadingSubmissions ? (
-                  <div className="text-center py-12 text-gray-500">Loading submissions...</div>
+                  <div className="text-center py-12 text-gray-500">{t('dashboard.loadingSubmissions')}</div>
                 ) : submissions.length === 0 ? (
                   <div className="text-center py-12 px-4">
                     <DollarSign className="w-12 h-12 lg:w-16 lg:h-16 mx-auto text-gray-300 mb-4" />
-                    <h3 className="text-base lg:text-lg font-medium text-gray-900 mb-2">No submissions yet</h3>
-                    <p className="text-sm lg:text-base text-gray-500 mb-6">Start contributing to unlock salary data</p>
+                    <h3 className="text-base lg:text-lg font-medium text-gray-900 mb-2">{t('dashboard.noSubmissions')}</h3>
+                    <p className="text-sm lg:text-base text-gray-500 mb-6">{t('dashboard.noSubmissionsDesc')}</p>
                     <Link
                       href="/contribute"
                       className="inline-block px-5 py-2.5 lg:px-6 lg:py-3 text-sm lg:text-base bg-brand-secondary text-white rounded-lg hover:bg-brand-accent transition-colors"
                     >
-                      Add Your First Salary
+                      {t('dashboard.addFirstSalary')}
                     </Link>
                   </div>
                 ) : (
@@ -343,7 +345,7 @@ export default function DashboardPage() {
                               </div>
                               <div className="flex items-center gap-2 text-sm text-gray-600">
                                 <TrendingUp className="w-4 h-4" />
-                                {submission.yearsOfExperience} yrs experience
+                                {submission.yearsOfExperience} {t('dashboard.yrsExperience')}
                               </div>
                               <div className="flex items-center gap-2 text-sm text-gray-600">
                                 <Calendar className="w-4 h-4" />
@@ -352,7 +354,7 @@ export default function DashboardPage() {
                             </div>
 
                             <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-gray-200 rounded-xl p-4">
-                              <div className="text-xs font-semibold text-gray-600 mb-1">Base Salary</div>
+                              <div className="text-xs font-semibold text-gray-600 mb-1">{t('dashboard.baseSalary')}</div>
                               <div className="text-2xl lg:text-3xl font-bold text-brand-secondary">
                                 {formatCurrency(submission.baseSalary)}
                               </div>
@@ -370,9 +372,9 @@ export default function DashboardPage() {
               <>
                 {/* Section Header */}
                 <div className="mb-8 lg:mb-12">
-                  <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Statistics</h1>
+                  <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">{t('dashboard.statistics')}</h1>
                   <p className="text-sm lg:text-base text-gray-500">
-                    Overview of your salary submission data
+                    {t('dashboard.statsOverview')}
                   </p>
                 </div>
 
@@ -382,7 +384,7 @@ export default function DashboardPage() {
                   <div className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Total Submissions</h3>
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">{t('dashboard.totalSubmissions')}</h3>
                         <p className="text-3xl lg:text-4xl font-bold text-brand-secondary">{totalSubmissions}</p>
                       </div>
                       <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-xl flex items-center justify-center">
@@ -395,7 +397,7 @@ export default function DashboardPage() {
                   <div className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Avg Base Salary</h3>
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">{t('dashboard.avgBaseSalary')}</h3>
                         <p className="text-2xl lg:text-4xl font-bold text-brand-secondary">
                           {avgCompensation > 0 ? formatCurrency(avgCompensation) : '$0'}
                         </p>
@@ -410,9 +412,9 @@ export default function DashboardPage() {
                   <div className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Account Type</h3>
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">{t('dashboard.accountType')}</h3>
                         <p className="text-xs lg:text-sm text-gray-500">
-                          {user.app_metadata?.provider ? `Signed in with ${user.app_metadata.provider}` : 'Email'}
+                          {user.app_metadata?.provider ? `${t('dashboard.signedInWith')} ${user.app_metadata.provider}` : t('dashboard.email')}
                         </p>
                       </div>
                       <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-xl flex items-center justify-center">
@@ -425,7 +427,7 @@ export default function DashboardPage() {
                   <div className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Member Since</h3>
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">{t('dashboard.memberSince')}</h3>
                         <p className="text-xs lg:text-sm text-gray-500">
                           {new Date(user.created_at || '').toLocaleDateString('en-US', {
                             year: 'numeric',

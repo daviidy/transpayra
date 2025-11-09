@@ -1,6 +1,7 @@
 'use client'
 
 import { FormData } from '../types'
+import { useTranslations } from 'next-intl'
 
 interface Step6Props {
   formData: FormData
@@ -9,40 +10,41 @@ interface Step6Props {
 }
 
 export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
+  const t = useTranslations()
 
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Review & Submit</h2>
-        <p className="text-gray-600">Please review your submission before submitting</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('form.step3Title')}</h2>
+        <p className="text-gray-600">{t('form.step3Subtitle')}</p>
       </div>
 
       {/* Summary Card */}
       <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-brand-secondary rounded-xl p-6 space-y-4">
         <div>
-          <h3 className="text-lg font-bold text-gray-900 mb-3">Your Submission Summary</h3>
+          <h3 className="text-lg font-bold text-gray-900 mb-3">{t('form.submissionSummary')}</h3>
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
-              <p className="text-gray-600">Job Title</p>
+              <p className="text-gray-600">{t('form.jobTitle')}</p>
               <p className="font-semibold text-gray-900">{formData.jobTitle || '—'}</p>
             </div>
             <div>
-              <p className="text-gray-600">Company</p>
+              <p className="text-gray-600">{t('form.company')}</p>
               <p className="font-semibold text-gray-900">{formData.company || '—'}</p>
             </div>
             <div>
-              <p className="text-gray-600">Location</p>
+              <p className="text-gray-600">{t('form.location')}</p>
               <p className="font-semibold text-gray-900">{formData.location || '—'}</p>
             </div>
             <div>
-              <p className="text-gray-600">Level</p>
-              <p className="font-semibold text-gray-900">{formData.companyLevel || 'Not specified'}</p>
+              <p className="text-gray-600">{t('form.companyLevel')}</p>
+              <p className="font-semibold text-gray-900">{formData.companyLevel || t('form.notSpecified')}</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-amber-300 pt-4">
-          <h4 className="font-bold text-gray-900 mb-3">Annual Base Salary</h4>
+          <h4 className="font-bold text-gray-900 mb-3">{t('form.annualBaseSalary')}</h4>
           <div className="flex justify-center">
             <span className="font-bold text-3xl text-brand-secondary">
               {formData.currency} {(formData.baseSalary || 0).toLocaleString('en-US')}
@@ -51,24 +53,24 @@ export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
         </div>
 
         <div className="border-t border-amber-300 pt-4">
-          <h4 className="font-bold text-gray-900 mb-2">Experience</h4>
+          <h4 className="font-bold text-gray-900 mb-2">{t('form.experience')}</h4>
           <div className="grid grid-cols-3 gap-4 text-sm">
             <div>
-              <p className="text-gray-600">Total Experience</p>
+              <p className="text-gray-600">{t('form.totalExperience')}</p>
               <p className="font-semibold text-gray-900">
-                {formData.yearsOfExperience ? `${formData.yearsOfExperience} yrs` : '—'}
+                {formData.yearsOfExperience ? `${formData.yearsOfExperience} ${t('form.yrs')}` : '—'}
               </p>
             </div>
             <div>
-              <p className="text-gray-600">At Company</p>
+              <p className="text-gray-600">{t('form.atCompany')}</p>
               <p className="font-semibold text-gray-900">
-                {formData.yearsAtCompany ? `${formData.yearsAtCompany} yrs` : '—'}
+                {formData.yearsAtCompany ? `${formData.yearsAtCompany} ${t('form.yrs')}` : '—'}
               </p>
             </div>
             <div>
-              <p className="text-gray-600">At Level</p>
+              <p className="text-gray-600">{t('form.atLevel')}</p>
               <p className="font-semibold text-gray-900">
-                {formData.yearsAtLevel ? `${formData.yearsAtLevel} yrs` : '—'}
+                {formData.yearsAtLevel ? `${formData.yearsAtLevel} ${t('form.yrs')}` : '—'}
               </p>
             </div>
           </div>
@@ -99,7 +101,7 @@ export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
           />
           <div>
             <span className="font-semibold text-gray-900">
-              This information is accurate to the best of my knowledge
+              {t('form.accuracyConsent')}
             </span>
             {errors.accuracyConsent && (
               <p className="text-sm text-red-500 mt-1">{errors.accuracyConsent}</p>
@@ -128,11 +130,10 @@ export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
           />
           <div>
             <span className="font-semibold text-gray-900">
-              Share anonymously according to our privacy policy
+              {t('form.privacyConsent')}
             </span>
             <p className="text-sm text-gray-600 mt-1">
-              Your submission will be completely anonymous. We don&apos;t store any personally identifiable
-              information.
+              {t('form.privacyConsentDescription')}
             </p>
             {errors.privacyConsent && (
               <p className="text-sm text-red-500 mt-1">{errors.privacyConsent}</p>

@@ -14,6 +14,7 @@ import { Step1Combined } from './steps/Step1Combined'
 import { Step2Compensation } from './steps/Step2Compensation'
 import { Step6Review } from './steps/Step6Review'
 import { useAnonymousToken } from '@/lib/hooks/useAnonymousToken'
+import { useTranslations } from 'next-intl'
 
 const STEPS = [
   { number: 1, name: 'Role & Experience' },
@@ -24,6 +25,7 @@ const STEPS = [
 export function SalarySubmissionWizard() {
   const router = useRouter()
   const { token, isLoading: tokenLoading } = useAnonymousToken()
+  const t = useTranslations()
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [errors, setErrors] = useState<Record<string, string>>({})
@@ -178,14 +180,14 @@ export function SalarySubmissionWizard() {
                   onClick={handleBack}
                   className="px-6 py-3 border-2 border-gray-200 rounded-xl text-gray-700 font-semibold hover:bg-gray-50 transition-all"
                 >
-                  Back
+                  {t('contribute.back')}
                 </button>
               )}
               <button
                 onClick={handleSaveAndExit}
                 className="px-6 py-3 border-2 border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 transition-all"
               >
-                Save & Exit
+                {t('contribute.saveAndExit')}
               </button>
             </div>
 
@@ -194,7 +196,7 @@ export function SalarySubmissionWizard() {
               disabled={isSubmitting || (currentStep === 3 && !token)}
               className="px-10 py-4 bg-brand-secondary text-white rounded-2xl font-bold text-base hover:bg-brand-accent transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
             >
-              {isSubmitting ? 'Submitting...' : currentStep === 3 ? 'Submit' : 'Continue'}
+              {isSubmitting ? t('contribute.submitting') : currentStep === 3 ? t('contribute.submit') : t('contribute.continue')}
             </button>
           </div>
         </div>

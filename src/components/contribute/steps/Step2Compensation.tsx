@@ -1,6 +1,7 @@
 'use client'
 
 import { FormData } from '../types'
+import { useTranslations } from 'next-intl'
 
 interface Step2Props {
   formData: FormData
@@ -15,6 +16,7 @@ const CURRENCIES = [
 ]
 
 export function Step2Compensation({ formData, updateFormData, errors }: Step2Props) {
+  const t = useTranslations()
   const formatNumber = (value: number | undefined) => {
     if (!value) return ''
     return value.toLocaleString('en-US')
@@ -28,14 +30,14 @@ export function Step2Compensation({ formData, updateFormData, errors }: Step2Pro
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Compensation</h2>
-        <p className="text-gray-600">Your annual base salary</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('form.step2Title')}</h2>
+        <p className="text-gray-600">{t('form.step2Subtitle')}</p>
       </div>
 
       {/* Currency */}
       <div>
         <label className="block text-base font-semibold text-gray-800 mb-3">
-          Currency <span className="text-red-500">*</span>
+          {t('form.currency')} <span className="text-red-500">*</span>
         </label>
         <select
           value={formData.currency}
@@ -56,7 +58,7 @@ export function Step2Compensation({ formData, updateFormData, errors }: Step2Pro
       {/* Base Salary */}
       <div>
         <label className="block text-base font-semibold text-gray-800 mb-3">
-          Base Salary (Annual) <span className="text-red-500">*</span>
+          {t('form.baseSalary')} <span className="text-red-500">*</span>
         </label>
         <input
           type="text"

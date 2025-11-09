@@ -1,12 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import { WhatsAppBanner } from './WhatsAppBanner'
 import { getIndustriesWithSubmissions } from '@/app/actions/directories'
 import type { IndustryWithSubmissions } from '@/app/actions/directories'
+import { useTranslations } from 'next-intl'
 
 export function TitleDirectory() {
+  const t = useTranslations()
   const [searchQuery, setSearchQuery] = useState('')
   const [industries, setIndustries] = useState<IndustryWithSubmissions[]>([])
   const [loading, setLoading] = useState(true)
@@ -30,9 +32,9 @@ export function TitleDirectory() {
     <div className="max-w-7xl mx-auto px-6 py-12">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">Search by Industry</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-3">{t('directory.industry.title')}</h1>
         <p className="text-gray-600 text-lg">
-          Explore salaries across different industries.
+          {t('directory.industry.subtitle')}
         </p>
       </div>
 
@@ -41,13 +43,13 @@ export function TitleDirectory() {
         {/* Search Input (Left Side - 2/3 width) */}
         <div className="lg:col-span-2">
           <label htmlFor="industrySearch" className="block text-sm font-medium text-gray-700 mb-3">
-            Industry Name
+            {t('directory.industry.industryName')}
           </label>
           <div className="relative">
             <input
               type="text"
               id="industrySearch"
-              placeholder="Search industries..."
+              placeholder={t('directory.industry.searchPlaceholder')}
               className="w-full px-6 py-4 bg-white border border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-transparent shadow-sm text-lg"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -61,10 +63,10 @@ export function TitleDirectory() {
 
       {/* Industries Grid */}
       {loading ? (
-        <div className="text-center py-12 text-gray-500">Loading industries...</div>
+        <div className="text-center py-12 text-gray-500">{t('directory.industry.loading')}</div>
       ) : filteredIndustries.length === 0 ? (
         <div className="text-center py-12 text-gray-500">
-          No industries found matching &quot;{searchQuery}&quot;
+          {t('directory.industry.noResults', { query: searchQuery })}
         </div>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -83,7 +85,7 @@ export function TitleDirectory() {
                 {industry.name}
               </span>
               <span className="text-sm text-gray-500">
-                {industry.submissionCount} {industry.submissionCount === 1 ? 'submission' : 'submissions'}
+                {industry.submissionCount} {industry.submissionCount === 1 ? t('directory.industry.submission') : t('directory.industry.submissions')}
               </span>
             </Link>
           ))}

@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import { Search } from 'lucide-react'
 import { getLocationsWithSubmissions } from '@/app/actions/directories'
 import type { LocationWithSubmissions } from '@/app/actions/directories'
+import { useTranslations } from 'next-intl'
 
 interface Location extends LocationWithSubmissions {
   flag: string
@@ -32,6 +33,7 @@ const countryFlags: Record<string, string> = {
 }
 
 export function LocationDirectory() {
+  const t = useTranslations()
   const [searchQuery, setSearchQuery] = useState('')
   const [locations, setLocations] = useState<Location[]>([])
   const [loading, setLoading] = useState(true)
@@ -75,9 +77,9 @@ export function LocationDirectory() {
     <div className="max-w-6xl mx-auto px-6 py-12">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">Location Directory</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-3">{t('directory.location.title')}</h1>
         <p className="text-gray-600 text-lg">
-          Popular locations are listed below. Use the Search bar to search all locations.
+          {t('directory.location.subtitle')}
         </p>
       </div>
 
@@ -89,7 +91,7 @@ export function LocationDirectory() {
           </div>
           <input
             type="text"
-            placeholder="Search over 1,000 locations across metros, countries, and more"
+            placeholder={t('directory.location.searchPlaceholder')}
             className="w-full pl-12 pr-4 py-4 bg-white border border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-transparent shadow-sm"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -99,7 +101,7 @@ export function LocationDirectory() {
 
       {/* Location Sections */}
       {loading ? (
-        <div className="text-center py-12 text-gray-500">Loading locations...</div>
+        <div className="text-center py-12 text-gray-500">{t('directory.location.loading')}</div>
       ) : (
         <div className="space-y-12">
           {Object.entries(groupedLocations).map(([region, locs]) => (

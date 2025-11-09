@@ -10,6 +10,7 @@ import {
   getIndustryByJobTitle,
   saveLocation,
 } from '@/app/actions/typeahead'
+import { useTranslations } from 'next-intl'
 
 interface Step1Props {
   formData: FormData
@@ -18,6 +19,7 @@ interface Step1Props {
 }
 
 export function Step1Combined({ formData, updateFormData, errors }: Step1Props) {
+  const t = useTranslations()
   const currentYear = new Date().getFullYear()
   const months = [
     'January',
@@ -72,13 +74,13 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Role, Company & Experience</h2>
-        <p className="text-gray-600">Tell us about your position and career progression</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('form.step1Title')}</h2>
+        <p className="text-gray-600">{t('form.step1Subtitle')}</p>
       </div>
 
       <TypeaheadInput
-        label="Job Title"
-        placeholder="e.g., Software Engineer, Product Manager..."
+        label={t('form.jobTitle')}
+        placeholder={t('form.jobTitlePlaceholder')}
         value={formData.jobTitle || ''}
         onChange={handleJobTitleChange}
         onSearch={(query) => searchJobTitles(query)}
@@ -87,20 +89,20 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
       />
 
       <TypeaheadInput
-        label="Industry"
-        placeholder="Auto-populated based on job title"
+        label={t('form.industry')}
+        placeholder={t('form.industryPlaceholder')}
         value={formData.industry || ''}
         onChange={(value, id) => updateFormData({ industry: value, industryId: id })}
         onSearch={searchIndustries}
         error={errors.industry}
         required
         disabled
-        helperText="This field is automatically filled based on your job title"
+        helperText={t('form.industryHelper')}
       />
 
       <TypeaheadInput
-        label="Company"
-        placeholder="e.g., Google, Microsoft, Amazon..."
+        label={t('form.company')}
+        placeholder={t('form.companyPlaceholder')}
         value={formData.company || ''}
         onChange={(value, id) => updateFormData({ company: value, companyId: id })}
         onSearch={searchCompanies}
@@ -109,20 +111,20 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
       />
 
       <TypeaheadInput
-        label="Location"
-        placeholder="e.g., San Francisco, London, Tokyo..."
+        label={t('form.location')}
+        placeholder={t('form.locationPlaceholder')}
         value={formData.location || ''}
         onChange={handleLocationChange}
         onSearch={searchLocations}
         error={errors.location}
         required
-        helperText="Enter city name - we'll show you matching cities worldwide"
+        helperText={t('form.locationHelper')}
       />
 
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-base font-semibold text-gray-800 mb-3">
-            Work Model <span className="text-red-500">*</span>
+            {t('form.workModel')} <span className="text-red-500">*</span>
           </label>
           <select
             value={formData.workModel}
@@ -135,17 +137,17 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
               errors.workModel ? 'border-red-500' : 'border-gray-200'
             }`}
           >
-            <option value="">Select...</option>
-            <option value="Remote">Remote</option>
-            <option value="Hybrid">Hybrid</option>
-            <option value="On-site">On-site</option>
+            <option value="">{t('form.select')}</option>
+            <option value="Remote">{t('workModel.remote')}</option>
+            <option value="Hybrid">{t('workModel.hybrid')}</option>
+            <option value="On-site">{t('workModel.onsite')}</option>
           </select>
           {errors.workModel && <p className="text-sm text-red-500 mt-2">{errors.workModel}</p>}
         </div>
 
         <div>
           <label className="block text-base font-semibold text-gray-800 mb-3">
-            Employment Type <span className="text-red-500">*</span>
+            {t('form.employmentType')} <span className="text-red-500">*</span>
           </label>
           <select
             value={formData.employmentType}
@@ -158,10 +160,10 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
               errors.employmentType ? 'border-red-500' : 'border-gray-200'
             }`}
           >
-            <option value="">Select...</option>
-            <option value="Full-time">Full-time</option>
-            <option value="Contract">Contract</option>
-            <option value="Intern">Intern</option>
+            <option value="">{t('form.select')}</option>
+            <option value="Full-time">{t('employmentType.fulltime')}</option>
+            <option value="Contract">{t('employmentType.contract')}</option>
+            <option value="Intern">{t('employmentType.intern')}</option>
           </select>
           {errors.employmentType && <p className="text-sm text-red-500 mt-2">{errors.employmentType}</p>}
         </div>
@@ -169,7 +171,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
 
       <div>
         <label className="block text-base font-semibold text-gray-800 mb-3">
-          As-of Date <span className="text-red-500">*</span>
+          {t('form.asOfDate')} <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-2 gap-4">
           <select
@@ -181,7 +183,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
             }
             className="px-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all"
           >
-            <option value="">Select month</option>
+            <option value="">{t('form.selectMonth')}</option>
             {months.map((month, index) => (
               <option key={month} value={String(index + 1)}>
                 {month}
@@ -197,7 +199,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
             }
             className="px-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all"
           >
-            <option value="">Select year</option>
+            <option value="">{t('form.selectYear')}</option>
             {years.map((year) => (
               <option key={year} value={String(year)}>
                 {year}
@@ -209,23 +211,23 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
       </div>
 
       <div className="border-t border-gray-200 pt-6 mt-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Experience & Seniority</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('form.experienceSeniority')}</h3>
 
         <div>
           <label className="block text-base font-semibold text-gray-800 mb-3">
-            Company-Specific Level
+            {t('form.companyLevel')}
           </label>
           <input
             type="text"
             value={formData.companyLevel || ''}
             onChange={(e) => updateFormData({ companyLevel: e.target.value })}
-            placeholder="e.g., L5, Senior, Principal..."
+            placeholder={t('form.companyLevelPlaceholder')}
             className={`w-full px-4 py-3 border-2 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all ${
               errors.companyLevel ? 'border-red-500' : 'border-gray-200'
             }`}
           />
           <p className="text-sm text-gray-500 mt-2">
-            Optional - Add your Level (like Senior, Junior, VP etc)
+            {t('form.companyLevelHelper')}
           </p>
           {errors.companyLevel && <p className="text-sm text-red-500 mt-2">{errors.companyLevel}</p>}
         </div>
@@ -233,7 +235,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
         <div className="grid grid-cols-3 gap-4 mt-4">
           <div>
             <label className="block text-sm font-semibold text-gray-800 mb-2">
-              Years of Experience
+              {t('form.experience')}
             </label>
             <input
               type="number"
@@ -251,7 +253,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-2">Years at Company</label>
+            <label className="block text-sm font-semibold text-gray-800 mb-2">{t('form.yearsAtCompany')}</label>
             <input
               type="number"
               min="0"
@@ -268,7 +270,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-2">Years at Level</label>
+            <label className="block text-sm font-semibold text-gray-800 mb-2">{t('form.yearsAtLevel')}</label>
             <input
               type="number"
               min="0"

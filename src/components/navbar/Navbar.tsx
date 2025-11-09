@@ -1,26 +1,40 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, User } from 'lucide-react'
+import { Menu, User, Globe } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
+import { usePathname, useRouter } from '@/i18n/routing'
+import { useTranslations } from 'next-intl'
 import { AuthModal } from './AuthModal'
 import { MobileMenu } from './MobileMenu'
 import { SearchAutocomplete } from '@/components/search/SearchAutocomplete'
 import { useAuth } from '@/contexts/AuthContext'
 import { useCurrency } from '@/contexts/CurrencyContext'
 import { CURRENCIES, Currency } from '@/lib/currency'
+import { useParams } from 'next/navigation'
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const [isSalariesDropdownOpen, setIsSalariesDropdownOpen] = useState(false)
   const [isCurrencyDropdownOpen, setIsCurrencyDropdownOpen] = useState(false)
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false)
   const { user } = useAuth()
   const { selectedCurrency, setSelectedCurrency } = useCurrency()
+  const t = useTranslations()
+  const router = useRouter()
+  const pathname = usePathname()
+  const params = useParams()
+  const currentLocale = params.locale as string
 
   const handleAuthClick = () => {
     setIsAuthModalOpen(true)
+  }
+
+  const switchLanguage = (locale: string) => {
+    router.replace(pathname, { locale })
+    setIsLanguageDropdownOpen(false)
   }
 
   return (
@@ -43,7 +57,7 @@ export function Navbar() {
 
             {/* Expanded Search Bar */}
             <div className="flex-1 max-w-2xl">
-              <SearchAutocomplete placeholder="Search by company, title, or location..." />
+              <SearchAutocomplete placeholder={t('nav.searchPlaceholder')} />
             </div>
 
             {/* Right side actions */}
@@ -55,7 +69,7 @@ export function Navbar() {
                   onBlur={() => setTimeout(() => setIsSalariesDropdownOpen(false), 200)}
                   className="text-sm font-medium text-brand-secondary hover:text-brand-accent transition-colors px-3 py-2 flex items-center gap-1"
                 >
-                  Salaries
+                  {t('nav.browse')}
                   <svg
                     className={`w-4 h-4 transition-transform ${
                       isSalariesDropdownOpen ? 'rotate-180' : ''
@@ -80,21 +94,21 @@ export function Navbar() {
                       className="block px-4 py-2 text-sm text-brand-secondary hover:bg-brand-primary transition-colors first:rounded-t-lg"
                       onClick={() => setIsSalariesDropdownOpen(false)}
                     >
-                      By Location
+                      {t('browse.byLocation')}
                     </Link>
                     <Link
                       href="/salaries/by-company"
                       className="block px-4 py-2 text-sm text-brand-secondary hover:bg-brand-primary transition-colors"
                       onClick={() => setIsSalariesDropdownOpen(false)}
                     >
-                      By Company
+                      {t('browse.byCompany')}
                     </Link>
                     <Link
                       href="/salaries/by-industry"
                       className="block px-4 py-2 text-sm text-brand-secondary hover:bg-brand-primary transition-colors last:rounded-b-lg"
                       onClick={() => setIsSalariesDropdownOpen(false)}
                     >
-                      By Industry
+                      {t('browse.byIndustry')}
                     </Link>
                   </div>
                 )}
@@ -151,11 +165,63 @@ export function Navbar() {
                 )}
               </div>
 
+              {/* Language Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                  onBlur={() => setTimeout(() => setIsLanguageDropdownOpen(false), 200)}
+                  className="text-sm font-medium text-brand-secondary hover:text-brand-accent transition-colors px-3 py-2 flex items-center gap-1"
+                >
+                  <Globe className="w-4 h-4" />
+                  {currentLocale === 'fr' ? 'FR' : 'EN'}
+                  <svg
+                    className={`w-4 h-4 transition-transform ${
+                      isLanguageDropdownOpen ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                {isLanguageDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-32 bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+                    <button
+                      onClick={() => switchLanguage('fr')}
+                      className={`w-full text-left px-4 py-2 text-sm hover:bg-brand-primary transition-colors first:rounded-t-lg flex items-center gap-2 ${
+                        currentLocale === 'fr'
+                          ? 'bg-brand-primary text-brand-accent font-semibold'
+                          : 'text-brand-secondary'
+                      }`}
+                    >
+                      🇫🇷 Français
+                    </button>
+                    <button
+                      onClick={() => switchLanguage('en')}
+                      className={`w-full text-left px-4 py-2 text-sm hover:bg-brand-primary transition-colors last:rounded-b-lg flex items-center gap-2 ${
+                        currentLocale === 'en'
+                          ? 'bg-brand-primary text-brand-accent font-semibold'
+                          : 'text-brand-secondary'
+                      }`}
+                    >
+                      🇬🇧 English
+                    </button>
+                  </div>
+                )}
+              </div>
+
               <Link
                 href="/contribute"
                 className="text-sm font-medium text-brand-secondary hover:text-brand-accent transition-colors px-3 py-2"
               >
-                Contribute
+                {t('nav.contribute')}
               </Link>
 
               {user ? (
@@ -171,7 +237,7 @@ export function Navbar() {
                   onClick={handleAuthClick}
                   className="px-5 py-2 text-sm font-medium text-white bg-brand-secondary rounded-lg hover:bg-brand-accent transition-colors cursor-pointer"
                 >
-                  Register / Sign in
+                  {t('nav.signIn')}
                 </button>
               )}
             </div>

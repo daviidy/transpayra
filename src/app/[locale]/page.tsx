@@ -3,8 +3,10 @@ import { JobTabs } from "@/components/JobTabs";
 import { ContributeCTA } from "@/components/ContributeCTA";
 import { Footer } from "@/components/Footer";
 import { SearchAutocomplete } from "@/components/search/SearchAutocomplete";
+import { getTranslations } from 'next-intl/server';
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations();
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
@@ -15,29 +17,19 @@ export default function Home() {
         <div className="container flex flex-col px-6 py-16 mx-auto space-y-8 lg:py-20">
           <div className="w-full text-center">
             <h1 className="text-4xl font-bold tracking-wide text-brand-secondary lg:text-5xl">
-              Find out what engineers really earn.
+              {t('home.title')}
             </h1>
 
             <p className="mt-6 text-lg text-brand-secondary text-opacity-80 max-w-2xl mx-auto">
-              Get transparent salary data from real engineers at companies everywhere across Europe and Africa.
+              {t('home.subtitle')}
             </p>
 
             {/* Central Search Bar */}
             <div className="w-full mt-12 max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row gap-2">
-                <div className="flex-1">
-                  <SearchAutocomplete
-                    placeholder="Search by Job Title, Company, or Location…"
-                    className="h-14 text-base"
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="h-14 px-8 text-white font-medium transition-colors duration-300 transform bg-brand-secondary rounded-lg hover:bg-brand-accent focus:outline-none focus:bg-brand-accent"
-                >
-                  Search
-                </button>
-              </div>
+              <SearchAutocomplete
+                placeholder={t('home.searchPlaceholder')}
+                className="h-14 text-base"
+              />
             </div>
           </div>
         </div>

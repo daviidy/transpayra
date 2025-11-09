@@ -33,5 +33,6 @@ export async function GET(request: NextRequest) {
   }
 
   // Redirect to dashboard after successful sign-in
-  return NextResponse.redirect(`${origin}/dashboard`)
+  // Default to French locale
+  return NextResponse.redirect(`${origin}/fr/dashboard`)
 }
