@@ -26,7 +26,7 @@ export const CURRENCIES: Record<Currency, CurrencyInfo> = {
     code: 'XOF',
     name: 'West African CFA Franc',
     symbol: 'F CFA',
-    flag: '🇸🇳', // Senegal flag as representative
+    flag: '🇨🇮', // Côte d'Ivoire flag as representative
   },
   EUR: {
     code: 'EUR',

@@ -121,7 +121,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
 
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-base font-semibold text-gray-800 mb-3">
             Work Model <span className="text-red-500">*</span>
           </label>
           <select
@@ -131,8 +131,8 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
                 workModel: e.target.value as 'Remote' | 'Hybrid' | 'On-site',
               })
             }
-            className={`w-full px-4 py-3 border rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent ${
-              errors.workModel ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-3 border-2 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all ${
+              errors.workModel ? 'border-red-500' : 'border-gray-200'
             }`}
           >
             <option value="">Select...</option>
@@ -140,11 +140,11 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
             <option value="Hybrid">Hybrid</option>
             <option value="On-site">On-site</option>
           </select>
-          {errors.workModel && <p className="text-sm text-red-500 mt-1">{errors.workModel}</p>}
+          {errors.workModel && <p className="text-sm text-red-500 mt-2">{errors.workModel}</p>}
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-base font-semibold text-gray-800 mb-3">
             Employment Type <span className="text-red-500">*</span>
           </label>
           <select
@@ -154,8 +154,8 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
                 employmentType: e.target.value as 'Full-time' | 'Contract' | 'Intern',
               })
             }
-            className={`w-full px-4 py-3 border rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent ${
-              errors.employmentType ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-3 border-2 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all ${
+              errors.employmentType ? 'border-red-500' : 'border-gray-200'
             }`}
           >
             <option value="">Select...</option>
@@ -163,12 +163,12 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
             <option value="Contract">Contract</option>
             <option value="Intern">Intern</option>
           </select>
-          {errors.employmentType && <p className="text-sm text-red-500 mt-1">{errors.employmentType}</p>}
+          {errors.employmentType && <p className="text-sm text-red-500 mt-2">{errors.employmentType}</p>}
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-base font-semibold text-gray-800 mb-3">
           As-of Date <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-2 gap-4">
@@ -179,7 +179,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
                 asOfDate: { ...formData.asOfDate, month: e.target.value },
               })
             }
-            className="px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+            className="px-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all"
           >
             <option value="">Select month</option>
             {months.map((month, index) => (
@@ -195,7 +195,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
                 asOfDate: { ...formData.asOfDate, year: e.target.value },
               })
             }
-            className="px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+            className="px-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all"
           >
             <option value="">Select year</option>
             {years.map((year) => (
@@ -205,14 +205,14 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
             ))}
           </select>
         </div>
-        {errors.asOfDate && <p className="text-sm text-red-500 mt-1">{errors.asOfDate}</p>}
+        {errors.asOfDate && <p className="text-sm text-red-500 mt-2">{errors.asOfDate}</p>}
       </div>
 
       <div className="border-t border-gray-200 pt-6 mt-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">Experience & Seniority</h3>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-base font-semibold text-gray-800 mb-3">
             Company-Specific Level
           </label>
           <input
@@ -220,19 +220,19 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
             value={formData.companyLevel || ''}
             onChange={(e) => updateFormData({ companyLevel: e.target.value })}
             placeholder="e.g., L5, Senior, Principal..."
-            className={`w-full px-4 py-3 border rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent ${
-              errors.companyLevel ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-3 border-2 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all ${
+              errors.companyLevel ? 'border-red-500' : 'border-gray-200'
             }`}
           />
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-500 mt-2">
             Optional - Add your Level (like Senior, Junior, VP etc)
           </p>
-          {errors.companyLevel && <p className="text-sm text-red-500 mt-1">{errors.companyLevel}</p>}
+          {errors.companyLevel && <p className="text-sm text-red-500 mt-2">{errors.companyLevel}</p>}
         </div>
 
         <div className="grid grid-cols-3 gap-4 mt-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-800 mb-2">
               Years of Experience
             </label>
             <input
@@ -246,12 +246,12 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
                 })
               }
               placeholder="5"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Years at Company</label>
+            <label className="block text-sm font-semibold text-gray-800 mb-2">Years at Company</label>
             <input
               type="number"
               min="0"
@@ -263,12 +263,12 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
                 })
               }
               placeholder="2"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Years at Level</label>
+            <label className="block text-sm font-semibold text-gray-800 mb-2">Years at Level</label>
             <input
               type="number"
               min="0"
@@ -280,7 +280,7 @@ export function Step1Combined({ formData, updateFormData, errors }: Step1Props) 
                 })
               }
               placeholder="1"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all"
             />
           </div>
         </div>

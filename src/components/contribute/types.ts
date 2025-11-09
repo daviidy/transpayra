@@ -23,28 +23,11 @@ export interface FormData {
   yearsAtLevel?: number
   focusTag?: string
 
-  // Step 3: Cash Compensation
+  // Step 3: Compensation
   currency: string
   baseSalary?: number
-  signingBonus?: number
-  otherCashStipends?: number
 
-  // Step 4: Equity / Stock
-  equityType: 'RSU' | 'Options' | 'None' | ''
-  equityGrantValue?: number
-  equityGrantShares?: number
-  equityGrantToggle: 'value' | 'shares'
-  vestingDuration?: number
-  vestingCliff?: number
-  vestingFrontLoaded: boolean
-  vestingFrontLoadedPercent?: number
-  equityRefresher?: number
-
-  // Step 5: Bonus
-  targetBonusPercent?: number
-  actualBonusAmount?: number
-
-  // Step 6: Review & Privacy
+  // Step 4: Review & Privacy
   accuracyConsent: boolean
   privacyConsent: boolean
 }
@@ -54,9 +37,6 @@ export const initialFormData: FormData = {
   employmentType: '',
   asOfDate: { month: '', year: '' },
   currency: 'XOF', // Default to West African CFA
-  equityType: '',
-  equityGrantToggle: 'value',
-  vestingFrontLoaded: false,
   accuracyConsent: false,
   privacyConsent: false,
 }

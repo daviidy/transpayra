@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Motivation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap');
+
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .option-card {
+            transition: all 0.2s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-card.selected {
+            background-color: #e6f3ff;
+            border-color: #1cb0f6;
+            box-shadow: 0 0 0 2px #1cb0f6;
+        }
+
+        .continue-btn {
+            transition: all 0.2s ease;
+        }
+
+        .continue-btn:hover {
+            background-color: #4db802;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(88, 204, 2, 0.3);
+        }
+
+        .continue-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+    <style>@view-transition { navigation: auto; }</style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+<body class="bg-white min-h-full flex flex-col">
+<div class="w-full px-4 pt-6">
+    <div class="max-w-2xl mx-auto">
+        <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div class="h-full bg-[#58cc02] rounded-full" style="width: 28%"></div>
+        </div>
+    </div>
+</div>
+<div class="flex-1 flex items-center justify-center px-4 py-8">
+    <div class="max-w-2xl w-full">
+        <div class="flex items-start gap-4 mb-12">
+            <div class="flex-shrink-0">
+                <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="65" rx="25" ry="8" fill="#E5E5E5" opacity="0.3" /> <circle cx="40" cy="35" r="28" fill="#58cc02" /> <circle cx="32" cy="30" r="6" fill="white" /> <circle cx="48" cy="30" r="6" fill="white" /> <circle cx="32" cy="30" r="3" fill="#1e1e1e" /> <circle cx="48" cy="30" r="3" fill="#1e1e1e" /> <path d="M28 42 Q40 50 52 42" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round" fill="none" /> <path d="M15 28 Q12 22 18 20" stroke="#58cc02" stroke-width="4" stroke-linecap="round" fill="none" /> <path d="M65 28 Q68 22 62 20" stroke="#58cc02" stroke-width="4" stroke-linecap="round" fill="none" /> <rect x="35" y="50" width="10" height="8" rx="2" fill="#ff9600" />
+                </svg>
+            </div>
+            <div class="flex-1 mt-2">
+                <div class="bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 relative">
+                    <div class="absolute -left-2 top-6 w-4 h-4 bg-white border-l-2 border-b-2 border-gray-200 transform rotate-45"></div>
+                    <p id="mascot-message" class="text-lg font-bold text-gray-800">Yay! Fun is my specialty!</p>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mb-12"><button class="option-card selected bg-white border-2 border-gray-200 rounded-2xl p-5 flex items-center gap-4 cursor-pointer shadow-sm" data-option="fun"> <span class="text-3xl">🎉</span> <span class="text-base font-bold text-gray-800">Just for fun</span> </button> <button class="option-card bg-white border-2 border-gray-200 rounded-2xl p-5 flex items-center gap-4 cursor-pointer shadow-sm" data-option="career"> <span class="text-3xl">💼</span> <span class="text-base font-bold text-gray-800">Boost my career</span> </button> <button class="option-card bg-white border-2 border-gray-200 rounded-2xl p-5 flex items-center gap-4 cursor-pointer shadow-sm" data-option="education"> <span class="text-3xl">📚</span> <span class="text-base font-bold text-gray-800">Support my education</span> </button> <button class="option-card bg-white border-2 border-gray-200 rounded-2xl p-5 flex items-center gap-4 cursor-pointer shadow-sm" data-option="travel"> <span class="text-3xl">✈️</span> <span class="text-base font-bold text-gray-800">Prepare for travel</span> </button> <button class="option-card bg-white border-2 border-gray-200 rounded-2xl p-5 flex items-center gap-4 cursor-pointer shadow-sm" data-option="productive"> <span class="text-3xl">🧠</span> <span class="text-base font-bold text-gray-800">Spend time productively</span> </button> <button class="option-card bg-white border-2 border-gray-200 rounded-2xl p-5 flex items-center gap-4 cursor-pointer shadow-sm" data-option="connect"> <span class="text-3xl">👥</span> <span class="text-base font-bold text-gray-800">Connect with people</span> </button>
+        </div>
+        <div class="flex justify-center"><button id="continue-btn" class="continue-btn bg-[#58cc02] text-white font-bold text-base px-16 py-4 rounded-2xl shadow-md uppercase tracking-wide"> CONTINUE </button>
+        </div>
+    </div>
+</div>
+<script>
+    const defaultConfig = {
+        mascot_message: "Yay! Fun is my specialty!",
+        button_text: "CONTINUE",
+        background_color: "#ffffff",
+        progress_color: "#58cc02",
+        primary_action_color: "#58cc02",
+        selection_color: "#1cb0f6",
+        text_color: "#1e1e1e",
+        font_family: "Nunito",
+        font_size: 16
+    };
+
+    let selectedOption = 'fun';
+
+    const optionCards = document.querySelectorAll('.option-card');
+    optionCards.forEach(card => {
+        card.addEventListener('click', function() {
+            optionCards.forEach(c => c.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedOption = this.dataset.option;
+        });
+    });
+
+    document.getElementById('continue-btn').addEventListener('click', function() {
+        const message = document.createElement('div');
+        message.className = 'fixed top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg font-bold';
+        message.textContent = `Great choice! You selected: ${selectedOption}`;
+        document.body.appendChild(message);
+
+        setTimeout(() => {
+            message.remove();
+        }, 3000);
+    });
+
+    async function onConfigChange(config) {
+        const mascotMessage = document.getElementById('mascot-message');
+        const continueBtn = document.getElementById('continue-btn');
+        const baseFontSize = config.font_size || defaultConfig.font_size;
+        const customFont = config.font_family || defaultConfig.font_family;
+        const baseFontStack = 'sans-serif';
+
+        mascotMessage.textContent = config.mascot_message || defaultConfig.mascot_message;
+        continueBtn.textContent = config.button_text || defaultConfig.button_text;
+
+        document.body.style.backgroundColor = config.background_color || defaultConfig.background_color;
+        document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+        const progressBar = document.querySelector('.bg-\\[\\#58cc02\\]');
+        if (progressBar) {
+            progressBar.style.backgroundColor = config.progress_color || defaultConfig.progress_color;
+        }
+
+        continueBtn.style.backgroundColor = config.primary_action_color || defaultConfig.primary_action_color;
+
+        mascotMessage.style.color = config.text_color || defaultConfig.text_color;
+        mascotMessage.style.fontSize = `${baseFontSize * 1.125}px`;
+
+        continueBtn.style.fontSize = `${baseFontSize}px`;
+
+        const optionLabels = document.querySelectorAll('.option-card span:last-child');
+        optionLabels.forEach(label => {
+            label.style.color = config.text_color || defaultConfig.text_color;
+            label.style.fontSize = `${baseFontSize}px`;
+        });
+
+        const styleSheet = document.styleSheets[0];
+        const rules = Array.from(styleSheet.cssRules);
+        const selectedRule = rules.find(rule => rule.selectorText === '.option-card.selected');
+        if (selectedRule) {
+            const selectionColor = config.selection_color || defaultConfig.selection_color;
+            selectedRule.style.backgroundColor = selectionColor + '1a';
+            selectedRule.style.borderColor = selectionColor;
+            selectedRule.style.boxShadow = `0 0 0 2px ${selectionColor}`;
+        }
+    }
+
+    if (window.elementSdk) {
+        window.elementSdk.init({
+            defaultConfig,
+            onConfigChange,
+            mapToCapabilities: (config) => ({
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.progress_color || defaultConfig.progress_color,
+                        set: (value) => {
+                            config.progress_color = value;
+                            window.elementSdk.setConfig({ progress_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                        set: (value) => {
+                            config.primary_action_color = value;
+                            window.elementSdk.setConfig({ primary_action_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.selection_color || defaultConfig.selection_color,
+                        set: (value) => {
+                            config.selection_color = value;
+                            window.elementSdk.setConfig({ selection_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            }),
+            mapToEditPanelValues: (config) => new Map([
+                ["mascot_message", config.mascot_message || defaultConfig.mascot_message],
+                ["button_text", config.button_text || defaultConfig.button_text]
+            ])
+        });
+    }
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99b921e35189c402',t:'MTc2MjY0NzUwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,4 +1,4 @@
-import { getSubmissionDetails } from '@/app/actions/submissions'
+import { getSubmissionDetails, getSimilarSubmissions } from '@/app/actions/submissions'
 import { Navbar } from '@/components/navbar/Navbar'
 import { ContributeCTA } from '@/components/ContributeCTA'
 import { Footer } from '@/components/Footer'
@@ -23,11 +23,15 @@ export default async function SubmissionPage({ params }: PageProps) {
     notFound()
   }
 
+  // Fetch similar submissions if jobTitleId is available
+  const similarSubmissions = submission.jobTitleId
+    ? await getSimilarSubmissions(submission.jobTitleId, submissionId, 10)
+    : []
+
   return (
     <>
       <Navbar />
-      <SubmissionDetailsClient submission={submission} />
-      <ContributeCTA />
+      <SubmissionDetailsClient submission={submission} similarSubmissions={similarSubmissions} />
       <Footer />
     </>
   )

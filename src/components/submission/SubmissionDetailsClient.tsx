@@ -8,15 +8,11 @@ import Link from 'next/link'
 
 interface SubmissionDetailsClientProps {
   submission: SubmissionDetails
+  similarSubmissions?: SubmissionDetails[]
 }
 
-export function SubmissionDetailsClient({ submission }: SubmissionDetailsClientProps) {
+export function SubmissionDetailsClient({ submission, similarSubmissions = [] }: SubmissionDetailsClientProps) {
   const { formatAmount } = useCurrency()
-
-  const totalComp =
-    parseFloat(submission.baseSalary) +
-    parseFloat(submission.bonus || '0') +
-    parseFloat(submission.stockCompensation || '0')
 
   const formatCurrency = (amount: string | number) => {
     const num = typeof amount === 'string' ? parseFloat(amount) : amount
@@ -28,10 +24,9 @@ export function SubmissionDetailsClient({ submission }: SubmissionDetailsClientP
   return (
     <main className="min-h-screen bg-white">
       <section className="mx-auto max-w-6xl px-4 py-10">
-        {/* Top row: title + utilities */}
-        <div className="flex items-start justify-between gap-6">
-          {/* Title & meta */}
-          <div className="flex min-w-0 items-start gap-3">
+        {/* Top row: title */}
+        <div className="mb-8">
+          <div className="flex min-w-0 items-start gap-4">
             {/* Company logo */}
             <Link href={`/company/${submission.companyId}`} className="mt-1 hover:opacity-80 transition-opacity">
               <CompanyLogo
@@ -41,161 +36,115 @@ export function SubmissionDetailsClient({ submission }: SubmissionDetailsClientP
               />
             </Link>
             <div className="min-w-0">
-              <h1 className="text-2xl font-semibold text-slate-900">{submission.jobTitle}</h1>
-              <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-slate-600">
-                <div className="flex items-center gap-1">
-                  <span className="font-medium text-slate-700">Level</span>
-                  <span>•</span>
-                  <span className="text-slate-900">
-                    {submission.levelName || submission.levelDescription || '—'}
-                  </span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <span className="font-medium text-slate-700">Focus Tag</span>
-                  <span>•</span>
-                  <span className="text-slate-900">—</span>
-                </div>
-              </div>
+              <h1 className="text-3xl font-bold text-gray-900">{submission.jobTitle}</h1>
+              <p className="text-lg text-gray-600 mt-1">{submission.companyName}</p>
             </div>
-          </div>
-
-          {/* Utilities */}
-          <div className="flex shrink-0 items-center gap-4">
-            <button className="text-sm font-medium text-slate-600 hover:text-slate-900">
-              Report this entry
-            </button>
-            <button className="text-sm font-medium text-slate-600 hover:text-slate-900">
-              Share
-            </button>
           </div>
         </div>
 
         {/* Main content grid */}
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {/* RIGHT: Total comp + breakdown */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {/* LEFT: Compensation */}
           <div>
-            {/* Total Compensation */}
-            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-5">
-              <div className="flex items-center justify-between">
-                <h2 className="text-sm font-semibold tracking-wide text-slate-700">
-                  Average Annual Total Comp
-                </h2>
-                <button className="text-sm font-medium text-slate-600 hover:text-slate-900">
-                  See Calculation ▾
-                </button>
+            {/* Base Salary Card */}
+            <div className="rounded-2xl border-2 border-gray-200 bg-gradient-to-br from-amber-50 to-orange-50 p-6 shadow-sm">
+              <h2 className="text-base font-bold text-gray-800 mb-4">
+                Annual Base Salary
+              </h2>
+              <div className="rounded-xl bg-white px-6 py-6 text-4xl font-bold tabular-nums text-brand-secondary shadow-sm border-2 border-gray-200">
+                {formatCurrency(submission.baseSalary)}
               </div>
-              <div className="mt-3 rounded-lg bg-white px-4 py-4 text-3xl font-semibold tabular-nums text-slate-900 shadow-sm ring-1 ring-slate-200">
-                {formatCurrency(totalComp)}
-              </div>
-            </div>
-
-            {/* Breakdown */}
-            <div className="mt-6 rounded-xl border border-slate-200 bg-white p-5">
-              <div className="mb-3 flex items-center justify-between">
-                <h3 className="text-sm font-semibold text-slate-800">Comp Breakdown</h3>
-                <button className="text-sm font-medium text-sky-700 hover:text-sky-800">
-                  View Vesting Trends →
-                </button>
-              </div>
-
-              <dl className="divide-y divide-slate-200">
-                {/* Base Salary */}
-                <div className="flex items-center justify-between py-4">
-                  <dt className="text-sm font-medium text-slate-700">Base Salary</dt>
-                  <dd className="text-sm font-semibold tabular-nums text-slate-900">
-                    {formatCurrency(submission.baseSalary)}
-                  </dd>
-                </div>
-
-                {/* Stock */}
-                <div className="flex items-center justify-between py-4">
-                  <div>
-                    <div className="text-xs uppercase tracking-wide text-slate-400">Stock</div>
-                    <dt className="text-sm font-medium text-slate-700">
-                      Average Annual Stock
-                    </dt>
-                  </div>
-                  <dd
-                    className={`text-sm tabular-nums ${
-                      submission.stockCompensation && parseFloat(submission.stockCompensation) > 0
-                        ? 'font-semibold text-slate-900'
-                        : 'text-slate-400'
-                    }`}
-                  >
-                    {submission.stockCompensation && parseFloat(submission.stockCompensation) > 0
-                      ? formatCurrency(submission.stockCompensation)
-                      : '—'}
-                  </dd>
-                </div>
-
-                {/* Bonus (Target) */}
-                <div className="flex items-center justify-between py-4">
-                  <div>
-                    <div className="text-xs uppercase tracking-wide text-slate-400">Bonus</div>
-                    <dt className="text-sm font-medium text-slate-700">Target Bonus</dt>
-                  </div>
-                  <dd className="text-sm tabular-nums text-slate-400">—</dd>
-                </div>
-
-                {/* Bonus (Average Annual Bonuses) */}
-                <div className="flex items-center justify-between py-4">
-                  <dt className="text-sm font-medium text-slate-700">Average Annual Bonuses</dt>
-                  <dd
-                    className={`text-sm tabular-nums ${
-                      submission.bonus && parseFloat(submission.bonus) > 0
-                        ? 'font-semibold text-slate-900'
-                        : 'text-slate-900'
-                    }`}
-                  >
-                    {submission.bonus && parseFloat(submission.bonus) > 0
-                      ? formatCurrency(submission.bonus)
-                      : formatCurrency(0)}
-                  </dd>
-                </div>
-              </dl>
-            </div>
-
-            {/* CTA */}
-            <div className="mt-6">
-              <Link
-                href="/negotiate"
-                className="text-sm font-medium text-sky-700 hover:text-sky-800"
-              >
-                Negotiate Your Salary →
-              </Link>
             </div>
           </div>
 
-          {/* LEFT: Details */}
-          <aside className="space-y-4">
-            <h2 className="text-sm font-semibold tracking-wide text-slate-700">Details</h2>
-
+          {/* RIGHT: Details */}
+          <aside>
+            <h2 className="text-base font-bold text-gray-800 mb-4">Details</h2>
             <ul className="space-y-3">
-              <li className="rounded-lg border border-slate-200 bg-white px-4 py-3">
+              <li className="rounded-xl border-2 border-gray-200 bg-white px-5 py-4 hover:border-gray-300 transition-all">
+                <div className="text-sm font-semibold text-gray-600 mb-1">Company</div>
                 <Link
                   href={`/company/${submission.companyId}`}
-                  target="_blank"
-                  className="text-sky-700 hover:text-sky-800"
+                  className="text-brand-secondary hover:text-brand-accent font-semibold"
                 >
                   {submission.companyName}
                 </Link>
               </li>
-              <li className="rounded-lg border border-slate-200 bg-white px-4 py-3">
-                <div className="text-slate-700">{locationString}</div>
+              <li className="rounded-xl border-2 border-gray-200 bg-white px-5 py-4">
+                <div className="text-sm font-semibold text-gray-600 mb-1">Location</div>
+                <div className="text-gray-900 font-semibold">{locationString}</div>
               </li>
-              <li className="rounded-lg border border-slate-200 bg-white px-4 py-3">
-                <div className="text-slate-700">
-                  {submission.yearsOfExperience} years of experience
+              <li className="rounded-xl border-2 border-gray-200 bg-white px-5 py-4">
+                <div className="text-sm font-semibold text-gray-600 mb-1">Experience</div>
+                <div className="text-gray-900 font-semibold">
+                  {submission.yearsOfExperience} years total
                 </div>
               </li>
-              <li className="rounded-lg border border-slate-200 bg-white px-4 py-3">
-                <div className="text-slate-700">
+              <li className="rounded-xl border-2 border-gray-200 bg-white px-5 py-4">
+                <div className="text-sm font-semibold text-gray-600 mb-1">Tenure</div>
+                <div className="text-gray-900 font-semibold">
                   {submission.yearsAtCompany} years at company
                 </div>
               </li>
             </ul>
           </aside>
         </div>
+
+        {/* Similar Submissions Section */}
+        {similarSubmissions.length > 0 && (
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              Similar {submission.jobTitle} Submissions
+            </h2>
+            <div className="rounded-2xl border-2 border-gray-200 bg-white shadow-sm overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-gray-50 border-b-2 border-gray-200">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-700">Company</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-700">Location</th>
+                      <th className="px-6 py-4 text-right text-sm font-bold text-gray-700">Base Salary</th>
+                      <th className="px-6 py-4 text-center text-sm font-bold text-gray-700">Experience</th>
+                      <th className="px-6 py-4 text-center text-sm font-bold text-gray-700">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    {similarSubmissions.map((sub) => {
+                      const subLocation = `${sub.city}${sub.state ? `, ${sub.state}` : ''}, ${sub.country}`
+                      return (
+                        <tr key={sub.submissionId} className="hover:bg-gray-50 transition-colors">
+                          <td className="px-6 py-4">
+                            <Link
+                              href={`/company/${sub.companyId}`}
+                              className="font-semibold text-brand-secondary hover:text-brand-accent"
+                            >
+                              {sub.companyName}
+                            </Link>
+                          </td>
+                          <td className="px-6 py-4 text-gray-700">{subLocation}</td>
+                          <td className="px-6 py-4 text-right font-bold text-gray-900 tabular-nums">
+                            {formatCurrency(sub.baseSalary)}
+                          </td>
+                          <td className="px-6 py-4 text-center text-gray-700">
+                            {sub.yearsOfExperience} yrs
+                          </td>
+                          <td className="px-6 py-4 text-center">
+                            <Link
+                              href={`/submission/${sub.submissionId}`}
+                              className="inline-block px-4 py-2 text-sm font-semibold text-brand-secondary border-2 border-brand-secondary rounded-xl hover:bg-brand-secondary hover:text-white transition-all"
+                            >
+                              View
+                            </Link>
+                          </td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
     </main>
   )

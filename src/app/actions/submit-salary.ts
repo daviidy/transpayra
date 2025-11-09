@@ -41,25 +41,6 @@ export async function submitSalary(
       }
     }
 
-    // Calculate total compensation
-    const baseSalary = formData.baseSalary
-    const stockComp = formData.equityGrantValue && formData.vestingDuration
-      ? formData.equityGrantValue / formData.vestingDuration
-      : 0
-    const bonus = formData.actualBonusAmount
-      ? formData.actualBonusAmount
-      : formData.targetBonusPercent && formData.baseSalary
-      ? (formData.baseSalary * formData.targetBonusPercent) / 100
-      : 0
-
-    console.log('Salary Submission Debug:', {
-      actualBonusAmount: formData.actualBonusAmount,
-      targetBonusPercent: formData.targetBonusPercent,
-      calculatedBonus: bonus,
-      baseSalary,
-      stockComp
-    })
-
     // Insert salary submission
     const [result] = await db
       .insert(salarySubmission)
@@ -70,9 +51,9 @@ export async function submitSalary(
         jobTitleId: formData.jobTitleId,
         locationId: formData.locationId,
         levelId: formData.companyLevelId || null,
-        baseSalary: baseSalary.toString(),
-        bonus: bonus.toString(),
-        stockCompensation: stockComp.toString(),
+        baseSalary: formData.baseSalary.toString(),
+        bonus: '0',
+        stockCompensation: '0',
         yearsOfExperience: formData.yearsOfExperience || 0,
         yearsAtCompany: formData.yearsAtCompany || 0,
       })

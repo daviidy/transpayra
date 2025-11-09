@@ -84,7 +84,7 @@ export function TypeaheadInput({
 
   return (
     <div ref={wrapperRef} className="relative">
-      <label className="block text-sm font-medium text-gray-700 mb-2">
+      <label className="block text-base font-semibold text-gray-800 mb-3">
         {label}
         {required && <span className="text-red-500 ml-1">*</span>}
       </label>
@@ -99,15 +99,15 @@ export function TypeaheadInput({
         }}
         placeholder={placeholder}
         disabled={disabled}
-        className={`w-full px-4 py-3 border rounded-lg text-black focus:ring-2 focus:ring-brand-secondary focus:border-transparent ${
-          error ? 'border-red-500' : 'border-gray-300'
+        className={`w-full px-4 py-3 border-2 rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition-all ${
+          error ? 'border-red-500' : 'border-gray-200'
         } ${disabled ? 'bg-gray-100 cursor-not-allowed' : ''}`}
       />
-      {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
+      {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
 
       {/* Suggestions dropdown */}
       {showSuggestions && inputValue.length >= 2 && !disabled && (
-        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+        <div className="absolute z-10 w-full mt-2 bg-white border-2 border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto">
           {loading ? (
             <div className="px-4 py-3 text-gray-500">Loading...</div>
           ) : suggestions.length > 0 ? (
@@ -116,7 +116,7 @@ export function TypeaheadInput({
                 key={suggestion.id}
                 type="button"
                 onClick={() => handleSelectSuggestion(suggestion)}
-                className="w-full text-left px-4 py-3 text-black hover:bg-gray-100 transition-colors"
+                className="w-full text-left px-4 py-3 text-gray-900 hover:bg-gray-100 transition-colors first:rounded-t-xl last:rounded-b-xl"
               >
                 {suggestion.label}
               </button>

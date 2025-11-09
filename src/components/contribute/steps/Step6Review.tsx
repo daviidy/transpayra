@@ -9,32 +9,6 @@ interface Step6Props {
 }
 
 export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
-  const calculateAverageAnnualStock = () => {
-    if (!formData.equityGrantValue || !formData.vestingDuration) return 0
-
-    if (formData.vestingFrontLoaded && formData.vestingFrontLoadedPercent) {
-      const year1 = (formData.equityGrantValue * formData.vestingFrontLoadedPercent) / 100
-      const remaining = formData.equityGrantValue - year1
-      const perYear = remaining / (formData.vestingDuration - 1)
-      return (year1 + perYear * (formData.vestingDuration - 1)) / formData.vestingDuration
-    }
-
-    return formData.equityGrantValue / formData.vestingDuration
-  }
-
-  const calculateBonus = () => {
-    if (formData.actualBonusAmount) return formData.actualBonusAmount
-    if (formData.targetBonusPercent && formData.baseSalary) {
-      return (formData.baseSalary * formData.targetBonusPercent) / 100
-    }
-    return 0
-  }
-
-  const totalCompensation =
-    (formData.baseSalary || 0) +
-    calculateAverageAnnualStock() +
-    calculateBonus() +
-    (formData.otherCashStipends || 0)
 
   return (
     <div className="space-y-6">
@@ -68,40 +42,11 @@ export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
         </div>
 
         <div className="border-t border-amber-300 pt-4">
-          <h4 className="font-bold text-gray-900 mb-3">Compensation Breakdown</h4>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-gray-700">Base Salary</span>
-              <span className="font-semibold text-gray-900">
-                {formData.currency} {(formData.baseSalary || 0).toLocaleString('en-US')}
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-700">Avg Annual Stock</span>
-              <span className="font-semibold text-gray-900">
-                {formData.currency} {Math.round(calculateAverageAnnualStock()).toLocaleString('en-US')}
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-700">Bonus</span>
-              <span className="font-semibold text-gray-900">
-                {formData.currency} {Math.round(calculateBonus()).toLocaleString('en-US')}
-              </span>
-            </div>
-            {formData.otherCashStipends && formData.otherCashStipends > 0 && (
-              <div className="flex justify-between">
-                <span className="text-gray-700">Other Cash</span>
-                <span className="font-semibold text-gray-900">
-                  {formData.currency} {formData.otherCashStipends.toLocaleString('en-US')}
-                </span>
-              </div>
-            )}
-            <div className="flex justify-between border-t-2 border-amber-300 pt-2 mt-2">
-              <span className="font-bold text-gray-900">Total Compensation</span>
-              <span className="font-bold text-xl text-brand-secondary">
-                {formData.currency} {Math.round(totalCompensation).toLocaleString('en-US')}
-              </span>
-            </div>
+          <h4 className="font-bold text-gray-900 mb-3">Annual Base Salary</h4>
+          <div className="flex justify-center">
+            <span className="font-bold text-3xl text-brand-secondary">
+              {formData.currency} {(formData.baseSalary || 0).toLocaleString('en-US')}
+            </span>
           </div>
         </div>
 
@@ -130,23 +75,16 @@ export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
         </div>
       </div>
 
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <p className="text-sm text-gray-700">
-          <strong>How we calculate Total Compensation:</strong> Base + Average annual stock (grant
-          value ÷ vesting years) + Bonus (actual or target × base) + Other recurring cash. We annualize
-          all components for fair comparison.
-        </p>
-      </div>
 
       {/* Consent Checkboxes */}
       <div className="space-y-4">
         <label
-          className={`flex items-start gap-3 p-4 border-2 rounded-lg cursor-pointer transition-colors ${
+          className={`flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer transition-all ${
             formData.accuracyConsent
               ? 'border-brand-secondary bg-amber-50'
               : errors.accuracyConsent
               ? 'border-red-500 bg-red-50'
-              : 'border-gray-300 hover:border-gray-400'
+              : 'border-gray-200 hover:border-gray-300'
           }`}
         >
           <input
@@ -170,12 +108,12 @@ export function Step6Review({ formData, updateFormData, errors }: Step6Props) {
         </label>
 
         <label
-          className={`flex items-start gap-3 p-4 border-2 rounded-lg cursor-pointer transition-colors ${
+          className={`flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer transition-all ${
             formData.privacyConsent
               ? 'border-brand-secondary bg-amber-50'
               : errors.privacyConsent
               ? 'border-red-500 bg-red-50'
-              : 'border-gray-300 hover:border-gray-400'
+              : 'border-gray-200 hover:border-gray-300'
           }`}
         >
           <input

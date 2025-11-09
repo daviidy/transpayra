@@ -141,112 +141,63 @@ export function SalarySubmissionWizard() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Add Your Salary</h1>
-          <p className="text-gray-600 mt-2">All information is anonymous and encrypted</p>
-        </div>
-        <button
-          onClick={handleRestart}
-          className="text-sm text-gray-600 hover:text-gray-900 underline"
-        >
-          Restart
-        </button>
-      </div>
-
-      {/* Progress Indicator */}
-      <div className="mb-8">
-        {/* Step Indicators with Lines */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-4 w-full">
-            {STEPS.map((step, index) => (
-              <div key={step.number} className={`relative ${index < STEPS.length - 1 ? 'flex-1' : ''} flex items-center`}>
-                <div
-                  className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors duration-300 font-semibold relative z-10 ${
-                    currentStep >= step.number
-                      ? 'bg-brand-secondary text-white'
-                      : 'bg-gray-300 text-gray-600'
-                  }`}
-                >
-                  {currentStep > step.number ? '✓' : step.number}
-                </div>
-                {index < STEPS.length - 1 && (
-                  <div
-                    className={`absolute w-full h-1 left-0 top-1/2 -translate-y-1/2 -z-0 transition-colors duration-300 ${
-                      currentStep > step.number ? 'bg-brand-secondary' : 'bg-gray-300'
-                    }`}
-                  />
-                )}
-              </div>
-            ))}
+    <div className="min-h-screen flex flex-col">
+      {/* Progress Bar at Top */}
+      <div className="w-full px-4 pt-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-brand-secondary rounded-full transition-all duration-300"
+              style={{ width: `${(currentStep / STEPS.length) * 100}%` }}
+            />
           </div>
         </div>
+      </div>
 
-        {/* Progress Bar */}
-        <div className="w-full bg-gray-200 rounded-full h-2">
-          <div
-            className="bg-brand-secondary h-2 rounded-full transition-all duration-300"
-            style={{ width: `${(currentStep / STEPS.length) * 100}%` }}
-          />
-        </div>
+      {/* Main Content */}
+      <div className="flex-1 flex items-center justify-center px-4 py-8">
+        <div className="max-w-2xl w-full">
+          {/* Step Content Card */}
+          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-sm mb-8">
+            {currentStep === 1 && (
+              <Step1Combined formData={formData} updateFormData={updateFormData} errors={errors} />
+            )}
+            {currentStep === 2 && (
+              <Step2Compensation formData={formData} updateFormData={updateFormData} errors={errors} />
+            )}
+            {currentStep === 3 && (
+              <Step6Review formData={formData} updateFormData={updateFormData} errors={errors} />
+            )}
+          </div>
 
-        {/* Step Labels */}
-        <div className="flex items-center justify-between mt-4">
-          {STEPS.map((step) => (
-            <div
-              key={step.number}
-              className={`text-xs text-center font-medium ${
-                currentStep >= step.number ? 'text-brand-secondary' : 'text-gray-500'
-              }`}
-              style={{ width: '33.33%' }}
-            >
-              {step.name}
+          {/* Navigation Buttons */}
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex gap-3">
+              {currentStep > 1 && (
+                <button
+                  onClick={handleBack}
+                  className="px-6 py-3 border-2 border-gray-200 rounded-xl text-gray-700 font-semibold hover:bg-gray-50 transition-all"
+                >
+                  Back
+                </button>
+              )}
+              <button
+                onClick={handleSaveAndExit}
+                className="px-6 py-3 border-2 border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 transition-all"
+              >
+                Save & Exit
+              </button>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Step Content */}
-      <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-        {currentStep === 1 && (
-          <Step1Combined formData={formData} updateFormData={updateFormData} errors={errors} />
-        )}
-        {currentStep === 2 && (
-          <Step2Compensation formData={formData} updateFormData={updateFormData} errors={errors} />
-        )}
-        {currentStep === 3 && (
-          <Step6Review formData={formData} updateFormData={updateFormData} errors={errors} />
-        )}
-      </div>
-
-      {/* Navigation Buttons */}
-      <div className="flex items-center justify-between">
-        <div className="flex gap-4">
-          {currentStep > 1 && (
             <button
-              onClick={handleBack}
-              className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+              onClick={handleNext}
+              disabled={isSubmitting || (currentStep === 3 && !token)}
+              className="px-10 py-4 bg-brand-secondary text-white rounded-2xl font-bold text-base hover:bg-brand-accent transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
             >
-              ← Back
+              {isSubmitting ? 'Submitting...' : currentStep === 3 ? 'Submit' : 'Continue'}
             </button>
-          )}
-          <button
-            onClick={handleSaveAndExit}
-            className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            Save & Exit
-          </button>
+          </div>
         </div>
-
-        <button
-          onClick={handleNext}
-          disabled={isSubmitting || (currentStep === 3 && !token)}
-          className="px-8 py-3 bg-brand-secondary text-white rounded-lg font-semibold hover:bg-brand-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {isSubmitting ? 'Submitting...' : currentStep === 3 ? 'Submit' : 'Next →'}
-        </button>
       </div>
     </div>
   )

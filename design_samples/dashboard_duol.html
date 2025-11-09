@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duolingo Friends Search</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <style>@view-transition { navigation: auto; }</style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+<body class="bg-white min-h-full">
+<div class="flex min-h-full"><!-- Left Sidebar Navigation -->
+    <aside class="w-64 bg-white border-r border-gray-200 flex-shrink-0">
+        <div class="p-6"><!-- Duolingo Logo -->
+            <div class="mb-8">
+                <svg class="w-10 h-10" viewbox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#58CC02" /> <path d="M15 18c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm6 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z" fill="white" /> <path d="M20 28c-3.3 0-6-2.7-6-6h2c0 2.2 1.8 4 4 4s4-1.8 4-4h2c0 3.3-2.7 6-6 6z" fill="white" />
+                </svg>
+            </div><!-- Navigation Menu -->
+            <nav class="space-y-2"><a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+                <div class="w-7 h-7 bg-orange-500 rounded-lg flex items-center justify-center text-white text-lg">
+                    🏠
+                </div><span class="text-gray-700 font-medium">Learn</span> </a> <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+                <div class="w-7 h-7 bg-blue-500 rounded-lg flex items-center justify-center text-white text-sm font-bold">
+                    한
+                </div><span class="text-gray-700 font-medium">Letters</span> </a> <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+                <div class="w-7 h-7 bg-blue-400 rounded-lg flex items-center justify-center text-white text-lg">
+                    🎴
+                </div><span class="text-gray-700 font-medium">Practice</span> </a> <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+                <div class="w-7 h-7 bg-yellow-400 rounded-lg flex items-center justify-center text-white text-lg">
+                    🏆
+                </div><span class="text-gray-700 font-medium">Leaderboards</span> </a> <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+                <div class="w-7 h-7 bg-red-500 rounded-lg flex items-center justify-center text-white text-lg">
+                    🛡️
+                </div><span class="text-gray-700 font-medium">Quests</span> </a> <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+                <div class="w-7 h-7 bg-yellow-500 rounded-lg flex items-center justify-center text-white text-lg">
+                    💰
+                </div><span class="text-gray-700 font-medium">Shop</span> </a> <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+                <div class="w-7 h-7 bg-blue-500 rounded-lg flex items-center justify-center text-white text-lg">
+                    👤
+                </div><span class="text-gray-700 font-medium">Profile</span> </a> <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+                <div class="w-7 h-7 bg-purple-500 rounded-lg flex items-center justify-center text-white text-lg">
+                    ⋯
+                </div><span class="text-gray-700 font-medium">More</span> </a>
+            </nav>
+        </div>
+    </aside><!-- Main Content Area -->
+    <main class="flex-1 px-8 py-8 max-w-5xl"><!-- Page Title -->
+        <h1 id="page-title" class="text-3xl font-bold text-gray-900 mb-6">Search for friends</h1><!-- Search Bar -->
+        <div class="mb-6">
+            <div class="relative">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div><input type="text" id="search-input" placeholder="Search" value="alex" class="w-full pl-12 pr-12 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"> <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg></button>
+            </div>
+        </div><!-- Divider -->
+        <div class="border-t border-gray-200 mb-6"></div><!-- Results Count -->
+        <p id="results-count" class="text-sm text-gray-500 mb-4">1 993 212 results</p><!-- Results List -->
+        <div class="space-y-0" id="results-list"><!-- User Card 1 -->
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        A
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">
+                            Alex Johnson
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            @alexj
+                        </div>
+                    </div>
+                </div><button class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors">+ Follow</button>
+            </div><!-- User Card 2 -->
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        A
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">
+                            Alexandra Smith
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            @alexsmith
+                        </div>
+                    </div>
+                </div><button class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors">+ Follow</button>
+            </div><!-- User Card 3 -->
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        A
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">
+                            Alex Martinez
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            @alexm
+                        </div>
+                    </div>
+                </div><button class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors">+ Follow</button>
+            </div><!-- User Card 4 -->
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        A
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">
+                            Alexis Brown
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            @alexisbrown
+                        </div>
+                    </div>
+                </div><button class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors">+ Follow</button>
+            </div><!-- User Card 5 -->
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        A
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">
+                            Alexander Lee
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            @alexlee
+                        </div>
+                    </div>
+                </div><button class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors">+ Follow</button>
+            </div><!-- User Card 6 -->
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        A
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">
+                            Alex Wilson
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            @alexwilson
+                        </div>
+                    </div>
+                </div><button class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors">+ Follow</button>
+            </div>
+        </div>
+    </main><!-- Right Sidebar -->
+    <aside class="w-80 px-6 py-8 flex-shrink-0">
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+            <div class="p-6">
+                <h2 id="sidebar-title" class="font-bold text-gray-900 text-lg mb-4">Other ways to connect</h2>
+                <div class="bg-white border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors cursor-pointer">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0">
+                            <svg class="w-12 h-12" viewbox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#58CC02" /> <ellipse cx="18" cy="20" rx="2" ry="3" fill="white" /> <ellipse cx="30" cy="20" rx="2" ry="3" fill="white" /> <path d="M24 32c-3.5 0-6.5-2.5-7-6h2c.4 2.5 2.6 4.5 5 4.5s4.6-2 5-4.5h2c-.5 3.5-3.5 6-7 6z" fill="white" /> <path d="M16 28c0 1 .5 2 1.5 2.5" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-bold text-gray-900 text-sm mb-1">
+                                Invite friends
+                            </div>
+                            <p id="sidebar-description" class="text-xs text-gray-600 leading-relaxed">Tell your friends it's free and fun to learn a language on Duolingo!</p>
+                        </div>
+                        <div class="flex-shrink-0 text-gray-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>
+<script>
+    const defaultConfig = {
+        page_title: "Search for friends",
+        search_placeholder: "Search",
+        results_count: "1 993 212 results",
+        sidebar_title: "Other ways to connect",
+        sidebar_description: "Tell your friends it's free and fun to learn a language on Duolingo!"
+    };
+
+    async function onConfigChange(config) {
+        document.getElementById('page-title').textContent = config.page_title || defaultConfig.page_title;
+        document.getElementById('search-input').placeholder = config.search_placeholder || defaultConfig.search_placeholder;
+        document.getElementById('results-count').textContent = config.results_count || defaultConfig.results_count;
+        document.getElementById('sidebar-title').textContent = config.sidebar_title || defaultConfig.sidebar_title;
+        document.getElementById('sidebar-description').textContent = config.sidebar_description || defaultConfig.sidebar_description;
+    }
+
+    function mapToCapabilities(config) {
+        return {
+            recolorables: [],
+            borderables: [],
+            fontEditable: undefined,
+            fontSizeable: undefined
+        };
+    }
+
+    function mapToEditPanelValues(config) {
+        return new Map([
+            ["page_title", config.page_title || defaultConfig.page_title],
+            ["search_placeholder", config.search_placeholder || defaultConfig.search_placeholder],
+            ["results_count", config.results_count || defaultConfig.results_count],
+            ["sidebar_title", config.sidebar_title || defaultConfig.sidebar_title],
+            ["sidebar_description", config.sidebar_description || defaultConfig.sidebar_description]
+        ]);
+    }
+
+    if (window.elementSdk) {
+        window.elementSdk.init({
+            defaultConfig,
+            onConfigChange,
+            mapToCapabilities,
+            mapToEditPanelValues
+        });
+    }
+
+    // Clear search functionality
+    document.querySelector('button[class*="right-4"]').addEventListener('click', function() {
+        document.getElementById('search-input').value = '';
+    });
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99b93bded6ea3ee0',t:'MTc2MjY0ODU2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

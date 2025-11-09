@@ -9,12 +9,12 @@ import { eq } from 'drizzle-orm'
 import Link from 'next/link'
 
 interface SearchPageProps {
-  searchParams: {
+  searchParams: Promise<{
     type?: 'job' | 'company' | 'location' | 'industry' | 'level'
     id?: string
     jobId?: string
     locationId?: string
-  }
+  }>
 }
 
 function calculatePercentile(values: number[], percentile: number): number {
@@ -78,10 +78,11 @@ async function getFilterInfo(type: string | undefined, id: number) {
 }
 
 export default async function SearchResultsPage({ searchParams }: SearchPageProps) {
-  const type = searchParams.type
-  const id = searchParams.id ? parseInt(searchParams.id) : undefined
-  const jobId = searchParams.jobId ? parseInt(searchParams.jobId) : undefined
-  const locationId = searchParams.locationId ? parseInt(searchParams.locationId) : undefined
+  const params = await searchParams
+  const type = params.type
+  const id = params.id ? parseInt(params.id) : undefined
+  const jobId = params.jobId ? parseInt(params.jobId) : undefined
+  const locationId = params.locationId ? parseInt(params.locationId) : undefined
 
   // Handle multiple filters (job + location)
   if (jobId && locationId) {

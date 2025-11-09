@@ -76,7 +76,7 @@ export default function DashboardPage() {
 
   const totalSubmissions = submissions.length
   const avgCompensation = submissions.length > 0
-    ? submissions.reduce((sum, sub) => sum + parseFloat(sub.totalCompensation), 0) / submissions.length
+    ? submissions.reduce((sum, sub) => sum + parseFloat(sub.baseSalary), 0) / submissions.length
     : 0
 
   return (
@@ -244,38 +244,42 @@ export default function DashboardPage() {
             </div>
 
             {/* Navigation Links */}
-            <nav className="space-y-1">
+            <nav className="space-y-2">
               <button
                 onClick={() => setActiveTab('submissions')}
-                className={`w-full text-left block py-3 px-3 text-sm rounded-lg transition-colors ${
+                className={`w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
                   activeTab === 'submissions'
-                    ? 'text-brand-secondary font-medium bg-brand-primary'
-                    : 'text-gray-800 hover:text-brand-secondary hover:bg-gray-50'
+                    ? 'bg-gray-100 text-brand-secondary font-semibold'
+                    : 'text-gray-700 hover:bg-gray-100 font-medium'
                 }`}
               >
-                My Submissions
+                <span className="text-lg">📋</span>
+                <span>My Submissions</span>
               </button>
               <button
                 onClick={() => setActiveTab('stats')}
-                className={`w-full text-left block py-3 px-3 text-sm rounded-lg transition-colors ${
+                className={`w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
                   activeTab === 'stats'
-                    ? 'text-brand-secondary font-medium bg-brand-primary'
-                    : 'text-gray-800 hover:text-brand-secondary hover:bg-gray-50'
+                    ? 'bg-gray-100 text-brand-secondary font-semibold'
+                    : 'text-gray-700 hover:bg-gray-100 font-medium'
                 }`}
               >
-                Statistics
+                <span className="text-lg">📊</span>
+                <span>Statistics</span>
               </button>
               <Link
                 href="/"
-                className="block py-3 px-3 text-sm text-gray-800 hover:text-brand-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-xl transition-colors font-medium"
               >
-                Browse Salaries
+                <span className="text-lg">🔍</span>
+                <span>Browse Salaries</span>
               </Link>
               <Link
                 href="/contribute"
-                className="block py-3 px-3 text-sm text-gray-800 hover:text-brand-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-xl transition-colors font-medium"
               >
-                Add New Submission
+                <span className="text-lg">➕</span>
+                <span>Add Submission</span>
               </Link>
             </nav>
           </div>
@@ -313,7 +317,7 @@ export default function DashboardPage() {
                     {submissions.map((submission) => (
                       <div
                         key={submission.submissionId}
-                        className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all cursor-pointer"
+                        className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer"
                       >
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
@@ -347,27 +351,10 @@ export default function DashboardPage() {
                               </div>
                             </div>
 
-                            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
-                              <div>
-                                <div className="text-xs text-gray-500 mb-1">Total Compensation</div>
-                                <div className="text-xl lg:text-2xl font-bold text-brand-secondary">
-                                  {formatCurrency(submission.totalCompensation)}
-                                </div>
-                              </div>
-                              <div className="hidden lg:block h-8 w-px bg-gray-200" />
-                              <div className="flex gap-4 lg:gap-6 text-sm">
-                                <div>
-                                  <div className="text-gray-500">Base</div>
-                                  <div className="font-medium">{formatCurrency(submission.baseSalary)}</div>
-                                </div>
-                                <div>
-                                  <div className="text-gray-500">Stock</div>
-                                  <div className="font-medium">{formatCurrency(submission.stockCompensation ?? '0')}</div>
-                                </div>
-                                <div>
-                                  <div className="text-gray-500">Bonus</div>
-                                  <div className="font-medium">{formatCurrency(submission.bonus ?? '0')}</div>
-                                </div>
+                            <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-gray-200 rounded-xl p-4">
+                              <div className="text-xs font-semibold text-gray-600 mb-1">Base Salary</div>
+                              <div className="text-2xl lg:text-3xl font-bold text-brand-secondary">
+                                {formatCurrency(submission.baseSalary)}
                               </div>
                             </div>
                           </div>
@@ -392,35 +379,35 @@ export default function DashboardPage() {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
                   {/* Total Submissions Card */}
-                  <div className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
                         <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Total Submissions</h3>
                         <p className="text-3xl lg:text-4xl font-bold text-brand-secondary">{totalSubmissions}</p>
                       </div>
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-xl flex items-center justify-center">
                         <DollarSign className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                     </div>
                   </div>
 
                   {/* Average Compensation Card */}
-                  <div className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Avg Compensation</h3>
+                        <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Avg Base Salary</h3>
                         <p className="text-2xl lg:text-4xl font-bold text-brand-secondary">
                           {avgCompensation > 0 ? formatCurrency(avgCompensation) : '$0'}
                         </p>
                       </div>
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-xl flex items-center justify-center">
                         <TrendingUp className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                     </div>
                   </div>
 
                   {/* Account Type Card */}
-                  <div className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
                         <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Account Type</h3>
@@ -428,14 +415,14 @@ export default function DashboardPage() {
                           {user.app_metadata?.provider ? `Signed in with ${user.app_metadata.provider}` : 'Email'}
                         </p>
                       </div>
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-xl flex items-center justify-center">
                         <User className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                     </div>
                   </div>
 
                   {/* Member Since Card */}
-                  <div className="bg-white rounded-xl p-4 lg:p-6 border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="bg-white rounded-2xl p-4 lg:p-6 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
                         <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2">Member Since</h3>
@@ -447,7 +434,7 @@ export default function DashboardPage() {
                           })}
                         </p>
                       </div>
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-secondary to-brand-accent rounded-xl flex items-center justify-center">
                         <Calendar className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                     </div>

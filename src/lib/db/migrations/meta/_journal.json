@@ -43,6 +43,13 @@
       "when": 1760222431712,
       "tag": "0005_nappy_dust",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1762654462460,
+      "tag": "0006_cold_lucky_pierre",
+      "breakpoints": true
     }
   ]
 }
