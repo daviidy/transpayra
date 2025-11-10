@@ -59,7 +59,9 @@ export function CompanyDirectory() {
         </div>
 
         {/* WhatsApp Community Banner (Right Side - 1/3 width) */}
-        <WhatsAppBanner />
+        <div className="hidden lg:block">
+          <WhatsAppBanner />
+        </div>
       </div>
 
       {/* Companies Grid */}

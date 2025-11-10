@@ -1,10 +1,12 @@
 'use client'
 
-import { X, ChevronDown } from 'lucide-react'
+import { X, ChevronDown, Globe } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useCurrency } from '@/contexts/CurrencyContext'
 import { CURRENCIES, Currency } from '@/lib/currency'
+import { usePathname, useRouter } from '@/i18n/routing'
+import { useParams } from 'next/navigation'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -16,7 +18,17 @@ interface MobileMenuProps {
 export function MobileMenu({ isOpen, onClose, isLoggedIn, onAuthClick }: MobileMenuProps) {
   const [isSalariesOpen, setIsSalariesOpen] = useState(false)
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false)
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false)
   const { selectedCurrency, setSelectedCurrency } = useCurrency()
+  const router = useRouter()
+  const pathname = usePathname()
+  const params = useParams()
+  const currentLocale = params.locale as string
+
+  const switchLanguage = (locale: string) => {
+    router.replace(pathname, { locale })
+    setIsLanguageOpen(false)
+  }
   useEffect(() => {
     if (!isOpen) return
 
@@ -157,6 +169,51 @@ export function MobileMenu({ isOpen, onClose, isLoggedIn, onAuthClick }: MobileM
                       </button>
                     </li>
                   ))}
+                </ul>
+              )}
+            </li>
+            <li>
+              {/* Language selector with dropdown */}
+              <button
+                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                className="w-full flex items-center justify-between text-2xl font-medium text-brand-secondary hover:text-brand-accent py-3 transition-colors"
+              >
+                <span className="flex items-center gap-2">
+                  <Globe className="w-6 h-6" />
+                  Language {currentLocale === 'fr' ? '🇫🇷' : '🇬🇧'}
+                </span>
+                <ChevronDown
+                  className={`w-6 h-6 transition-transform ${
+                    isLanguageOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              {isLanguageOpen && (
+                <ul className="mt-2 ml-4 space-y-2">
+                  <li>
+                    <button
+                      onClick={() => switchLanguage('fr')}
+                      className={`w-full text-left block text-lg font-medium py-2 transition-colors flex items-center gap-2 ${
+                        currentLocale === 'fr'
+                          ? 'text-brand-accent font-bold'
+                          : 'text-brand-secondary hover:text-brand-accent'
+                      }`}
+                    >
+                      🇫🇷 Français
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => switchLanguage('en')}
+                      className={`w-full text-left block text-lg font-medium py-2 transition-colors flex items-center gap-2 ${
+                        currentLocale === 'en'
+                          ? 'text-brand-accent font-bold'
+                          : 'text-brand-secondary hover:text-brand-accent'
+                      }`}
+                    >
+                      🇬🇧 English
+                    </button>
+                  </li>
                 </ul>
               )}
             </li>
