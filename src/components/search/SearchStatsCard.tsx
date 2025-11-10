@@ -1,7 +1,8 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import { useCurrency } from '@/contexts/CurrencyContext'
+import { useTranslations } from 'next-intl'
 
 interface SearchStatsCardProps {
   average: number
@@ -14,6 +15,7 @@ export function SearchStatsCard({
   submissionCount,
   filterName,
 }: SearchStatsCardProps) {
+  const t = useTranslations()
   const { formatAmount } = useCurrency()
 
   const formatStat = (amount: number) => {
@@ -25,7 +27,7 @@ export function SearchStatsCard({
       <div className="flex items-center justify-between">
         {/* Left Side - Salary Info */}
         <div className="flex-1">
-          <p className="text-sm text-gray-600 mb-2">Average Base Salary</p>
+          <p className="text-sm text-gray-600 mb-2">{t('search.averageBaseSalary')}</p>
           <p className="text-4xl font-bold text-black mb-4">
             {formatStat(average)}
           </p>
@@ -33,7 +35,7 @@ export function SearchStatsCard({
             href="/contribute"
             className="inline-block bg-brand-secondary hover:bg-brand-accent text-white font-medium px-6 py-2 rounded-md transition-colors"
           >
-            Share Your Salary
+            {t('search.shareYourSalary')}
           </Link>
         </div>
 
@@ -60,8 +62,8 @@ export function SearchStatsCard({
       {/* Bottom: Fine Print */}
       <div className="text-sm text-gray-500 mt-6">
         <p>
-          Based on {submissionCount} anonymous{' '}
-          {submissionCount === 1 ? 'submission' : 'submissions'}. Last updated:{' '}
+          {t('search.basedOn', { count: submissionCount })}{' '}
+          {submissionCount === 1 ? t('location.submission') : t('location.submissions')}. {t('search.lastUpdated')}{' '}
           {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
         </p>
       </div>

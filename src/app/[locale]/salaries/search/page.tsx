@@ -6,7 +6,8 @@ import { SearchStatsCard } from '@/components/search/SearchStatsCard'
 import { db } from '@/lib/db'
 import { company, jobTitle, location, industry } from '@/lib/db/schema'
 import { eq } from 'drizzle-orm'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
+import { getTranslations } from 'next-intl/server'
 
 interface SearchPageProps {
   searchParams: Promise<{
@@ -78,6 +79,7 @@ async function getFilterInfo(type: string | undefined, id: number) {
 }
 
 export default async function SearchResultsPage({ searchParams }: SearchPageProps) {
+  const t = await getTranslations()
   const params = await searchParams
   const type = params.type
   const id = params.id ? parseInt(params.id) : undefined
@@ -111,13 +113,13 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
             <main className="min-h-screen bg-gray-50">
               <div className="container mx-auto px-6 py-12">
                 <div className="text-center">
-                  <h1 className="text-3xl font-bold text-gray-900 mb-4">Job Title Not Found</h1>
-                  <p className="text-gray-600">The requested job title (ID: {jobId}) could not be found in our database.</p>
+                  <h1 className="text-3xl font-bold text-gray-900 mb-4">{t('search.jobTitleNotFound')}</h1>
+                  <p className="text-gray-600">{t('search.jobTitleNotFoundDesc', { jobId })}</p>
                   <Link
                     href="/"
                     className="inline-block mt-6 px-6 py-3 bg-brand-secondary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors"
                   >
-                    Go Home
+                    {t('search.goHome')}
                   </Link>
                 </div>
               </div>
@@ -135,16 +137,16 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
             <main className="min-h-screen bg-gray-50">
               <div className="container mx-auto px-6 py-12">
                 <div className="text-center">
-                  <h1 className="text-3xl font-bold text-gray-900 mb-4">Location Not Found</h1>
-                  <p className="text-gray-600">The requested location (ID: {locationId}) could not be found in our database.</p>
+                  <h1 className="text-3xl font-bold text-gray-900 mb-4">{t('search.locationNotFound')}</h1>
+                  <p className="text-gray-600">{t('search.locationNotFoundDesc', { locationId })}</p>
                   <p className="text-gray-500 mt-2">
-                    This might be an outdated link. Please go back to the location page and try again.
+                    {t('search.outdatedLink')}
                   </p>
                   <Link
                     href="/"
                     className="inline-block mt-6 px-6 py-3 bg-brand-secondary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors"
                   >
-                    Go Home
+                    {t('search.goHome')}
                   </Link>
                 </div>
               </div>
@@ -160,7 +162,7 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
         ? baseSalaries.reduce((sum, salary) => sum + salary, 0) / baseSalaries.length
         : 0
 
-      const filterName = `${jobName} in ${locationName}`
+      const filterName = `${jobName} ${t('search.in')} ${locationName}`
 
     return (
       <>
@@ -188,9 +190,9 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
               </>
             ) : (
               <div className="bg-white rounded-lg shadow-md p-12 text-center">
-                <p className="text-gray-600 text-lg">No salary data found for this search.</p>
+                <p className="text-gray-600 text-lg">{t('search.noDataFound')}</p>
                 <p className="text-gray-500 mt-2">
-                  Try searching for a different job title, company, or location.
+                  {t('search.tryDifferentSearch')}
                 </p>
               </div>
             )}
@@ -207,13 +209,13 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
           <main className="min-h-screen bg-gray-50">
             <div className="container mx-auto px-6 py-12">
               <div className="text-center">
-                <h1 className="text-3xl font-bold text-gray-900 mb-4">Error</h1>
-                <p className="text-gray-600">There was an error loading the salary data.</p>
+                <h1 className="text-3xl font-bold text-gray-900 mb-4">{t('search.error')}</h1>
+                <p className="text-gray-600">{t('search.errorLoadingData')}</p>
                 <Link
                   href="/"
                   className="inline-block mt-6 px-6 py-3 bg-brand-secondary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors"
                 >
-                  Go Home
+                  {t('search.goHome')}
                 </Link>
               </div>
             </div>
@@ -231,8 +233,8 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
         <main className="min-h-screen bg-gray-50">
           <div className="container mx-auto px-6 py-12">
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">Invalid Search</h1>
-              <p className="text-gray-600">Please use the search bar to find salaries.</p>
+              <h1 className="text-3xl font-bold text-gray-900 mb-4">{t('search.invalidSearch')}</h1>
+              <p className="text-gray-600">{t('search.useSearchBar')}</p>
             </div>
           </div>
         </main>
@@ -261,14 +263,6 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
     ? baseSalaries.reduce((sum, salary) => sum + salary, 0) / baseSalaries.length
     : 0
 
-  const typeLabels = {
-    job: 'Job Title',
-    company: 'Company',
-    location: 'Location',
-    industry: 'Industry',
-    level: 'Level',
-  }
-
   return (
     <>
       <Navbar />
@@ -277,7 +271,7 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
           {/* Page Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900">
-              {filterName || 'Search Results'}
+              {filterName || t('search.searchResults')}
             </h1>
           </div>
 
@@ -295,9 +289,9 @@ export default async function SearchResultsPage({ searchParams }: SearchPageProp
             </>
           ) : (
             <div className="bg-white rounded-lg shadow-md p-12 text-center">
-              <p className="text-gray-600 text-lg">No salary data found for this search.</p>
+              <p className="text-gray-600 text-lg">{t('search.noDataFound')}</p>
               <p className="text-gray-500 mt-2">
-                Try searching for a different job title, company, or location.
+                {t('search.tryDifferentSearch')}
               </p>
             </div>
           )}

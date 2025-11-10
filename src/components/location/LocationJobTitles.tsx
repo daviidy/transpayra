@@ -1,8 +1,9 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import { useCurrency } from '@/contexts/CurrencyContext'
 import type { LocationJobTitlesData } from '@/app/actions/location-job-titles'
+import { useTranslations } from 'next-intl'
 
 interface LocationJobTitlesProps {
   data: LocationJobTitlesData
@@ -21,6 +22,7 @@ const bgColors = [
 ]
 
 export function LocationJobTitles({ data }: LocationJobTitlesProps) {
+  const t = useTranslations()
   const { formatAmount } = useCurrency()
 
   const formatCurrency = (amount: number) => {
@@ -42,7 +44,7 @@ export function LocationJobTitles({ data }: LocationJobTitlesProps) {
               {data.locationName}
             </h1>
             <p className="text-gray-600 text-lg">
-              Select a job title to view salary data
+              {t('location.selectJobTitle')}
             </p>
           </div>
         </div>
@@ -53,19 +55,19 @@ export function LocationJobTitles({ data }: LocationJobTitlesProps) {
         {data.jobTitles.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">
-              No salary data available for this location yet.
+              {t('location.noDataAvailable')}
             </p>
             <Link
               href="/contribute"
               className="inline-block mt-6 px-6 py-3 bg-brand-secondary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors"
             >
-              + Add Salary
+              {t('location.addSalary')}
             </Link>
           </div>
         ) : (
           <>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Job Titles with Salary Data
+              {t('location.jobTitlesWithData')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {data.jobTitles.map((jobTitle, index) => (
@@ -96,10 +98,10 @@ export function LocationJobTitles({ data }: LocationJobTitlesProps) {
 
                       <div className="space-y-1">
                         <p className="text-[13px] text-gray-600">
-                          Median: {formatCurrency(jobTitle.medianSalary)}
+                          {t('location.median')}: {formatCurrency(jobTitle.medianSalary)}
                         </p>
                         <p className="text-[13px] text-gray-600">
-                          {jobTitle.submissionCount} submission{jobTitle.submissionCount !== 1 ? 's' : ''}
+                          {jobTitle.submissionCount} {jobTitle.submissionCount !== 1 ? t('location.submissions') : t('location.submission')}
                         </p>
                       </div>
                     </div>

@@ -156,6 +156,35 @@
     "similarSubmissions": "Similar Submissions",
     "view": "View"
   },
+  "location": {
+    "selectJobTitle": "Select a job title to view salary data",
+    "noDataAvailable": "No salary data available for this location yet.",
+    "addSalary": "+ Add Salary",
+    "jobTitlesWithData": "Job Titles with Salary Data",
+    "median": "Median",
+    "submission": "submission",
+    "submissions": "submissions"
+  },
+  "search": {
+    "jobTitleNotFound": "Job Title Not Found",
+    "jobTitleNotFoundDesc": "The requested job title (ID: {jobId}) could not be found in our database.",
+    "locationNotFound": "Location Not Found",
+    "locationNotFoundDesc": "The requested location (ID: {locationId}) could not be found in our database.",
+    "outdatedLink": "This might be an outdated link. Please go back to the location page and try again.",
+    "goHome": "Go Home",
+    "error": "Error",
+    "errorLoadingData": "There was an error loading the salary data.",
+    "invalidSearch": "Invalid Search",
+    "useSearchBar": "Please use the search bar to find salaries.",
+    "searchResults": "Search Results",
+    "noDataFound": "No salary data found for this search.",
+    "tryDifferentSearch": "Try searching for a different job title, company, or location.",
+    "averageBaseSalary": "Average Base Salary",
+    "shareYourSalary": "Share Your Salary",
+    "basedOn": "Based on {count} anonymous",
+    "lastUpdated": "Last updated:",
+    "in": "in"
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error",

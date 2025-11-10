@@ -156,6 +156,35 @@
     "similarSubmissions": "Soumissions Similaires",
     "view": "Voir"
   },
+  "location": {
+    "selectJobTitle": "Sélectionnez un intitulé de poste pour voir les données salariales",
+    "noDataAvailable": "Aucune donnée salariale disponible pour ce lieu pour le moment.",
+    "addSalary": "+ Ajouter un Salaire",
+    "jobTitlesWithData": "Intitulés de Poste avec Données Salariales",
+    "median": "Médiane",
+    "submission": "soumission",
+    "submissions": "soumissions"
+  },
+  "search": {
+    "jobTitleNotFound": "Intitulé de Poste Non Trouvé",
+    "jobTitleNotFoundDesc": "L'intitulé de poste demandé (ID: {jobId}) n'a pas pu être trouvé dans notre base de données.",
+    "locationNotFound": "Lieu Non Trouvé",
+    "locationNotFoundDesc": "Le lieu demandé (ID: {locationId}) n'a pas pu être trouvé dans notre base de données.",
+    "outdatedLink": "Ceci pourrait être un lien obsolète. Veuillez revenir à la page de localisation et réessayer.",
+    "goHome": "Retour à l'Accueil",
+    "error": "Erreur",
+    "errorLoadingData": "Une erreur s'est produite lors du chargement des données salariales.",
+    "invalidSearch": "Recherche Invalide",
+    "useSearchBar": "Veuillez utiliser la barre de recherche pour trouver des salaires.",
+    "searchResults": "Résultats de Recherche",
+    "noDataFound": "Aucune donnée salariale trouvée pour cette recherche.",
+    "tryDifferentSearch": "Essayez de rechercher un intitulé de poste, une entreprise ou un lieu différent.",
+    "averageBaseSalary": "Salaire de Base Moyen",
+    "shareYourSalary": "Partagez Votre Salaire",
+    "basedOn": "Basé sur {count} anonymes",
+    "lastUpdated": "Dernière mise à jour:",
+    "in": "à"
+  },
   "common": {
     "loading": "Chargement...",
     "error": "Erreur",
