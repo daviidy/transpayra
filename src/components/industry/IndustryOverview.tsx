@@ -1,10 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { CompanyLogo } from '../CompanyLogo'
 import type { IndustryOverviewData } from '@/app/actions/industry-overview'
+import { checkUserHasAccess } from '@/app/actions/check-access'
+import { useAnonymousToken } from '@/lib/hooks/useAnonymousToken'
+import { useAuth } from '@/contexts/AuthContext'
 import { useCurrency } from '@/contexts/CurrencyContext'
 
 interface IndustryOverviewProps {
@@ -15,7 +18,18 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
   const router = useRouter()
   const [searchQuery, setSearchQuery] = useState('')
   const [unlocked, setUnlocked] = useState(false)
+  const { token } = useAnonymousToken()
+  const { user } = useAuth()
   const { formatAmount } = useCurrency()
+
+  useEffect(() => {
+    async function verifyAccess() {
+      const accessStatus = await checkUserHasAccess(token ?? undefined, user?.id)
+      setUnlocked(accessStatus.hasAccess)
+    }
+
+    verifyAccess()
+  }, [token, user])
 
   // Assume aggregated stats are in XOF (base currency)
   const formatCurrency = (amount: number) => {
@@ -241,22 +255,10 @@ export function IndustryOverview({ data }: IndustryOverviewProps) {
                 </p>
                 <button
                   onClick={() => router.push('/contribute')}
-                  className="bg-brand-secondary text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent transition-colors mb-4"
+                  className="bg-brand-secondary text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent transition-colors"
                 >
                   + Add Salary
                 </button>
-                <div className="flex items-center justify-center gap-2">
-                  <input
-                    type="checkbox"
-                    id="already-added"
-                    className="rounded"
-                    checked={unlocked}
-                    onChange={(e) => setUnlocked(e.target.checked)}
-                  />
-                  <label htmlFor="already-added" className="text-sm text-gray-600">
-                    Added mine already within last 1 year
-                  </label>
-                </div>
               </div>
             </div>
           )}

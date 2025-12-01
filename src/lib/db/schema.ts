@@ -72,9 +72,12 @@ export const salarySubmission = pgTable('salary_submission', {
   yearsOfExperience: integer('years_of_experience').notNull(),
   yearsAtCompany: integer('years_at_company').default(0),
   submissionDate: timestamp('submission_date', { withTimezone: true }).notNull().defaultNow(),
+  accessExpiresAt: timestamp('access_expires_at', { withTimezone: true }).notNull().defaultNow(), // 12-month access after submission
 }, (table) => ({
   queryIdx: index().on(table.jobTitleId, table.companyId, table.locationId, table.levelId),
   tokenHashIdx: index().on(table.userTokenHash),
+  userIdIdx: index().on(table.userId),
+  accessExpiryIdx: index().on(table.accessExpiresAt),
 }))
 
 // Relations

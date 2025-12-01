@@ -6,6 +6,9 @@ import { useRouter } from 'next/navigation'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { getCompanySalaries } from '@/app/actions/companies'
 import type { CompanySalarySubmission } from '@/app/actions/companies'
+import { checkUserHasAccess } from '@/app/actions/check-access'
+import { useAnonymousToken } from '@/lib/hooks/useAnonymousToken'
+import { useAuth } from '@/contexts/AuthContext'
 import { useCurrency } from '@/contexts/CurrencyContext'
 import { Currency } from '@/lib/currency'
 
@@ -25,6 +28,8 @@ export function SalariesTab({ companyId, companyName }: SalariesTabProps) {
   const [unlocked, setUnlocked] = useState(false)
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set())
   const router = useRouter()
+  const { token } = useAnonymousToken()
+  const { user } = useAuth()
   const { formatAmount } = useCurrency()
 
   useEffect(() => {
@@ -37,6 +42,15 @@ export function SalariesTab({ companyId, companyName }: SalariesTabProps) {
 
     fetchData()
   }, [companyId])
+
+  useEffect(() => {
+    async function verifyAccess() {
+      const accessStatus = await checkUserHasAccess(token ?? undefined, user?.id)
+      setUnlocked(accessStatus.hasAccess)
+    }
+
+    verifyAccess()
+  }, [token, user])
 
   const formatCurrency = (amount: string | number | undefined, currency: string) => {
     if (!amount) return 'N/A'
@@ -266,23 +280,10 @@ export function SalariesTab({ companyId, companyName }: SalariesTabProps) {
 
                             <button
                               onClick={() => router.push('/contribute')}
-                              className="w-full bg-brand-secondary hover:bg-brand-accent text-white font-semibold py-3 px-6 rounded-lg transition-colors mb-4"
+                              className="w-full bg-brand-secondary hover:bg-brand-accent text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                             >
                               + Add Salary
                             </button>
-
-                            <div className="flex items-center justify-center text-sm text-gray-600">
-                              <input
-                                type="checkbox"
-                                id={`already-added-${group.jobTitle}`}
-                                checked={unlocked}
-                                onChange={(e) => setUnlocked(e.target.checked)}
-                                className="mr-2 rounded border-gray-300 text-brand-secondary focus:ring-brand-secondary"
-                              />
-                              <label htmlFor={`already-added-${group.jobTitle}`} className="cursor-pointer">
-                                Added mine already within last 1 year
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </div>

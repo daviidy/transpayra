@@ -25,8 +25,8 @@ export function SalaryResultsList({ results }: SalaryResultsListProps) {
   // Check if user has access on mount
   useEffect(() => {
     async function verifyAccess() {
-      const hasAccess = await checkUserHasAccess(token ?? undefined, user?.id)
-      setUnlocked(hasAccess)
+      const accessStatus = await checkUserHasAccess(token ?? undefined, user?.id)
+      setUnlocked(accessStatus.hasAccess)
       setCheckingAccess(false)
     }
 
@@ -197,22 +197,10 @@ export function SalaryResultsList({ results }: SalaryResultsListProps) {
               </p>
               <button
                 onClick={() => router.push('/contribute')}
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
               >
                 + Add Salary
               </button>
-              <div className="flex items-center justify-center gap-2">
-                <input
-                  type="checkbox"
-                  id="already-added"
-                  className="rounded"
-                  checked={unlocked}
-                  onChange={(e) => setUnlocked(e.target.checked)}
-                />
-                <label htmlFor="already-added" className="text-sm text-gray-600">
-                  Added mine already within last 1 year
-                </label>
-              </div>
             </div>
           </div>
         </div>

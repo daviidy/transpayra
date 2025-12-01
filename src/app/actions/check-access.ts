@@ -3,22 +3,23 @@
 import { db } from '@/lib/db'
 import { salarySubmission } from '@/lib/db/schema'
 import { hashAnonymousToken } from '@/lib/anonymous-token'
-import { eq, or } from 'drizzle-orm'
+import { eq, or, and, gte, desc } from 'drizzle-orm'
 
 /**
  * Check if user has access to view all salary data
- * User has access if they have submitted at least once (either anonymous or authenticated)
+ * User has access if they have submitted at least once AND access hasn't expired
+ * Access is granted for 12 months from the most recent submission
  *
  * @param anonymousToken - The token from the user's cookie (for anonymous users)
  * @param userId - The user ID from Supabase (for authenticated users)
- * @returns true if user has submitted before (has access), false otherwise
+ * @returns Object with access status and expiration date
  */
 export async function checkUserHasAccess(
   anonymousToken?: string,
   userId?: string
-): Promise<boolean> {
+): Promise<{ hasAccess: boolean; expiresAt?: Date; daysUntilExpiry?: number }> {
   if (!anonymousToken && !userId) {
-    return false
+    return { hasAccess: false }
   }
 
   try {
@@ -35,16 +36,37 @@ export async function checkUserHasAccess(
       conditions.push(eq(salarySubmission.userTokenHash, tokenHash))
     }
 
-    // Check if any submission exists with either condition
-    const submission = await db
-      .select({ submissionId: salarySubmission.submissionId })
+    // Get the most recent submission with valid (non-expired) access
+    const now = new Date()
+    const submissions = await db
+      .select({
+        submissionId: salarySubmission.submissionId,
+        accessExpiresAt: salarySubmission.accessExpiresAt,
+      })
       .from(salarySubmission)
-      .where(or(...conditions))
+      .where(
+        and(
+          or(...conditions),
+          gte(salarySubmission.accessExpiresAt, now)
+        )
+      )
+      .orderBy(desc(salarySubmission.accessExpiresAt))
       .limit(1)
 
-    return submission.length > 0
+    if (submissions.length === 0) {
+      return { hasAccess: false }
+    }
+
+    const expiresAt = submissions[0].accessExpiresAt
+    const daysUntilExpiry = Math.ceil((expiresAt.getTime() - now.getTime()) / (24 * 60 * 60 * 1000))
+
+    return {
+      hasAccess: true,
+      expiresAt,
+      daysUntilExpiry,
+    }
   } catch (error) {
     console.error('Error checking user access:', error)
-    return false
+    return { hasAccess: false }
   }
 }

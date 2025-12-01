@@ -226,24 +226,6 @@ export function MobileMenu({ isOpen, onClose, isLoggedIn, onAuthClick }: MobileM
                 Contribute
               </Link>
             </li>
-            <li>
-              <Link
-                href="/companies"
-                onClick={onClose}
-                className="block text-2xl font-medium text-brand-secondary hover:text-brand-accent py-3 transition-colors"
-              >
-                Companies
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                onClick={onClose}
-                className="block text-2xl font-medium text-brand-secondary hover:text-brand-accent py-3 transition-colors"
-              >
-                About
-              </Link>
-            </li>
           </ul>
         </nav>
 

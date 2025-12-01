@@ -14,6 +14,7 @@ import { Step1Combined } from './steps/Step1Combined'
 import { Step2Compensation } from './steps/Step2Compensation'
 import { Step6Review } from './steps/Step6Review'
 import { useAnonymousToken } from '@/lib/hooks/useAnonymousToken'
+import { useAuth } from '@/contexts/AuthContext'
 import { useTranslations } from 'next-intl'
 
 const STEPS = [
@@ -25,6 +26,7 @@ const STEPS = [
 export function SalarySubmissionWizard() {
   const router = useRouter()
   const { token, isLoading: tokenLoading } = useAnonymousToken()
+  const { user } = useAuth()
   const t = useTranslations()
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState<FormData>(initialFormData)
@@ -104,7 +106,7 @@ export function SalarySubmissionWizard() {
     setIsSubmitting(true)
     try {
       const { submitSalary } = await import('@/app/actions/submit-salary')
-      const result = await submitSalary(formData, token)
+      const result = await submitSalary(formData, token, user?.id)
 
       if (result.success) {
         // Clear draft
